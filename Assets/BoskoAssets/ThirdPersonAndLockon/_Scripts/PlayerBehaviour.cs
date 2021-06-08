@@ -300,6 +300,15 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
+    public void ForceHideWeapon()
+    {
+        if (playerWeapon.activeSelf == true)
+        {
+            playerWeapon.SetActive(false);
+            sheatedWeapon.SetActive(true);
+        }
+    }
+
     public void CancelTrigger(string triggerName)
     {
         anim.ResetTrigger(triggerName);
