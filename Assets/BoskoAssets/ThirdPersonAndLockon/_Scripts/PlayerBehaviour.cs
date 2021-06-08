@@ -14,6 +14,10 @@ public class PlayerBehaviour : MonoBehaviour
     public float distanceFromWall;
     public float grabHeight;
 
+    [Header("Combat")]
+    public GameObject playerWeapon;
+    public GameObject sheatedWeapon;
+
     [Header("GroundedInfo")]
     public bool grounded;
     public bool ccGrounded;
@@ -52,6 +56,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         lol.gameObject.SetActive(false);
 
+        EquipWeapon(0);
         SetupStateMachine();
     }
 
@@ -279,6 +284,25 @@ public class PlayerBehaviour : MonoBehaviour
             anim.SetIKPositionWeight(AvatarIKGoal.RightHand, 1);
             anim.SetIKPosition(AvatarIKGoal.RightHand, rightHandPos);
         }
+    }
+
+    public void EquipWeapon(int equip)
+    {
+        if (equip == 1)
+        {
+            playerWeapon.SetActive(true);
+            sheatedWeapon.SetActive(false);
+        }
+        else
+        {
+            playerWeapon.SetActive(false);
+            sheatedWeapon.SetActive(true);
+        }
+    }
+
+    public void CancelTrigger(string triggerName)
+    {
+        anim.ResetTrigger(triggerName);
     }
 
 }

@@ -14,6 +14,7 @@ public class Combat : State
 
     public override void OnStateExit(PlayerBehaviour pb)
     {
+        pb.EquipWeapon(0);
         pb.lockedOn = false;
         pb.anim.SetBool("Target", false);
         pb.oc.ChangeCamState(OrbitCamera.CamState.onPlayer);
@@ -29,6 +30,11 @@ public class Combat : State
         pb.anim.SetFloat("x", x);
         pb.anim.SetFloat("y", y);
         pb.anim.SetFloat("y+x", (Mathf.Abs(x) + Mathf.Abs(y)));
+
+        if (Input.GetKeyDown(pb.pc.jump))
+        {
+            pb.anim.SetTrigger("Jump");
+        }
 
         pb.RotateTowardsCamera();
         if (Input.mouseScrollDelta.y != 0)
