@@ -27,7 +27,10 @@ public class Locomotion : State
 
     public override void StateUpdate(PlayerBehaviour pb)
     {
-        pb.Grounded();
+        if (pb.Grounded())
+        {
+            pb.anim.ResetTrigger("fall");
+        }
         if (!pb.lockedOn)
         {
             RotateToCam(pb);

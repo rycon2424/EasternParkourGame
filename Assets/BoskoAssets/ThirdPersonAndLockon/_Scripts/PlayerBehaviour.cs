@@ -22,10 +22,8 @@ public class PlayerBehaviour : MonoBehaviour
     public bool grounded;
     public bool ccGrounded;
 
-    [Header("IK")]
-    public bool useIK;
-    public Vector3 leftHandPos;
-    public Vector3 rightHandPos;
+    [Header("VFX")]
+    public ParticleSystem jumpSmoke;
 
     #region public hidden
     [HideInInspector] public CharacterController cc;
@@ -80,9 +78,9 @@ public class PlayerBehaviour : MonoBehaviour
         ccGrounded = cc.isGrounded;
         currentStateDebug = currentState.GetType().ToString();
         currentState.StateUpdate(this);
-        anim.SetBool("Land", grounded);
+        anim.SetBool("Land", Grounded());
     }
-    
+
     public void ChangeState(State newState)
     {
         currentState = newState;
@@ -107,7 +105,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             return true;
         }
-        else if    (RayHit(transform.position + (transform.right * 0.2f) + (transform.up * startHeight), (Vector3.down), range, everything)
+        else if (RayHit(transform.position + (transform.right * 0.2f) + (transform.up * startHeight), (Vector3.down), range, everything)
             || RayHit(transform.position + (-transform.right * 0.2f) + (transform.up * startHeight), (Vector3.down), range, everything)
             || RayHit(transform.position + (transform.forward * 0.2f) + (transform.up * startHeight), (Vector3.down), range, everything)
             || RayHit(transform.position + (-transform.forward * 0.2f) + (transform.up * startHeight), (Vector3.down), range, everything)
@@ -257,7 +255,6 @@ public class PlayerBehaviour : MonoBehaviour
     {
         Invoke(functionName, delay);
     }
-
     void DelayedRoot()
     {
         anim.applyRootMotion = true;
@@ -276,18 +273,6 @@ public class PlayerBehaviour : MonoBehaviour
     public void AddRotation(Vector3 rot)
     {
         transform.Rotate(rot);
-    }
-    
-    private void OnAnimatorIK(int layerIndex)
-    {
-        if (useIK)
-        {
-            anim.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1);
-            anim.SetIKPosition(AvatarIKGoal.LeftHand, leftHandPos);
-
-            anim.SetIKPositionWeight(AvatarIKGoal.RightHand, 1);
-            anim.SetIKPosition(AvatarIKGoal.RightHand, rightHandPos);
-        }
     }
 
     public void EquipWeapon(int equip)
@@ -316,6 +301,14 @@ public class PlayerBehaviour : MonoBehaviour
     public void CancelTrigger(string triggerName)
     {
         anim.ResetTrigger(triggerName);
+    }
+
+    public void CheckForSmoke()
+    {
+        if (Grounded() == false)
+        {
+            jumpSmoke.Play();
+        }
     }
 
 }
