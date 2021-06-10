@@ -22,6 +22,11 @@ public class PlayerBehaviour : MonoBehaviour
     public bool grounded;
     public bool ccGrounded;
 
+    [Header("IK")]
+    public bool injured;
+    [Range(0, 1)] public float leftWeight;
+    public Transform leftPos;
+
     [Header("VFX")]
     public ParticleSystem jumpSmoke;
 
@@ -249,6 +254,17 @@ public class PlayerBehaviour : MonoBehaviour
         }
         Vector3 finalY = new Vector3(0, to, 0);
         cc.center = finalY;
+    }
+
+    private void OnAnimatorIK(int layerIndex)
+    {
+        if (injured)
+        {
+            anim.SetIKPositionWeight(AvatarIKGoal.LeftHand, leftWeight);
+            anim.SetIKRotationWeight(AvatarIKGoal.LeftHand, leftWeight);
+            anim.SetIKPosition(AvatarIKGoal.LeftHand, leftPos.position);
+            anim.SetIKRotation(AvatarIKGoal.LeftHand, leftPos.rotation);
+        }
     }
 
     public void DelayFunction(string functionName, float delay)
