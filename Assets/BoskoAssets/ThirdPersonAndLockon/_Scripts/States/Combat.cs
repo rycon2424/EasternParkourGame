@@ -45,9 +45,12 @@ public class Combat : State
 
     void Attacking(PlayerBehaviour pb)
     {
-        if (Input.GetMouseButtonDown(0))
+        if (pb.anim.GetInteger("AttackType") > 0)
         {
-            pb.anim.SetTrigger("Attack");
+            if (Input.GetMouseButtonDown(0))
+            {
+                pb.anim.SetTrigger("Attack");
+            }
         }
     }
 
@@ -73,7 +76,7 @@ public class Combat : State
             ResetAttack(pb);
         }
     }
-
+    
     void CombatUI(PlayerBehaviour pb)
     {
         float mouseX = Input.GetAxis("Mouse X");
