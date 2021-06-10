@@ -7,6 +7,9 @@ public class PlayerBehaviour : MonoBehaviour
     State currentState;
     public string currentStateDebug;
 
+    [Header("PlayerStats")]
+    public int health = 100;
+
     [Header("RaycastInfo")]
     public LayerMask everything;
     public LayerMask climbing;
@@ -29,6 +32,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     [Header("VFX")]
     public ParticleSystem jumpSmoke;
+    public ParticleSystem bleeding;
 
     #region public hidden
     [HideInInspector] public CharacterController cc;
@@ -264,6 +268,20 @@ public class PlayerBehaviour : MonoBehaviour
             anim.SetIKRotationWeight(AvatarIKGoal.LeftHand, leftWeight);
             anim.SetIKPosition(AvatarIKGoal.LeftHand, leftPos.position);
             anim.SetIKRotation(AvatarIKGoal.LeftHand, leftPos.rotation);
+        }
+    }
+
+    public void SetInjured()
+    {
+        if (health <= 100)
+        {
+            injured = true;
+            bleeding.Play();
+        }
+        else
+        {
+            injured = false;
+            bleeding.Stop();
         }
     }
 
