@@ -24,19 +24,26 @@ public class Combat : State
 
     public override void StateUpdate(PlayerBehaviour pb)
     {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-
-        pb.anim.SetFloat("x", x);
-        pb.anim.SetFloat("y", y);
-        pb.anim.SetFloat("y+x", (Mathf.Abs(x) + Mathf.Abs(y)));
-
-        if (Input.GetKeyDown(pb.pc.jump))
-        {
-            pb.anim.SetTrigger("Jump");
-        }
-
+        Movement(pb);
         pb.RotateTowardsCamera();
+        Parry(pb);
+        Targeting(pb);
+        CombatUI(pb);
+        Attacking(pb);
+
+        if (Input.GetKeyDown(pb.pc.target))
+        {
+            pb.stateMachine.GoToState(pb, "Locomotion");
+        }
+    }
+
+    void Attacking(PlayerBehaviour pb)
+    {
+
+    }
+
+    void Targeting(PlayerBehaviour pb)
+    {
         if (Input.mouseScrollDelta.y != 0)
         {
             pb.ts.SwitchTarget(pb.oc);
@@ -46,9 +53,56 @@ public class Combat : State
         {
             pb.stateMachine.GoToState(pb, "Locomotion");
         }
-        if (Input.GetKeyDown(pb.pc.target))
+    }
+
+    void Parry(PlayerBehaviour pb)
+    {
+        if (Input.GetKeyDown(pb.pc.jump))
         {
-            pb.stateMachine.GoToState(pb, "Locomotion");
+            pb.anim.SetTrigger("Jump");
         }
+    }
+
+    void CombatUI(PlayerBehaviour pb)
+    {
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
+        if (Mathf.Abs(mouseX) > 0.5f || Mathf.Abs(mouseY) > 0.5f)
+        {
+            if (Mathf.Abs(mouseX) > Mathf.Abs(mouseY))
+            {
+                pb.combatUI.SetFloat("mouseY", 0);
+                if (mouseX > 0)
+                {
+                    pb.combatUI.SetFloat("mouseX", 1);
+                }
+                else
+                {
+                    pb.combatUI.SetFloat("mouseX", -1);
+                }
+                return;
+            }
+            pb.combatUI.SetFloat("mouseX", 0);
+            if (mouseY > 0)
+            {
+                pb.combatUI.SetFloat("mouseY", 1);
+            }
+            else
+            {
+                pb.combatUI.SetFloat("mouseY", -1);
+            }
+        }
+
+    }
+
+    void Movement(PlayerBehaviour pb)
+    {
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
+
+        pb.anim.SetFloat("x", x);
+        pb.anim.SetFloat("y", y);
+        pb.anim.SetFloat("y+x", (Mathf.Abs(x) + Mathf.Abs(y)));
+
     }
 }

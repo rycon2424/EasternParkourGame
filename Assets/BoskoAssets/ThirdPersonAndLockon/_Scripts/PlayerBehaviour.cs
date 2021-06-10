@@ -20,6 +20,7 @@ public class PlayerBehaviour : MonoBehaviour
     [Header("Combat")]
     public GameObject playerWeapon;
     public GameObject sheatedWeapon;
+    public Animator combatUI;
 
     [Header("GroundedInfo")]
     public bool grounded;
