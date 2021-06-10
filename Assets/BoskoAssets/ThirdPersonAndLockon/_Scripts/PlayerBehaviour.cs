@@ -21,6 +21,7 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject playerWeapon;
     public GameObject sheatedWeapon;
     public Animator combatUI;
+    public GameObject combatUIVisual;
 
     [Header("GroundedInfo")]
     public bool grounded;

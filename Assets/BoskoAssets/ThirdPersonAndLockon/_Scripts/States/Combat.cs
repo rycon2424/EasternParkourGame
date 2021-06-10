@@ -10,6 +10,8 @@ public class Combat : State
         pb.lockedOn = true;
         pb.lol.gameObject.SetActive(true);
         pb.lol.target = pb.ts.currentTarget;
+        pb.combatUIVisual.SetActive(true);
+        ResetAttack(pb);
     }
 
     public override void OnStateExit(PlayerBehaviour pb)
@@ -20,6 +22,10 @@ public class Combat : State
         pb.oc.ChangeCamState(OrbitCamera.CamState.onPlayer);
         pb.ts.currentTarget = null;
         pb.lol.gameObject.SetActive(false);
+
+        ResetAttack(pb);
+
+        pb.combatUIVisual.SetActive(false);
     }
 
     public override void StateUpdate(PlayerBehaviour pb)
@@ -39,7 +45,10 @@ public class Combat : State
 
     void Attacking(PlayerBehaviour pb)
     {
-
+        if (Input.GetMouseButtonDown(0))
+        {
+            pb.anim.SetTrigger("Attack");
+        }
     }
 
     void Targeting(PlayerBehaviour pb)
@@ -60,6 +69,8 @@ public class Combat : State
         if (Input.GetKeyDown(pb.pc.jump))
         {
             pb.anim.SetTrigger("Jump");
+
+            ResetAttack(pb);
         }
     }
 
@@ -75,10 +86,12 @@ public class Combat : State
                 if (mouseX > 0)
                 {
                     pb.combatUI.SetFloat("mouseX", 1);
+                    pb.anim.SetInteger("AttackType", 2);
                 }
                 else
                 {
                     pb.combatUI.SetFloat("mouseX", -1);
+                    pb.anim.SetInteger("AttackType", 3);
                 }
                 return;
             }
@@ -86,10 +99,12 @@ public class Combat : State
             if (mouseY > 0)
             {
                 pb.combatUI.SetFloat("mouseY", 1);
+                pb.anim.SetInteger("AttackType", 1);
             }
             else
             {
                 pb.combatUI.SetFloat("mouseY", -1);
+                pb.anim.SetInteger("AttackType", 4);
             }
         }
 
@@ -104,5 +119,14 @@ public class Combat : State
         pb.anim.SetFloat("y", y);
         pb.anim.SetFloat("y+x", (Mathf.Abs(x) + Mathf.Abs(y)));
 
+    }
+
+    void ResetAttack(PlayerBehaviour pb)
+    {
+        pb.anim.ResetTrigger("Attack");
+        pb.anim.SetInteger("AttackType", 0);
+
+        pb.combatUI.SetFloat("mouseX", 0);
+        pb.combatUI.SetFloat("mouseY", 0);
     }
 }
