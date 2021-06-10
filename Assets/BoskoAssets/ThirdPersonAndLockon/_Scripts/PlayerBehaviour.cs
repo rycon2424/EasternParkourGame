@@ -268,6 +268,17 @@ public class PlayerBehaviour : MonoBehaviour
             anim.SetIKRotationWeight(AvatarIKGoal.LeftHand, leftWeight);
             anim.SetIKPosition(AvatarIKGoal.LeftHand, leftPos.position);
             anim.SetIKRotation(AvatarIKGoal.LeftHand, leftPos.rotation);
+            if (bleeding.isPlaying == false)
+            {
+                bleeding.Play();
+            }
+        }
+        else
+        {
+            if (bleeding.isPlaying)
+            {
+                bleeding.Stop();
+            }
         }
     }
 
