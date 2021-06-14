@@ -62,9 +62,14 @@ public class Climbing : State
             return;
         }
 
-        ShimmyClimbing(pb);
+        int moving = (int)Input.GetAxisRaw(pb.pc.inputHorizontal);
 
-        ClimbingUpDown(pb);
+        ShimmyClimbing(pb, moving);
+
+        if (moving == 0)
+        {
+            ClimbingUpDown(pb);
+        }
 
         if (Input.GetKeyDown(pb.pc.jump))
         {
@@ -116,7 +121,7 @@ public class Climbing : State
                     pb.anim.SetTrigger("JumpClimb");
                     pb.anim.SetInteger("ClimbUpDirection", -1);
                     climbCooldown = true;
-                    pb.mono.StartCoroutine(ClimbCooldown(pb.anim, 0.7f, pb));
+                    pb.mono.StartCoroutine(ClimbCooldown(pb.anim, 0.8f, pb));
                 }
             }
             else if (climbDirection == 1)
@@ -133,7 +138,7 @@ public class Climbing : State
                     pb.anim.SetTrigger("JumpClimb");
                     pb.anim.SetInteger("ClimbUpDirection", 1);
                     climbCooldown = true;
-                    pb.mono.StartCoroutine(ClimbCooldown(pb.anim, 0.7f, pb));
+                    pb.mono.StartCoroutine(ClimbCooldown(pb.anim, 0.8f, pb));
                 }
                 pb.anim.SetFloat("ClimbingHand", pb.anim.GetFloat("ClimbingHand") * -1);
             }
@@ -144,9 +149,8 @@ public class Climbing : State
         }
     }
 
-    void ShimmyClimbing(PlayerBehaviour pb)
+    void ShimmyClimbing(PlayerBehaviour pb, int shimmyDirection)
     {
-        int shimmyDirection = (int)Input.GetAxisRaw(pb.pc.inputHorizontal);
         if (shimmyDirection != 0)
         {
             pb.PlayerToWall(pb, pb.transform.forward, false, 1.2f);
