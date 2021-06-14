@@ -9,6 +9,8 @@ public class PlayerBehaviour : MonoBehaviour
 
     [Header("PlayerStats")]
     public int health = 100;
+    [Space]
+    public float slideSpeed;
 
     [Header("RaycastInfo")]
     public LayerMask everything;
@@ -75,11 +77,14 @@ public class PlayerBehaviour : MonoBehaviour
         InAir ia = new InAir();
         Climbing cl = new Climbing();
         Combat co = new Combat();
+        Sliding sl = new Sliding();
 
+        stateMachine.allStates.Add(lm);
         stateMachine.allStates.Add(lm);
         stateMachine.allStates.Add(ia);
         stateMachine.allStates.Add(cl);
         stateMachine.allStates.Add(co);
+        stateMachine.allStates.Add(sl);
 
         stateMachine.GoToState(this, "Locomotion");
     }
@@ -296,6 +301,20 @@ public class PlayerBehaviour : MonoBehaviour
             injured = false;
             bleeding.Stop();
         }
+    }
+
+    public Vector3 CalculateSlopeDirection()
+    {
+        RaycastHit hit;
+        Ray ray = new Ray(transform.position + Vector3.up * 0.5f, Vector3.down);
+        Debug.DrawRay(transform.position + Vector3.up * 0.5f, Vector3.down * 1, Color.red, 0.5f);
+        if (Physics.Raycast(ray, out hit, 1f))
+        {
+            Vector3 slopeRight = Vector3.Cross(Vector3.up, hit.normal);
+            Vector3 slopeDirection = Vector3.Cross(slopeRight, hit.normal).normalized;
+            return slopeDirection;
+        }
+        return Vector3.zero;
     }
 
     public void DelayFunction(string functionName, float delay)

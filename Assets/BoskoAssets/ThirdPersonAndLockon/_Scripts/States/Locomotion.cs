@@ -30,6 +30,7 @@ public class Locomotion : State
         if (pb.Grounded())
         {
             pb.anim.ResetTrigger("fall");
+            CheckSlope(pb);
         }
         if (!pb.lockedOn)
         {
@@ -42,6 +43,14 @@ public class Locomotion : State
         {
             pb.anim.SetTrigger("fall");
             pb.stateMachine.GoToState(pb, "InAir");
+        }
+    }
+
+    void CheckSlope(PlayerBehaviour pb)
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            pb.stateMachine.GoToState(pb, "Sliding");
         }
     }
 
