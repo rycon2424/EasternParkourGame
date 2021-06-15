@@ -6,6 +6,7 @@ public class PlayerBehaviour : MonoBehaviour
 {
     State currentState;
     public string currentStateDebug;
+    public string tagGround;
 
     [Header("PlayerStats")]
     public int health = 100;
@@ -114,6 +115,21 @@ public class PlayerBehaviour : MonoBehaviour
     public float startHeight = 0.5f;
     public float range = 1;
     public float airtime;
+
+    public string CheckTag()
+    {
+        RaycastHit hit;
+        Ray ray = new Ray(transform.position + (transform.up * startHeight), Vector3.down);
+        if (Physics.Raycast(ray, out hit, 1.25f, everything))
+        {
+            tagGround = hit.collider.tag;
+            return hit.collider.tag;
+        }
+        else
+        {
+            return "";
+        }
+    }
 
     public bool Grounded()
     {
@@ -307,7 +323,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = new Ray(transform.position + Vector3.up * 0.5f, Vector3.down);
-        Debug.DrawRay(transform.position + Vector3.up * 0.5f, Vector3.down * 1, Color.red, 0.5f);
+        Debug.DrawRay(transform.position + Vector3.up * 0.5f, Vector3.down * 1, Color.red, 1f);
         if (Physics.Raycast(ray, out hit, 1f))
         {
             Vector3 slopeRight = Vector3.Cross(Vector3.up, hit.normal);

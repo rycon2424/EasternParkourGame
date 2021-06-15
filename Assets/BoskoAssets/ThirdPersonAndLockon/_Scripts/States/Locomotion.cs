@@ -39,6 +39,10 @@ public class Locomotion : State
         GrabLedge(pb);
         Movement(pb);
         CanTarget(pb);
+        if (pb.CheckTag() == "Slide")
+        {
+            pb.stateMachine.GoToState(pb, "Sliding");
+        }
         if (pb.airtime > 0.75f)
         {
             pb.anim.SetTrigger("fall");

@@ -7,14 +7,26 @@ public class Sliding : State
     public override void OnStateEnter(PlayerBehaviour pb)
     {
         pb.anim.applyRootMotion = false;
-        pb.transform.rotation = Quaternion.LookRotation(pb.CalculateSlopeDirection());
+        Vector3 slopeDir = pb.CalculateSlopeDirection();
 
-        pb.anim.SetTrigger("Slide");
+        if (slopeDir == Vector3.zero)
+        {
+            pb.stateMachine.GoToState(pb, "Locomotion");
+            return;
+        }
+
+        pb.transform.rotation = Quaternion.LookRotation(slopeDir);
+
+        pb.RayHit(pb.transform.position + pb.transform.up, Vector3.down, 1.5f, pb.everything);
+
+        pb.transform.position = pb.lastCachedhit;
+
+        pb.anim.SetBool("isSliding", true);
     }
 
     public override void OnStateExit(PlayerBehaviour pb)
     {
-        pb.anim.SetTrigger("LetGo");
+        pb.anim.SetBool("isSliding", false);
 
         pb.transform.rotation = new Quaternion(0, 1, 0, 0.1f);
 
@@ -28,16 +40,15 @@ public class Sliding : State
 
         pb.cc.Move((pb.transform.forward * pb.slideSpeed + pb.transform.right * x * 2) * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            pb.stateMachine.GoToState(pb, "Locomotion");
-        }
+        ExitCheck(pb);
     }
 
     void ExitCheck(PlayerBehaviour pb)
     {
-        //Check if no ground
-        //Check if ground is not tagged "Slide"
+        if (pb.CheckTag() != "Slide")
+        {
+            pb.stateMachine.GoToState(pb, "Locomotion");
+        }
     }
 
 }

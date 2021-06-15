@@ -28,6 +28,10 @@ public class InAir : State
                 pb.cc.Move(pb.transform.forward * Time.deltaTime * 3);
             }
         }
+        if (pb.CheckTag() == "Slide")
+        {
+            pb.stateMachine.GoToState(pb, "Sliding");
+        }
         if (pb.grounded && pb.ccGrounded)
         {
             pb.stateMachine.GoToState(pb, "Locomotion");
