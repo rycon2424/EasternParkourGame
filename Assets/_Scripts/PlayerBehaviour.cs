@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBehaviour : MonoBehaviour
+public class PlayerBehaviour : Actor
 {
     State currentState;
     public string currentStateDebug;
     public string tagGround;
 
     [Header("PlayerStats")]
-    public int health = 100;
-    [Space]
     public float slideSpeed;
 
     [Header("RaycastInfo")]
