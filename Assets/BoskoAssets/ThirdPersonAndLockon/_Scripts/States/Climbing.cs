@@ -141,10 +141,6 @@ public class Climbing : State
                 pb.anim.SetFloat("ClimbingHand", pb.anim.GetFloat("ClimbingHand") * -1);
             }
         }
-        else
-        {
-            pb.anim.SetInteger("ClimbUpDirection", 0);
-        }
     }
 
     void ShimmyClimbing(PlayerBehaviour pb, int shimmyDirection)
