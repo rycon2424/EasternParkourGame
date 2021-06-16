@@ -61246,7 +61246,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &422871257805054339
 Transform:
   m_ObjectHideFlags: 0
@@ -73986,7 +73986,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &414686013971944911
 Transform:
   m_ObjectHideFlags: 0
@@ -74020,7 +74020,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c624a3d16e2ba1a43b8f5ff296ae5434, type: 2}
+  - {fileID: 2100000, guid: 8de9e751da13d0a428ac8c65860100c2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -77088,7 +77088,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &423295797833563677
 Transform:
   m_ObjectHideFlags: 0
@@ -81374,7 +81374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &423246591737861091
 Transform:
   m_ObjectHideFlags: 0
@@ -88302,7 +88302,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentStateDebug: 
+  tagGround: 
   health: 100
+  slideSpeed: 4
   everything:
     serializedVersion: 2
     m_Bits: 65
@@ -88312,7 +88314,7 @@ MonoBehaviour:
   lastCachedhit: {x: 0, y: 0, z: 0}
   distanceFromWall: 0.225
   grabHeight: 1.3
-  playerWeapon: {fileID: 8646357109683360253}
+  playerWeapon: {fileID: 8646357111363184378}
   sheatedWeapon: {fileID: 796667973624811189}
   combatUI: {fileID: 1033434840}
   combatUIVisual: {fileID: 1033434835}

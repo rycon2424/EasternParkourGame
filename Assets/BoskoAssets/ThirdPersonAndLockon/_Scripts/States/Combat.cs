@@ -22,7 +22,7 @@ public class Combat : State
         pb.oc.ChangeCamState(OrbitCamera.CamState.onPlayer);
         pb.ts.currentTarget = null;
         pb.lol.gameObject.SetActive(false);
-
+        
         ResetAttack(pb);
 
         pb.combatUIVisual.SetActive(false);
