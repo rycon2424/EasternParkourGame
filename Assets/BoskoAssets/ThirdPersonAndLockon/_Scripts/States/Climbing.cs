@@ -118,8 +118,7 @@ public class Climbing : State
                     temp.y -= pb.grabHeight;
 
                     pb.LerpToPosition(temp, 0.35f);
-                    pb.anim.SetTrigger("JumpClimb");
-                    pb.anim.SetInteger("ClimbUpDirection", -1);
+                    pb.anim.Play("ClimbDown");
                     climbCooldown = true;
                     pb.mono.StartCoroutine(ClimbCooldown(pb.anim, 0.8f, pb));
                 }
@@ -135,8 +134,7 @@ public class Climbing : State
                     temp.y -= pb.grabHeight;
 
                     pb.LerpToPosition(temp, 0.35f);
-                    pb.anim.SetTrigger("JumpClimb");
-                    pb.anim.SetInteger("ClimbUpDirection", 1);
+                    pb.anim.Play("ClimbingUp");
                     climbCooldown = true;
                     pb.mono.StartCoroutine(ClimbCooldown(pb.anim, 0.8f, pb));
                 }
