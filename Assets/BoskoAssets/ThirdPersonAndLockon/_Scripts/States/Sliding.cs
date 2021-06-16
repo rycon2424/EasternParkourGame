@@ -45,7 +45,7 @@ public class Sliding : State
 
     void ExitCheck(PlayerBehaviour pb)
     {
-        if (pb.CheckTag() != "Slide")
+        if (pb.CheckTag(Vector3.zero) != "Slide")
         {
             pb.stateMachine.GoToState(pb, "Locomotion");
         }

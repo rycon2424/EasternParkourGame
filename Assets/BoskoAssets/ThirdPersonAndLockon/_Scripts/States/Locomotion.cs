@@ -39,7 +39,7 @@ public class Locomotion : State
         GrabLedge(pb);
         Movement(pb);
         CanTarget(pb);
-        if (pb.CheckTag() == "Slide")
+        if (pb.CheckTag(Vector3.zero) == "Slide")
         {
             pb.stateMachine.GoToState(pb, "Sliding");
         }

@@ -28,7 +28,7 @@ public class InAir : State
                 pb.cc.Move(pb.transform.forward * Time.deltaTime * 3);
             }
         }
-        if (pb.CheckTag() == "Slide")
+        if (pb.CheckTag(Vector3.zero) == "Slide")
         {
             pb.stateMachine.GoToState(pb, "Sliding");
         }

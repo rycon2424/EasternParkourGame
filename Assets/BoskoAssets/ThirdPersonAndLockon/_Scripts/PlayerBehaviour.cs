@@ -116,11 +116,12 @@ public class PlayerBehaviour : MonoBehaviour
     public float range = 1;
     public float airtime;
 
-    public string CheckTag()
+    public string CheckTag(Vector3 offset)
     {
         RaycastHit hit;
-        Ray ray = new Ray(transform.position + (transform.up * startHeight), Vector3.down);
-        if (Physics.Raycast(ray, out hit, 1.25f, everything))
+        Ray ray = new Ray(transform.position + (transform.up * startHeight) + offset, Vector3.down);
+        Debug.DrawRay(transform.position + (transform.up * startHeight) + offset, Vector3.down * 1.1f, Color.green);
+        if (Physics.Raycast(ray, out hit, 1.1f, everything))
         {
             tagGround = hit.collider.tag;
             return hit.collider.tag;
