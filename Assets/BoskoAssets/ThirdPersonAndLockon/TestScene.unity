@@ -3394,6 +3394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0438c22d55092f4c8e62ee76b1f4239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
+  dead: 0
   runDistance: 5
   attackDistance: 1.75
   currentState: 0
@@ -11214,7 +11216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1324998178068492
 GameObject:
   m_ObjectHideFlags: 0
@@ -11569,7 +11571,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1347069954773054
 GameObject:
   m_ObjectHideFlags: 0
@@ -11805,7 +11807,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1356688360694312
 GameObject:
   m_ObjectHideFlags: 0
@@ -12414,7 +12416,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1406626871435086
 GameObject:
   m_ObjectHideFlags: 0
@@ -13117,7 +13119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1449813442001270
 GameObject:
   m_ObjectHideFlags: 0
@@ -15695,7 +15697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1604974623139860
 GameObject:
   m_ObjectHideFlags: 0
@@ -16926,7 +16928,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1688663745222516
 GameObject:
   m_ObjectHideFlags: 0
@@ -16989,6 +16991,7 @@ GameObject:
   - component: {fileID: 1000611269}
   - component: {fileID: 1000611267}
   - component: {fileID: 1000611268}
+  - component: {fileID: 1690435948411659}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -16996,6 +16999,83 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1690435948411659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690435948411658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e935619e17a6784c895ed5aab251e38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomColour: 1
+  materials:
+  - {fileID: 2100000, guid: 430ef6cb7affdaf4287014140a6286f8, type: 2}
+  - {fileID: 2100000, guid: 8bf6ede177a4ec04cabcbf9cace0ba87, type: 2}
+  - {fileID: 2100000, guid: cd9fc82958a66f8478aaf7aa89c9ebb0, type: 2}
+  - {fileID: 2100000, guid: d63156dee43f7e04c82101c6a7e9a597, type: 2}
+  - {fileID: 2100000, guid: 9407b9cdf360ce342b7482c6d875992a, type: 2}
+  randomItems:
+  - assignMaterial: 0
+    gameObjects:
+    - {fileID: 1475710466934718}
+    - {fileID: 1848736715125506}
+    - {fileID: 1660218944525660}
+    - {fileID: 1121255956275844}
+    - {fileID: 1962455431028440}
+    - {fileID: 1431207924870386}
+    - {fileID: 1449813442001270}
+    - {fileID: 1979028655844508}
+    - {fileID: 1638675115784874}
+    - {fileID: 1176180714223920}
+    - {fileID: 1759006201687214}
+    - {fileID: 1226979664482184}
+    - {fileID: 1413688762339480}
+    - {fileID: 1197733478802390}
+    - {fileID: 1270236352414604}
+    - {fileID: 1931071598588754}
+    - {fileID: 1843444158916064}
+    - {fileID: 1944860409838422}
+    - {fileID: 1074995777620800}
+    - {fileID: 1982483955787036}
+    - {fileID: 1435961820663594}
+    - {fileID: 1716234182185824}
+    - {fileID: 1966148083693992}
+  - assignMaterial: 1
+    gameObjects:
+    - {fileID: 1587408849703810}
+    - {fileID: 1271185578032812}
+    - {fileID: 1570692632059976}
+    - {fileID: 1342572234550038}
+    - {fileID: 1501398056555304}
+    - {fileID: 1878052657238936}
+    - {fileID: 1449749875408528}
+    - {fileID: 1773994710522084}
+    - {fileID: 1863223223834818}
+    - {fileID: 1172654612351848}
+  - assignMaterial: 1
+    gameObjects:
+    - {fileID: 1107101780903616}
+    - {fileID: 1663103495094350}
+    - {fileID: 1672522112017300}
+    - {fileID: 1100791267171608}
+    - {fileID: 1555595453264214}
+    - {fileID: 1424023444354204}
+    - {fileID: 1549500186538906}
+    - {fileID: 1815941549713634}
+    - {fileID: 1372536028438874}
+    - {fileID: 1894229498358336}
+    - {fileID: 1512927346916108}
+    - {fileID: 1682865434114828}
+    - {fileID: 1470606136928018}
+    - {fileID: 1666797375303456}
+    - {fileID: 1007418673752726}
+    - {fileID: 1487010901463248}
+    - {fileID: 1117681424565272}
+    - {fileID: 1217956441177700}
 --- !u!1 &1690901591603746
 GameObject:
   m_ObjectHideFlags: 0
@@ -17249,7 +17329,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1713576733330650
 GameObject:
   m_ObjectHideFlags: 0
@@ -18990,7 +19070,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1851940340465482
 GameObject:
   m_ObjectHideFlags: 0
