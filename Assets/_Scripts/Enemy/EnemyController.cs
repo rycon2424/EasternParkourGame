@@ -19,15 +19,22 @@ public class EnemyController : Actor
     public float randomInt;
     public float distancePlayer;
 
+    private BloodFXHandler bfh;
+
     void Start()
     {
         player = FindObjectOfType<PlayerBehaviour>().transform;
         anim = GetComponent<Animator>();
         SwitchState(EnemyStates.inCombat);
+        bfh = GetComponent<BloodFXHandler>();
     }
     
     void Update()
     {
+        if (dead)
+        {
+            return;
+        }
         distancePlayer = Vector3.Distance(transform.position, player.position);
         switch (currentState)
         {
@@ -41,6 +48,28 @@ public class EnemyController : Actor
             default:
                 break;
         }
+    }
+
+    public override void TakeDamage(int damage, int damageType)
+    {
+        base.TakeDamage(damage, damageType);
+        bfh.SlashDamage(damageType);
+    }
+
+    public override void Death(int damageType)
+    {
+        TargetingSystem ts = FindObjectOfType<TargetingSystem>();
+        OrbitCamera oc = FindObjectOfType<OrbitCamera>();
+
+        anim.SetInteger("DeathType", Random.Range(1, 4));
+        anim.SetTrigger("Death");
+
+        StopCoroutine("WalkDirection");
+        StopCoroutine("AttackCld");
+
+        bfh.DeathBleed(damageType);
+
+        GetComponent<CharacterController>().enabled = false;
     }
 
     void SwitchState(EnemyStates es)
@@ -59,6 +88,8 @@ public class EnemyController : Actor
                 break;
         }
     }
+
+    #region Combat
 
     void InCombat()
     {
@@ -94,7 +125,7 @@ public class EnemyController : Actor
     {
         anim.SetInteger("AttackType", Random.Range(1, 6));
         anim.SetTrigger("Attack");
-        StartCoroutine(AttackCld());
+        StartCoroutine("AttackCld");
     }
 
     IEnumerator AttackCld()
@@ -151,4 +182,6 @@ public class EnemyController : Actor
         newLookAt.z = 0;
         transform.rotation = Quaternion.Slerp(transform.rotation, newLookAt, Time.deltaTime * 5);
     }
+
+    #endregion
 }
