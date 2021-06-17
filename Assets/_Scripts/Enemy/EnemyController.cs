@@ -59,6 +59,7 @@ public class EnemyController : Actor
     {
         base.TakeDamage(damage, damageType);
         bfh.SlashDamage(damageType);
+        anim.Play("Damaged");
     }
 
     public override void Death(int damageType)
