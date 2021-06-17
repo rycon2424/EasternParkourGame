@@ -76,6 +76,7 @@ public class EnemyController : Actor
 
         dropWeapon.parent = null;
         dropWeapon.GetComponent<Rigidbody>().isKinematic = false;
+        dropWeapon.GetComponent<Collider>().enabled = true;
 
         pb.KilledTarget();
     }
