@@ -67,6 +67,8 @@ public class EnemyController : Actor
         TargetingSystem ts = FindObjectOfType<TargetingSystem>();
         OrbitCamera oc = FindObjectOfType<OrbitCamera>();
 
+        anim.SetBool("Dead", true);
+
         anim.SetInteger("RollType", Random.Range(1, 4));
         anim.SetTrigger("Death");
 

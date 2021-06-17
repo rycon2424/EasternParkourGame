@@ -36,6 +36,7 @@ public class PlayerBehaviour : Actor
     [Header("VFX")]
     public ParticleSystem jumpSmoke;
     public ParticleSystem bleeding;
+    private BloodFXHandler bfh;
 
     #region public hidden
     [HideInInspector] public CharacterController cc;
@@ -60,6 +61,7 @@ public class PlayerBehaviour : Actor
         ts = GetComponent<TargetingSystem>();
         anim = GetComponent<Animator>();
         pc = GetComponent<PlayerControls>();
+        bfh = GetComponent<BloodFXHandler>();
 
         oc = GetComponentInChildren<OrbitCamera>();
         lol = GetComponentInChildren<LockOnLookat>();
@@ -93,6 +95,16 @@ public class PlayerBehaviour : Actor
         currentStateDebug = currentState.GetType().ToString();
         currentState.StateUpdate(this);
         anim.SetBool("Land", Grounded());
+    }
+
+    public override void TakeDamage(int damage, int damageType)
+    {
+        base.TakeDamage(damage, damageType);
+        if (injured == false && health < 50)
+        {
+            injured = true;
+        }
+        bfh.SlashDamage(damageType);
     }
 
     public void ChangeState(State newState)
