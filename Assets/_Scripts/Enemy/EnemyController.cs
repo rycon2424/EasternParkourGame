@@ -22,6 +22,7 @@ public class EnemyController : Actor
 
     private PlayerBehaviour pb;
     private BloodFXHandler bfh;
+    private Target t;
 
     void Start()
     {
@@ -30,6 +31,7 @@ public class EnemyController : Actor
         anim = GetComponent<Animator>();
         SwitchState(EnemyStates.inCombat);
         bfh = GetComponent<BloodFXHandler>();
+        t = GetComponent<Target>();
     }
     
     void Update()
@@ -64,7 +66,7 @@ public class EnemyController : Actor
         TargetingSystem ts = FindObjectOfType<TargetingSystem>();
         OrbitCamera oc = FindObjectOfType<OrbitCamera>();
 
-        anim.SetInteger("DeathType", Random.Range(1, 4));
+        anim.SetInteger("RollType", Random.Range(1, 4));
         anim.SetTrigger("Death");
 
         StopCoroutine("WalkDirection");
@@ -78,7 +80,7 @@ public class EnemyController : Actor
         dropWeapon.GetComponent<Rigidbody>().isKinematic = false;
         dropWeapon.GetComponent<Collider>().enabled = true;
 
-        pb.KilledTarget();
+        pb.KilledTarget(t);
     }
 
     void SwitchState(EnemyStates es)
@@ -169,15 +171,15 @@ public class EnemyController : Actor
     {
         walkBehaviour = true;
 
-        randomInt = Random.Range(1.0f, 5.0f);
+        randomInt = Random.Range(2.0f, 5.0f);
         yield return new WaitForSeconds(randomInt);
 
         anim.SetBool("Walking", false);
 
-        randomInt = Random.Range(1.0f, 5.0f);
+        randomInt = Random.Range(1.0f, 3.0f);
         yield return new WaitForSeconds(randomInt);
 
-        int randomWalkDir = Random.Range(1, 5);
+        int randomWalkDir = Random.Range(1, 4);
         anim.SetBool("Walking", true);
         anim.SetInteger("WalkingDir", randomWalkDir);
         

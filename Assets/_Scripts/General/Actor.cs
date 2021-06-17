@@ -26,6 +26,4 @@ public class Actor : MonoBehaviour
     }
 
     public virtual void Death(int damageType) { }
-
-    public virtual void KilledTarget() { }
 }

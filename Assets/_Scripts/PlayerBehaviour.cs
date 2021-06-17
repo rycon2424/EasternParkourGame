@@ -332,9 +332,9 @@ public class PlayerBehaviour : Actor
         return Vector3.zero;
     }
 
-    public override void KilledTarget()
+    public void KilledTarget(Target targetThatDied)
     {
-        ts.targets.Remove(ts.currentTarget);
+        ts.targets.Remove(targetThatDied);
         ts.currentTarget = null;
 
         ts.SwitchTarget(oc);
