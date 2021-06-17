@@ -21,6 +21,8 @@ public class Sliding : State
 
         pb.transform.position = pb.lastCachedhit;
 
+        //pb.anim.Play("Sliding");
+        pb.anim.SetTrigger("Slide");
         pb.anim.SetBool("isSliding", true);
     }
 
@@ -28,9 +30,12 @@ public class Sliding : State
     {
         pb.anim.SetBool("isSliding", false);
 
-        pb.transform.rotation = new Quaternion(0, 1, 0, 0.1f);
+        Quaternion lookingPos = pb.transform.rotation;
+        pb.transform.rotation = new Quaternion(0, lookingPos.y, 0, lookingPos.w);
 
         pb.anim.applyRootMotion = true;
+
+        pb.anim.ResetTrigger("Slide");
     }
 
     public override void StateUpdate(PlayerBehaviour pb)
