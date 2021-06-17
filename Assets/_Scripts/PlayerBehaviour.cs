@@ -79,7 +79,6 @@ public class PlayerBehaviour : Actor
         Sliding sl = new Sliding();
 
         stateMachine.allStates.Add(lm);
-        stateMachine.allStates.Add(lm);
         stateMachine.allStates.Add(ia);
         stateMachine.allStates.Add(cl);
         stateMachine.allStates.Add(co);
@@ -225,7 +224,8 @@ public class PlayerBehaviour : Actor
         Debug.DrawRay(playerHeight, dir * range, Color.cyan, 5);
         if (Physics.Raycast(playerHeight, dir, out hit, range))
         {
-            pb.transform.rotation = Quaternion.LookRotation(-hit.normal, Vector3.up);
+            Quaternion hitRotation = Quaternion.LookRotation(-hit.normal, Vector3.up);
+            pb.transform.rotation = hitRotation;
             return true;
         }
         return false;
@@ -330,6 +330,20 @@ public class PlayerBehaviour : Actor
             return slopeDirection;
         }
         return Vector3.zero;
+    }
+
+    public override void KilledTarget()
+    {
+        ts.targets.Remove(ts.currentTarget);
+        ts.currentTarget = null;
+
+        ts.SwitchTarget(oc);
+        lol.target = ts.currentTarget;
+
+        if (ts.currentTarget == null)
+        {
+            stateMachine.GoToState(this, "Locomotion");
+        }
     }
 
     public void DelayFunction(string functionName, float delay)

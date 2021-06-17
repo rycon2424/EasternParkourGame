@@ -2048,7 +2048,7 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Target
     m_EventTreshold: 0
-  - m_ConditionMode: 2
+  - m_ConditionMode: 1
     m_ConditionEvent: Walking
     m_EventTreshold: 0
   - m_ConditionMode: 1

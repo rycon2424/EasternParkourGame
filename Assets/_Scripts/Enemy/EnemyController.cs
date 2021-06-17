@@ -9,6 +9,7 @@ public class EnemyController : Actor
 
     public enum EnemyStates {normal, chasing, inCombat }
     public EnemyStates currentState;
+    public Transform dropWeapon;
 
     [Header("Private/Dont Assign")]
     public Transform player;
@@ -19,11 +20,13 @@ public class EnemyController : Actor
     public float randomInt;
     public float distancePlayer;
 
+    private PlayerBehaviour pb;
     private BloodFXHandler bfh;
 
     void Start()
     {
-        player = FindObjectOfType<PlayerBehaviour>().transform;
+        pb = FindObjectOfType<PlayerBehaviour>();
+        player = pb.transform;
         anim = GetComponent<Animator>();
         SwitchState(EnemyStates.inCombat);
         bfh = GetComponent<BloodFXHandler>();
@@ -70,6 +73,11 @@ public class EnemyController : Actor
         bfh.DeathBleed(damageType);
 
         GetComponent<CharacterController>().enabled = false;
+
+        dropWeapon.parent = null;
+        dropWeapon.GetComponent<Rigidbody>().isKinematic = false;
+
+        pb.KilledTarget();
     }
 
     void SwitchState(EnemyStates es)
