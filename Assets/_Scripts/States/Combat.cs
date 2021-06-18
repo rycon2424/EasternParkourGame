@@ -16,7 +16,6 @@ public class Combat : State
 
     public override void OnStateExit(PlayerBehaviour pb)
     {
-        pb.EquipWeapon(0);
         pb.lockedOn = false;
         pb.anim.SetBool("Target", false);
         pb.oc.ChangeCamState(OrbitCamera.CamState.onPlayer);
