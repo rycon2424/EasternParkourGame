@@ -25,11 +25,13 @@ public class Climbing : State
 
         if (!pb.PlayerFaceWall(pb, new Vector3(0, 1, 0), pb.transform.forward, 2))
         {
+            pb.failedClimb = true;
             pb.stateMachine.GoToState(pb, "Locomotion");
             return;
         }
         if (!pb.PlayerToWall(pb, pb.transform.forward, false, 1.2f))
         {
+            pb.failedClimb = true;
             pb.stateMachine.GoToState(pb, "Locomotion");
             return;
         }
@@ -39,6 +41,7 @@ public class Climbing : State
         pb.cc.height = 1.2f;
 
         pb.anim.SetTrigger("Climb");
+        pb.anim.SetBool("Climbing", true);
         pb.DelayFunction("DelayedRoot", 0.25f);
         
     }
@@ -49,6 +52,7 @@ public class Climbing : State
         pb.cc.height = defaultHeight;
         pb.cc.enabled = true;
         pb.airtime = 0;
+        pb.anim.SetBool("Climbing", false);
     }
 
     private bool mountingWall;

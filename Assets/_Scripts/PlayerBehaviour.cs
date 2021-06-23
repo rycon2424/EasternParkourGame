@@ -27,6 +27,7 @@ public class PlayerBehaviour : Actor
     [Header("GroundedInfo")]
     public bool grounded;
     public bool ccGrounded;
+    public bool failedClimb;
 
     [Header("IK")]
     public bool injured;

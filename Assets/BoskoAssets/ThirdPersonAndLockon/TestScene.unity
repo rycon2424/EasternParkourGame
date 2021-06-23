@@ -6445,7 +6445,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1.7
-  m_Radius: 0.25
+  m_Radius: 0.43
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -7724,8 +7724,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1.287876}
-  m_Center: {x: -3.840912e-10, y: 0, z: 0.14393827}
+  m_Size: {x: 1, y: 1, z: 1.1}
+  m_Center: {x: 0, y: 0, z: 0.19066364}
 --- !u!1 &1305159879
 GameObject:
   m_ObjectHideFlags: 0
@@ -7848,8 +7848,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312411404}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.419999, y: 5.5000005, z: 8.65}
-  m_LocalScale: {x: 1.0594126, y: 0.20638283, z: 1.1538914}
+  m_LocalPosition: {x: -9.419999, y: 5.5, z: 9.6977}
+  m_LocalScale: {x: 1.0594126, y: 0.20638283, z: 3.249243}
   m_Children: []
   m_Father: {fileID: 1431398285}
   m_RootOrder: 83
@@ -21955,7 +21955,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1690435948411659
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Locomotion : State
 {
-
     public override void AnimatorIKUpdate(PlayerBehaviour pb)
     {
 
@@ -29,8 +28,8 @@ public class Locomotion : State
     {
         if (pb.Grounded())
         {
+            pb.failedClimb = false;
             pb.anim.ResetTrigger("fall");
-            CheckSlope(pb);
         }
         if (!pb.lockedOn)
         {
@@ -49,15 +48,7 @@ public class Locomotion : State
             pb.stateMachine.GoToState(pb, "InAir");
         }
     }
-
-    void CheckSlope(PlayerBehaviour pb)
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            pb.stateMachine.GoToState(pb, "Sliding");
-        }
-    }
-
+    
     void CanTarget(PlayerBehaviour pb)
     {
         if (Input.GetKeyDown(pb.pc.target))
@@ -86,7 +77,7 @@ public class Locomotion : State
     
     void GrabLedge(PlayerBehaviour pb)
     {
-        if (pb.grounded == false)
+        if (pb.grounded == false && pb.failedClimb == false)
         {
             if (Input.GetKey(pb.pc.grab))
             {
