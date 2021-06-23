@@ -68,7 +68,7 @@ public class Locomotion : State
             }
         }
     }
-
+    
     void RotateToCam(PlayerBehaviour pb)
     {
         float x = Input.GetAxisRaw("Horizontal");

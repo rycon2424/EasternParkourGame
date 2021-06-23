@@ -100,6 +100,18 @@ public class PlayerBehaviour : Actor
     public override void TakeDamage(int damage, int damageType)
     {
         base.TakeDamage(damage, damageType);
+        if (stateMachine.IsInState("Locomotion"))
+        {
+            if (ts.SelectTarget(oc))
+            {
+                EquipWeapon(1);
+                stateMachine.GoToState(this, "Combat");
+            }
+        }
+        if (stateMachine.IsInState("Combat"))
+        {
+            anim.Play("Hit");
+        }
         if (injured == false && health < 50)
         {
             injured = true;

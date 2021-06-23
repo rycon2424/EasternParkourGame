@@ -16,7 +16,10 @@ public class HitBox : MonoBehaviour
     {
         foreach (var target in targets)
         {
-            target.TakeDamage(ac.damage, damageType);
+            if (target != ac)
+            {
+                target.TakeDamage(ac.damage, damageType);
+            }
         }
     }
 }
