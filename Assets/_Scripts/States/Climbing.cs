@@ -6,6 +6,7 @@ public class Climbing : State
 {
     Vector3 defaultCenter = new Vector3(0,1,0);
     float defaultHeight = 1.75f;
+    bool legSupport;
 
     public override void OnStateEnter(PlayerBehaviour pb)
     {
@@ -22,8 +23,8 @@ public class Climbing : State
         newPlayerPos.y = pb.lastCachedhit.y - pb.grabHeight;
         
         pb.transform.position = newPlayerPos;
-
-        if (!pb.PlayerFaceWall(pb, new Vector3(0, 1, 0), pb.transform.forward, 2))
+        
+        if (!pb.PlayerFaceWall(pb, new Vector3(0, 1.15f, 0), pb.transform.forward, 2))
         {
             pb.failedClimb = true;
             pb.stateMachine.GoToState(pb, "Locomotion");
@@ -36,11 +37,36 @@ public class Climbing : State
             return;
         }
 
-        Vector3 ccCenter= new Vector3(0, 0.6f, 0);
+        if (pb.RayHit(pb.transform.position + Vector3.up, pb.transform.forward, 0.5f, pb.everything))
+        {
+            legSupport = true;
+        }
+        else
+        {
+            if (pb.RayHit(pb.transform.position, Vector3.down, 01f, pb.everything))
+            {
+                pb.failedClimb = true;
+                pb.stateMachine.GoToState(pb, "Locomotion");
+                return;
+            };
+            legSupport = false;
+        }
+
+
+        Vector3 ccCenter = new Vector3(0, 0.6f, 0);
         pb.cc.center = ccCenter;
         pb.cc.height = 1.2f;
 
-        pb.anim.SetTrigger("Climb");
+        if (legSupport)
+        {
+            pb.anim.SetTrigger("Climb");
+        }
+        else
+        {
+            pb.anim.SetTrigger("Ledge");
+        }
+        Debug.Log(legSupport);
+
         pb.anim.SetBool("Climbing", true);
         pb.DelayFunction("DelayedRoot", 0.25f);
         
@@ -53,6 +79,7 @@ public class Climbing : State
         pb.cc.enabled = true;
         pb.airtime = 0;
         pb.anim.SetBool("Climbing", false);
+        pb.anim.SetInteger("ClimbDirection", 0);
     }
 
     private bool mountingWall;
@@ -70,18 +97,19 @@ public class Climbing : State
 
         ShimmyClimbing(pb, moving);
 
-        if (moving == 0)
+        if (moving == 0 && legSupport)
         {
             ClimbingUpDown(pb);
         }
 
         if (Input.GetKeyDown(pb.pc.jump))
         {
-            if (pb.oc.transform.localEulerAngles.y > 70 && pb.oc.transform.localEulerAngles.y < 290)
+            if (pb.oc.transform.localEulerAngles.y > 70 && pb.oc.transform.localEulerAngles.y < 290 && legSupport)
             {
                 pb.stateMachine.GoToState(pb, "InAir");
                 pb.anim.SetTrigger("Jump");
                 pb.AddRotation(new Vector3(0, pb.oc.transform.localEulerAngles.y, 0));
+                return;
             }
             else if (!pb.RayHit(pb.transform.position + pb.transform.forward * 0.75f + pb.transform.up * 1.25f, pb.transform.up, 1.75f, pb.everything) && !pb.RayHit(pb.transform.position + pb.transform.up * 1.5f, pb.transform.forward, 1f, pb.everything))
             {
@@ -89,6 +117,31 @@ public class Climbing : State
                 pb.anim.SetTrigger("Jump");
             }
         }
+
+
+        if (pb.RayHit(pb.transform.position + Vector3.up, pb.transform.forward, 0.5f, pb.everything))
+        {
+            if (legSupport == false)
+            {
+                pb.anim.SetTrigger("Climb");
+                legSupport = true;
+            }
+        }
+        else
+        {
+            if (legSupport == true)
+            {
+                if (pb.RayHit(pb.transform.position, Vector3.down, 01f, pb.everything))
+                {
+                    pb.anim.SetTrigger("LetGo");
+                    pb.stateMachine.GoToState(pb, "InAir");
+                    return;
+                };
+                pb.anim.SetTrigger("Ledge");
+                legSupport = false;
+            }
+        }
+
         if (Input.GetKeyDown(pb.pc.crouch))
         {
             pb.anim.SetTrigger("LetGo");
@@ -157,7 +210,7 @@ public class Climbing : State
                 if (
                     !pb.RayHit(pb.transform.position + pb.transform.up * 0.5f, pb.transform.right, 0.65f, pb.everything) &&
                      pb.RayHit(pb.transform.position + pb.transform.right * 0.6f + pb.transform.up * 1.2f, pb.transform.forward, 0.35f, pb.everything) &&
-                    !pb.RayHit(pb.transform.position + pb.transform.forward * 0.4f + pb.transform.up * 1.4f, pb.transform.right, 0.5f, pb.everything)
+                    !pb.RayHit(pb.transform.position + pb.transform.forward * 0.3f + pb.transform.up * 1.4f, pb.transform.right, 0.5f, pb.everything)
                    )
                 {
                     pb.anim.SetInteger("ClimbDirection", shimmyDirection);
@@ -172,7 +225,7 @@ public class Climbing : State
                 if (
                     !pb.RayHit(pb.transform.position + pb.transform.up * 0.5f, pb.transform.right, -0.65f, pb.everything) &&
                      pb.RayHit(pb.transform.position + pb.transform.right * -0.6f + pb.transform.up * 1.2f, pb.transform.forward, 0.35f, pb.everything) &&
-                    !pb.RayHit(pb.transform.position + pb.transform.forward * 0.4f + pb.transform.up * 1.4f, -pb.transform.right, 0.5f, pb.everything)
+                    !pb.RayHit(pb.transform.position + pb.transform.forward * 0.3f + pb.transform.up * 1.4f, -pb.transform.right, 0.5f, pb.everything)
                    )
                 {
                     pb.anim.SetInteger("ClimbDirection", shimmyDirection);

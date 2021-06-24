@@ -44,7 +44,7 @@ public class StateMachine
                 pb.ChangeState(currentState);
 
                 s.OnStateEnter(pb);
-                Debug.Log("Changed state to " + currentState.GetType().ToString());
+                //Debug.Log("Changed state to " + currentState.GetType().ToString());
                 return;
             }
         }

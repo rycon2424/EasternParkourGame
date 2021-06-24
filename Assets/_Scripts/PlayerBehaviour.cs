@@ -270,10 +270,6 @@ public class PlayerBehaviour : Actor
                 switch (tagObject)
                 {
                     case "Ledge":
-                        if (stateMachine.IsInState("InAir"))
-                        {
-                            anim.Play("AirToClimb");
-                        }
                         stateMachine.GoToState(this, "Climbing");
                         break;
                     case "Example":
