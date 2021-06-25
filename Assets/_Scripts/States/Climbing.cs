@@ -64,6 +64,7 @@ public class Climbing : State
         else
         {
             pb.anim.SetTrigger("Ledge");
+            pb.PlayerToWall(pb, pb.transform.forward, false, 1.2f, -0.1f);
         }
         Debug.Log(legSupport);
 
@@ -122,6 +123,9 @@ public class Climbing : State
         {
             if (legSupport == false)
             {
+                Vector3 ccCenter = new Vector3(0, 0.6f, 0);
+                pb.cc.center = ccCenter;
+                pb.cc.height = 1.2f;
                 pb.anim.SetTrigger("Climb");
                 legSupport = true;
             }
@@ -136,6 +140,8 @@ public class Climbing : State
                     pb.stateMachine.GoToState(pb, "InAir");
                     return;
                 };
+                pb.cc.center = new Vector3(0, 0.4f, 0);
+                pb.cc.height = defaultHeight;
                 pb.anim.SetTrigger("Ledge");
                 legSupport = false;
             }
@@ -215,7 +221,7 @@ public class Climbing : State
             {
                 if (
                     !pb.RayHit(pb.transform.position + pb.transform.up * 0.5f, pb.transform.right, 0.65f, pb.everything) &&
-                     pb.RayHit(pb.transform.position + pb.transform.right * 0.6f + pb.transform.up * 1.2f, pb.transform.forward, 0.35f, pb.everything) &&
+                     pb.RayHit(pb.transform.position + pb.transform.right * 0.6f + pb.transform.up * 1.2f, pb.transform.forward, 0.3f, pb.everything) &&
                     !pb.RayHit(pb.transform.position + pb.transform.forward * 0.3f + pb.transform.up * 1.4f, pb.transform.right, 0.5f, pb.everything)
                    )
                 {
@@ -230,7 +236,7 @@ public class Climbing : State
             {
                 if (
                     !pb.RayHit(pb.transform.position + pb.transform.up * 0.5f, pb.transform.right, -0.65f, pb.everything) &&
-                     pb.RayHit(pb.transform.position + pb.transform.right * -0.6f + pb.transform.up * 1.2f, pb.transform.forward, 0.35f, pb.everything) &&
+                     pb.RayHit(pb.transform.position + pb.transform.right * -0.6f + pb.transform.up * 1.2f, pb.transform.forward, 0.3f, pb.everything) &&
                     !pb.RayHit(pb.transform.position + pb.transform.forward * 0.3f + pb.transform.up * 1.4f, -pb.transform.right, 0.5f, pb.everything)
                    )
                 {

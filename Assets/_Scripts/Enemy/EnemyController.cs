@@ -6,6 +6,8 @@ public class EnemyController : Actor
 {
     public float runDistance = 5;
     public float attackDistance = 2f;
+    [Range(0, 2)] public float minThinkTime;
+    [Range(0, 5)] public float maxThinkTime;
 
     public enum EnemyStates {normal, chasing, inCombat }
     public EnemyStates currentState;
@@ -146,9 +148,9 @@ public class EnemyController : Actor
     {
         attackCooldown = true;
         rotateCooldown = true;
-        yield return new WaitForSeconds(1.4f);
+        yield return new WaitForSeconds(1.2f);
         rotateCooldown = false;
-        yield return new WaitForSeconds(Random.Range(1.0f, 2.0f));
+        yield return new WaitForSeconds(Random.Range(minThinkTime, maxThinkTime));
         attackCooldown = false;
     }
 
