@@ -30,7 +30,7 @@ public class Climbing : State
             pb.stateMachine.GoToState(pb, "Locomotion");
             return;
         }
-        if (!pb.PlayerToWall(pb, pb.transform.forward, false, 1.2f))
+        if (!pb.PlayerToWall(pb, pb.transform.forward, false, 1.2f,0))
         {
             pb.failedClimb = true;
             pb.stateMachine.GoToState(pb, "Locomotion");
@@ -118,8 +118,7 @@ public class Climbing : State
             }
         }
 
-
-        if (pb.RayHit(pb.transform.position + Vector3.up, pb.transform.forward, 0.5f, pb.everything))
+        if (pb.RayHit(pb.transform.position + Vector3.up * 0.3f + (pb.transform.right * 0.2f), pb.transform.forward, 0.5f, pb.everything) && pb.RayHit(pb.transform.position + Vector3.up * 0.3f + (pb.transform.right * -0.2f), pb.transform.forward, 0.5f, pb.everything))
         {
             if (legSupport == false)
             {
@@ -148,13 +147,13 @@ public class Climbing : State
             pb.stateMachine.GoToState(pb, "InAir");
         }
     }
-
+    
     IEnumerator ClimbCooldown(Animator anim, float cld, PlayerBehaviour pb)
     {
         yield return new WaitForSeconds(cld);
         if (pb != null)
         {
-            pb.PlayerToWall(pb, pb.transform.forward, false, 1.2f);
+            pb.PlayerToWall(pb, pb.transform.forward, false, 1.2f, 0);
         }
         climbCooldown = false;
     }
@@ -204,7 +203,14 @@ public class Climbing : State
     {
         if (shimmyDirection != 0)
         {
-            pb.PlayerToWall(pb, pb.transform.forward, false, 1.2f);
+            if (legSupport)
+            {
+                pb.PlayerToWall(pb, pb.transform.forward, false, 1.2f, 0);
+            }
+            else
+            {
+                pb.PlayerToWall(pb, pb.transform.forward, false, 1.2f, -0.1f);
+            }
             if (shimmyDirection == 1)
             {
                 if (

@@ -216,7 +216,7 @@ public class PlayerBehaviour : Actor
         anim.applyRootMotion = true;
     }
 
-    public bool PlayerToWall(PlayerBehaviour pb, Vector3 dir, bool lerp, float checkYOffset)
+    public bool PlayerToWall(PlayerBehaviour pb, Vector3 dir, bool lerp, float checkYOffset, float closeDistance)
     {
         RaycastHit hit;
         float range = 2;
@@ -227,7 +227,7 @@ public class PlayerBehaviour : Actor
             Vector3 temp = pb.transform.position - hit.point;
             temp.y = 0;
             Vector3 positionToSend = pb.transform.position - temp;
-            positionToSend -= (pb.transform.forward * distanceFromWall);
+            positionToSend -= (pb.transform.forward * (distanceFromWall + closeDistance));
             if (lerp)
             {
                 pb.LerpToPosition(positionToSend, 0.25f);
