@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AI;
 using UnityEngine;
 
 public class EnemyController : Actor
@@ -21,6 +22,7 @@ public class EnemyController : Actor
     public bool rotateCooldown;
     public float randomInt;
     public float distancePlayer;
+    public NavMeshAgent agent;
 
     private PlayerBehaviour pb;
     private BloodFXHandler bfh;
@@ -31,9 +33,11 @@ public class EnemyController : Actor
         pb = FindObjectOfType<PlayerBehaviour>();
         player = pb.transform;
         anim = GetComponent<Animator>();
-        SwitchState(EnemyStates.inCombat);
         bfh = GetComponent<BloodFXHandler>();
+        agent = GetComponent<NavMeshAgent>();
         t = GetComponent<Target>();
+
+        SwitchState(EnemyStates.normal);
     }
     
     void Update()
@@ -46,8 +50,10 @@ public class EnemyController : Actor
         switch (currentState)
         {
             case EnemyStates.normal:
+                Patrol();
                 break;
             case EnemyStates.chasing:
+                InChase();
                 break;
             case EnemyStates.inCombat:
                 InCombat();
@@ -91,17 +97,70 @@ public class EnemyController : Actor
     void SwitchState(EnemyStates es)
     {
         currentState = es;
+        anim.SetInteger("WalkingDir", 0);
         switch (currentState)
         {
             case EnemyStates.normal:
+                anim.applyRootMotion = false;
+                agent.enabled = true;
+
+                anim.SetBool("inCombat", false);
+                
+                StopCoroutine("WalkDirection");
                 break;
+
             case EnemyStates.chasing:
+                anim.applyRootMotion = false;
+                agent.enabled = true;
+
+                anim.SetBool("inCombat", false);
+
+                StopCoroutine("WalkDirection");
                 break;
+
             case EnemyStates.inCombat:
+                anim.applyRootMotion = true;
+                agent.enabled = false;
+
+                anim.SetBool("inCombat", true);
+                anim.SetBool("Walking", true);
+                anim.SetInteger("WalkingDir", 1);
+                
+                walkBehaviour = false;
                 StartCoroutine("WalkDirection");
                 break;
+
             default:
                 break;
+        }
+    }
+
+    void Patrol()
+    {
+        if (distancePlayer < 5)
+        {
+            SwitchState(EnemyStates.chasing);
+        }
+    }
+
+    void InChase()
+    {
+        agent.SetDestination(player.position);
+        if (distancePlayer < runDistance)
+        {
+            SwitchState(EnemyStates.inCombat);
+        }
+        else if (distancePlayer > runDistance + 2)
+        {
+            agent.speed = 3;
+            anim.SetBool("Walking", false);
+            anim.SetBool("Running", true);
+        }
+        else if (distancePlayer > runDistance - 1)
+        {
+            agent.speed = 1;
+            anim.SetBool("Running", false);
+            anim.SetBool("Walking", true);
         }
     }
 
@@ -113,14 +172,11 @@ public class EnemyController : Actor
         {
             RotateTowardsPlayer();
         }
-        if (distancePlayer > runDistance)
+        if (distancePlayer > (runDistance + 0.25f))
         {
-            anim.SetBool("Walking", true);
-            anim.SetInteger("WalkingDir", 1);
-            if (walkBehaviour == true)
+            if (attackCooldown == false)
             {
-                StopCoroutine("WalkDirection");
-                walkBehaviour = false;
+                SwitchState(EnemyStates.chasing);
             }
         }
         else if (distancePlayer > attackDistance)
