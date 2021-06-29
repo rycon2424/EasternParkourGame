@@ -66,7 +66,6 @@ public class Climbing : State
             pb.anim.SetTrigger("Ledge");
             pb.PlayerToWall(pb, pb.transform.forward, false, 1.2f, -0.1f);
         }
-        Debug.Log(legSupport);
 
         pb.anim.SetBool("Climbing", true);
         pb.DelayFunction("DelayedRoot", 0.25f);

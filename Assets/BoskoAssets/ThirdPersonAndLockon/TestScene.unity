@@ -7076,11 +7076,14 @@ MonoBehaviour:
   damage: 20
   runDistance: 5
   attackDistance: 1.75
+  lookDistance: 7
+  hearDistance: 2
+  viewAngle: 70
   minThinkTime: 0.5
   maxThinkTime: 1
   currentState: 0
   dropWeapon: {fileID: 1588958121}
-  player: {fileID: 0}
+  player: {fileID: 1607532530}
   anim: {fileID: 0}
   attackCooldown: 0
   walkBehaviour: 0
@@ -10568,6 +10571,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.78, y: 71.35, z: 0.5}
   m_Center: {x: 0, y: 30, z: -1.08}
+--- !u!4 &1607532530 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 435441473957600256, guid: 3a5cfd827191f5642bba79ef88d549fb, type: 3}
+  m_PrefabInstance: {fileID: 1507786679823699101}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1607725730
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,11 +7,15 @@ public class EnemyController : Actor
 {
     public float runDistance = 5;
     public float attackDistance = 2f;
+    public float lookDistance = 5;
+    public float hearDistance = 2;
+    [Space]
+    [Range(0, 180)] public int viewAngle = 70;
     [Range(0, 2)] public float minThinkTime;
     [Range(0, 5)] public float maxThinkTime;
-
-    public enum EnemyStates {normal, chasing, inCombat }
+    [Space]
     public EnemyStates currentState;
+    public enum EnemyStates { normal, chasing, inCombat }
     public Transform dropWeapon;
 
     [Header("Private/Dont Assign")]
@@ -137,9 +141,21 @@ public class EnemyController : Actor
 
     void Patrol()
     {
-        if (distancePlayer < 5)
+        float angel = Vector3.Angle(transform.forward, player.position - transform.position);
+        if (angel <= viewAngle)
         {
-            SwitchState(EnemyStates.chasing);
+            RaycastHit hit;
+            Vector3 dir = (player.transform.position - transform.position).normalized;
+            Ray ray = new Ray(transform.position + Vector3.up * 1.2f, dir);
+            Debug.DrawRay(transform.position + Vector3.up * 1.2f, dir * lookDistance, Color.black);
+            if (Physics.Raycast(ray, out hit, lookDistance))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    Debug.Log("SeePlayer");
+                    SwitchState(EnemyStates.chasing);
+                }
+            }
         }
     }
 
@@ -256,4 +272,37 @@ public class EnemyController : Actor
     }
 
     #endregion
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position + Vector3.up, hearDistance);
+        Gizmos.color = Color.black;
+        Gizmos.DrawRay(transform.position + Vector3.up * 1.2f, transform.forward * lookDistance);
+
+        Gizmos.color = Color.red;
+        Mesh m = new Mesh();
+
+        float viewA = (float)viewAngle / 100;
+        m.vertices = new Vector3[3]
+        {
+            new Vector3(viewA, 0, -0.5f),
+            new Vector3(-viewA, 0, -0.5f),
+            new Vector3(  0f,  0, 0)
+        };
+
+        m.triangles = new int[]
+        {
+            0, 1, 2
+        };
+
+        m.normals = new Vector3[]
+        {
+            Vector3.up,
+            Vector3.up,
+            Vector3.up
+        };
+        Quaternion rotation = Quaternion.Euler(0, 90, 0);
+        Gizmos.DrawWireMesh(m, (transform.position + Vector3.up * 1.2f) - (transform.forward * 0.17f), rotation);
+    }
 }
