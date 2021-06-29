@@ -116,6 +116,10 @@ public class Locomotion : State
         {
             pb.anim.SetBool("Sprinting", false);
         }
+        if (Input.GetKeyUp(pb.pc.sprint))
+        {
+            pb.anim.SetBool("Sprinting", false);
+        }
         //Jump
         if (Input.GetKeyDown(pb.pc.jump))
         {
