@@ -277,32 +277,11 @@ public class EnemyController : Actor
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position + Vector3.up, hearDistance);
-        Gizmos.color = Color.black;
-        Gizmos.DrawRay(transform.position + Vector3.up * 1.2f, transform.forward * lookDistance);
 
         Gizmos.color = Color.red;
-        Mesh m = new Mesh();
-
-        float viewA = (float)viewAngle / 100;
-        m.vertices = new Vector3[3]
-        {
-            new Vector3(viewA, 0, -0.5f),
-            new Vector3(-viewA, 0, -0.5f),
-            new Vector3(  0f,  0, 0)
-        };
-
-        m.triangles = new int[]
-        {
-            0, 1, 2
-        };
-
-        m.normals = new Vector3[]
-        {
-            Vector3.up,
-            Vector3.up,
-            Vector3.up
-        };
-        Quaternion rotation = Quaternion.Euler(0, 90, 0);
-        Gizmos.DrawWireMesh(m, (transform.position + Vector3.up * 1.2f) - (transform.forward * 0.17f), rotation);
+        Gizmos.DrawRay(transform.position + Vector3.up * 1.2f, transform.forward * lookDistance);
+        
+        Gizmos.DrawRay(transform.position + Vector3.up * 1.2f, (transform.forward + ((transform.right * ((float)viewAngle / 100)) * 4)).normalized * lookDistance);
+        Gizmos.DrawRay(transform.position + Vector3.up * 1.2f, (transform.forward + ((-transform.right * ((float)viewAngle / 100)) * 4)).normalized * lookDistance);
     }
 }
