@@ -17,6 +17,10 @@ public class EnemyController : Actor
     public EnemyStates currentState;
     public enum EnemyStates { normal, chasing, inCombat }
     public Transform dropWeapon;
+    [Header("Patrol settings")]
+    public Transform[] patrolPoints;
+    public bool returnToPost;
+    public Vector3 oldPos;
 
     [Header("Private/Dont Assign")]
     public Transform player;
@@ -40,6 +44,8 @@ public class EnemyController : Actor
         bfh = GetComponent<BloodFXHandler>();
         agent = GetComponent<NavMeshAgent>();
         t = GetComponent<Target>();
+
+        oldPos = transform.position;
 
         SwitchState(EnemyStates.normal);
     }
@@ -105,8 +111,19 @@ public class EnemyController : Actor
         switch (currentState)
         {
             case EnemyStates.normal:
+                
                 anim.applyRootMotion = false;
                 agent.enabled = true;
+                agent.speed = 1;
+                
+                if (patrolPoints.Length > 0)
+                {
+                    StartCoroutine("Patrolling");
+                }
+                else
+                {
+                    agent.SetDestination(oldPos);
+                }
 
                 anim.SetBool("inCombat", false);
                 
@@ -119,6 +136,7 @@ public class EnemyController : Actor
 
                 anim.SetBool("inCombat", false);
 
+                StopCoroutine("Patrolling");
                 StopCoroutine("WalkDirection");
                 break;
 
@@ -131,6 +149,8 @@ public class EnemyController : Actor
                 anim.SetInteger("WalkingDir", 1);
                 
                 walkBehaviour = false;
+
+                StopCoroutine("Patrolling");
                 StartCoroutine("WalkDirection");
                 break;
 
@@ -139,8 +159,26 @@ public class EnemyController : Actor
         }
     }
 
+    IEnumerator Patrolling()
+    {
+        Vector3 randomWayPoint = patrolPoints[Random.Range(0, patrolPoints.Length)].position;
+        agent.SetDestination(randomWayPoint);
+        anim.SetBool("Walking", true);
+        while (Vector3.Distance(randomWayPoint, transform.position) > 1)
+        {
+            yield return new WaitForSeconds(0.25f);
+        }
+        anim.SetBool("Walking", false);
+        yield return new WaitForSeconds(Random.Range(minThinkTime, maxThinkTime));
+        StartCoroutine("Patrolling");
+    }
+
     void Patrol()
     {
+        if (distancePlayer <= hearDistance)
+        {
+            SwitchState(EnemyStates.inCombat);
+        }
         float angel = Vector3.Angle(transform.forward, player.position - transform.position);
         if (angel <= viewAngle)
         {
@@ -188,7 +226,7 @@ public class EnemyController : Actor
         {
             RotateTowardsPlayer();
         }
-        if (distancePlayer > (runDistance + 0.25f))
+        if (distancePlayer > (runDistance + 1f))
         {
             if (attackCooldown == false)
             {
