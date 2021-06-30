@@ -24,9 +24,10 @@ public class PlayerBehaviour : Actor
     public Animator combatUI;
     public GameObject combatUIVisual;
 
-    [Header("GroundedInfo")]
+    [Header("Info")]
     public bool grounded;
     public bool ccGrounded;
+    public bool crouched;
     public bool failedClimb;
 
     [Header("IK")]
