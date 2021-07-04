@@ -113,6 +113,8 @@ MonoBehaviour:
   combatUIVisual: {fileID: 7138975084753261733}
   grounded: 0
   ccGrounded: 0
+  crouched: 0
+  failedClimb: 0
   injured: 0
   leftWeight: 1
   leftPos: {fileID: 7138975085225128260}
@@ -5333,7 +5335,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6857497238153650659
 RectTransform:
   m_ObjectHideFlags: 0
@@ -45556,7 +45558,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7405454706780782241}
   m_LocalRotation: {x: -0.56874025, y: 0.68366265, z: 0.28877163, w: -0.35461387}
-  m_LocalPosition: {x: -0.82769394, y: 87.670815, z: 1.0873795}
+  m_LocalPosition: {x: -0.8277893, y: 87.670815, z: 1.0873795}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7409283420230644787}

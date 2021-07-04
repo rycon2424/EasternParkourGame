@@ -99,9 +99,9 @@ public class PlayerBehaviour : Actor
         anim.SetBool("Land", Grounded());
     }
 
-    public override void TakeDamage(int damage, int damageType)
+    public override void TakeDamage(int damage, int damageType, int attackDir)
     {
-        base.TakeDamage(damage, damageType);
+        base.TakeDamage(damage, damageType, attackDir);
         if (stateMachine.IsInState("Locomotion"))
         {
             if (ts.SelectTarget(oc))
@@ -119,6 +119,15 @@ public class PlayerBehaviour : Actor
             injured = true;
         }
         bfh.SlashDamage(damageType);
+
+        health -= damage;
+
+        if (health < 1)
+        {
+            dead = true;
+            health = 0;
+            Death(damageType);
+        }
     }
 
     public void ChangeState(State newState)
@@ -357,7 +366,7 @@ public class PlayerBehaviour : Actor
     public void KilledTarget(Target targetThatDied)
     {
         ts.targets.Remove(targetThatDied);
-        ts.currentTarget = null;
+        ts.StopTargeting();
 
         ts.SwitchTarget(oc);
         lol.target = ts.currentTarget;
@@ -426,6 +435,11 @@ public class PlayerBehaviour : Actor
         {
             jumpSmoke.Play();
         }
+    }
+
+    public void Parrying()
+    {
+        parrying = !parrying;
     }
 
 }

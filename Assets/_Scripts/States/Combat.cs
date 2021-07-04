@@ -16,10 +16,11 @@ public class Combat : State
 
     public override void OnStateExit(PlayerBehaviour pb)
     {
+        pb.parrying = false;
         pb.lockedOn = false;
         pb.anim.SetBool("Target", false);
         pb.oc.ChangeCamState(OrbitCamera.CamState.onPlayer);
-        pb.ts.currentTarget = null;
+        pb.ts.StopTargeting();
         pb.lol.gameObject.SetActive(false);
         
         ResetAttack(pb);
@@ -31,7 +32,7 @@ public class Combat : State
     {
         Movement(pb);
         pb.RotateTowardsCamera();
-        Parry(pb);
+        Dodge(pb);
         Targeting(pb);
         CombatUI(pb);
         Attacking(pb);
@@ -46,10 +47,20 @@ public class Combat : State
     {
         if (pb.anim.GetInteger("AttackType") > 0)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(pb.pc.mouseClickAttack))
             {
                 pb.anim.SetTrigger("Attack");
             }
+        }
+        if (Input.GetMouseButtonDown(pb.pc.mouseClickParry))
+        {
+            ResetAttack(pb);
+            pb.anim.SetTrigger("Parry");
+        }
+        if (Input.GetKeyDown(pb.pc.crouch))
+        {
+            ResetAttack(pb);
+            pb.anim.SetTrigger("Kick");
         }
     }
 
@@ -66,7 +77,7 @@ public class Combat : State
         }
     }
 
-    void Parry(PlayerBehaviour pb)
+    void Dodge(PlayerBehaviour pb)
     {
         if (Input.GetKeyDown(pb.pc.jump))
         {
@@ -93,7 +104,7 @@ public class Combat : State
                 else
                 {
                     pb.combatUI.SetFloat("mouseX", -1);
-                    pb.anim.SetInteger("AttackType", 3);
+                    pb.anim.SetInteger("AttackType", 4);
                 }
                 return;
             }
@@ -106,7 +117,7 @@ public class Combat : State
             else
             {
                 pb.combatUI.SetFloat("mouseY", -1);
-                pb.anim.SetInteger("AttackType", 4);
+                pb.anim.SetInteger("AttackType", 3);
             }
         }
 

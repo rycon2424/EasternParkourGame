@@ -11,27 +11,33 @@ public class EnemyController : Actor
     public float hearDistance = 2;
     [Space]
     [Range(0, 180)] public int viewAngle = 70;
+    [Range(0, 1)] public float stunTime;
     [Range(0, 2)] public float minThinkTime;
     [Range(0, 5)] public float maxThinkTime;
     [Space]
     public EnemyStates currentState;
-    public enum EnemyStates { normal, chasing, inCombat }
+    public enum EnemyStates { normal, chasing, inCombat, dead }
+    public GuardStates guardPos;
+    public enum GuardStates { TopRight, RightDown ,LeftDown, TopLeft, None}
     public Transform dropWeapon;
+    public GameObject fightUI;
+    public Animator fightAnim;
     [Header("Patrol settings")]
     public Transform[] patrolPoints;
     public bool returnToPost;
     public Vector3 oldPos;
 
     [Header("Private/Dont Assign")]
-    public Transform player;
-    public Animator anim;
-    public bool attackCooldown;
-    public bool walkBehaviour;
-    public bool rotateCooldown;
-    public float randomInt;
-    public float distancePlayer;
-    public NavMeshAgent agent;
+    [SerializeField] private Transform player;
+    [SerializeField] private bool targetOfPlayer;
+    [SerializeField] private bool attackCooldown;
+    [SerializeField] private bool walkBehaviour;
+    [SerializeField] private bool rotateCooldown;
+    [SerializeField] private float randomInt;
+    [SerializeField] private float distancePlayer;
 
+    private NavMeshAgent agent;
+    private Animator anim;
     private PlayerBehaviour pb;
     private BloodFXHandler bfh;
     private Target t;
@@ -46,6 +52,8 @@ public class EnemyController : Actor
         t = GetComponent<Target>();
 
         oldPos = transform.position;
+        
+        fightUI.SetActive(false);
 
         SwitchState(EnemyStates.normal);
     }
@@ -73,11 +81,107 @@ public class EnemyController : Actor
         }
     }
 
-    public override void TakeDamage(int damage, int damageType)
+    public void GotParried()
     {
-        base.TakeDamage(damage, damageType);
-        bfh.SlashDamage(damageType);
-        anim.Play("Damaged");
+        TakeDamage(0, 0, 0);
+    }
+
+    public override void TakeDamage(int damage, int damageType, int attackDir)
+    {
+        base.TakeDamage(damage, damageType, attackDir);
+        if (dead == false)
+        {
+            switch (attackDir)
+            {
+                case -1: // Force Dodge
+                    anim.Play("Dodgeback");
+                    return;
+                case 0: // Always hits
+                    anim.Play("Damaged");
+                    break;
+                case 1:
+                    if (guardPos == GuardStates.TopLeft || guardPos == GuardStates.TopRight)
+                    {
+                        anim.Play("Dodgeback");
+                        return;
+                    }
+                    else
+                    {
+                        anim.Play("Damaged");
+                    }
+                    break;
+                case 2:
+                    if (guardPos == GuardStates.RightDown || guardPos == GuardStates.TopRight)
+                    {
+                        anim.Play("Dodgeback");
+                        return;
+                    }
+                    else
+                    {
+                        anim.Play("Damaged");
+                    }
+                    break;
+                case 3:
+                    if (guardPos == GuardStates.RightDown || guardPos == GuardStates.LeftDown)
+                    {
+                        anim.Play("Dodgeback");
+                        return;
+                    }
+                    else
+                    {
+                        anim.Play("Damaged");
+                    }
+                    break;
+                case 4:
+                    if (guardPos == GuardStates.TopLeft || guardPos == GuardStates.LeftDown)
+                    {
+                        anim.Play("Dodgeback");
+                        return;
+                    }
+                    else
+                    {
+                        anim.Play("Damaged");
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        RandomizeGuard();
+
+        if (damage > 0)
+        {
+            bfh.SlashDamage(damageType);
+        }
+
+        health -= damage;
+
+        AttackStunned();
+
+        if (health < 1)
+        {
+            currentState = EnemyStates.dead;
+            dead = true;
+            health = 0;
+            Death(damageType);
+        }
+    }
+
+    void AttackStunned()
+    {
+        if (attackCooldown == false)
+        {
+            attackCooldown = true;
+            StopCoroutine("Stunned");
+            StartCoroutine("Stunned");
+        }
+    }
+
+    IEnumerator Stunned()
+    {
+        yield return new WaitForSeconds(stunTime);
+        attackCooldown = false;
     }
 
     public override void Death(int damageType)
@@ -91,7 +195,6 @@ public class EnemyController : Actor
         anim.SetTrigger("Death");
 
         StopCoroutine("WalkDirection");
-        StopCoroutine("AttackCld");
 
         bfh.DeathBleed(damageType);
 
@@ -101,6 +204,7 @@ public class EnemyController : Actor
         dropWeapon.GetComponent<Rigidbody>().isKinematic = false;
         dropWeapon.GetComponent<Collider>().enabled = true;
 
+        ShowBattleUI(false);
         pb.KilledTarget(t);
     }
 
@@ -115,7 +219,9 @@ public class EnemyController : Actor
                 anim.applyRootMotion = false;
                 agent.enabled = true;
                 agent.speed = 1;
-                
+
+                NoGuard();
+
                 if (patrolPoints.Length > 0)
                 {
                     StartCoroutine("Patrolling");
@@ -141,8 +247,12 @@ public class EnemyController : Actor
                 break;
 
             case EnemyStates.inCombat:
+                AttackStunned();
+
                 anim.applyRootMotion = true;
                 agent.enabled = false;
+
+                RandomizeGuard();
 
                 anim.SetBool("inCombat", true);
                 anim.SetBool("Walking", true);
@@ -251,15 +361,18 @@ public class EnemyController : Actor
     {
         anim.SetInteger("AttackType", Random.Range(1, 6));
         anim.SetTrigger("Attack");
-        StartCoroutine("AttackCld");
+        StartCoroutine(AttackCld());
     }
 
     IEnumerator AttackCld()
     {
         attackCooldown = true;
         rotateCooldown = true;
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(0.3f);
+        NoGuard();
+        yield return new WaitForSeconds(0.9f);
         rotateCooldown = false;
+        RandomizeGuard();
         yield return new WaitForSeconds(Random.Range(minThinkTime, maxThinkTime));
         attackCooldown = false;
     }
@@ -297,7 +410,8 @@ public class EnemyController : Actor
         int randomWalkDir = Random.Range(1, 4);
         anim.SetBool("Walking", true);
         anim.SetInteger("WalkingDir", randomWalkDir);
-        
+        RandomizeGuard();
+
         StartCoroutine("WalkDirection");
     }
     
@@ -310,6 +424,61 @@ public class EnemyController : Actor
     }
 
     #endregion
+
+    public void ShowBattleUI(bool show)
+    {
+        fightUI.SetActive(show);
+        targetOfPlayer = show;
+    }
+
+    //12 23 34 41
+    // Y 1 = TOPLEFT Y -1 = RightDown
+    // X 1 = LeftDown X -1 = TopRight
+    public void RandomizeGuard()
+    {
+        if (currentState != EnemyStates.inCombat)
+        {
+            return;
+        }
+        int randomTemp = Random.Range(0, 2);
+        if (randomTemp == 1)
+        {
+            fightAnim.SetFloat("mouseX", 0);
+            fightAnim.SetFloat("mouseY", Random.Range(0, 2));
+            if (fightAnim.GetFloat("mouseY") == 0)
+            {
+                fightAnim.SetFloat("mouseY", -1);
+                guardPos = GuardStates.RightDown;
+            }
+            else
+            {
+                fightAnim.SetFloat("mouseY", 1);
+                guardPos = GuardStates.TopLeft;
+            }
+        }
+        else
+        {
+            fightAnim.SetFloat("mouseY", 0);
+            fightAnim.SetFloat("mouseX", Random.Range(0, 2));
+            if (fightAnim.GetFloat("mouseX") == 0)
+            {
+                fightAnim.SetFloat("mouseX", -1);
+                guardPos = GuardStates.TopRight;
+            }
+            else
+            {
+                fightAnim.SetFloat("mouseX", 1);
+                guardPos = GuardStates.LeftDown;
+            }
+        }
+    }
+
+    void NoGuard()
+    {
+        fightAnim.SetFloat("mouseY", 0);
+        fightAnim.SetFloat("mouseX", 0);
+        guardPos = GuardStates.None;
+    }
 
     private void OnDrawGizmos()
     {

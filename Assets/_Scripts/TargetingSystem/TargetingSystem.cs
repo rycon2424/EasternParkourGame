@@ -24,6 +24,7 @@ public class TargetingSystem : MonoBehaviour
         
         if (currentTarget != null)
         {
+            currentTarget.OnTarget.Invoke();
             oc.ReceiveEnemy(currentTarget.transform);
             return true;
         }
@@ -45,8 +46,19 @@ public class TargetingSystem : MonoBehaviour
 
         if (newTarget != null)
         {
+            currentTarget.OnSwitchTarget.Invoke();
             currentTarget = newTarget;
+            currentTarget.OnTarget.Invoke();
             oc.ReceiveEnemy(currentTarget.transform);
+        }
+    }
+
+    public void StopTargeting()
+    {
+        if (currentTarget != null)
+        {
+            currentTarget.OnSwitchTarget.Invoke();
+            currentTarget = null;
         }
     }
 
