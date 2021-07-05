@@ -14,6 +14,7 @@ public class EnemyController : Actor
     [Range(0, 1)] public float stunTime;
     [Range(0, 2)] public float minThinkTime;
     [Range(0, 5)] public float maxThinkTime;
+    [Range(0, 20)] public float chaseTime;
     [Space]
     public EnemyStates currentState;
     public enum EnemyStates { normal, chasing, inCombat, dead }
@@ -27,10 +28,15 @@ public class EnemyController : Actor
     public bool returnToPost;
     public Vector3 oldPos;
 
+    [Header("PatrolDebug")]
+    [SerializeField] private Mesh debugPos;
+    [SerializeField] private Color32 colorDebug;
+
     [Header("Private/Dont Assign")]
     [SerializeField] private Transform player;
     [SerializeField] private bool targetOfPlayer;
     [SerializeField] private bool attackCooldown;
+    [SerializeField] private bool lostPlayer;
     [SerializeField] private bool walkBehaviour;
     [SerializeField] private bool rotateCooldown;
     [SerializeField] private float randomInt;
@@ -167,23 +173,7 @@ public class EnemyController : Actor
             Death(damageType);
         }
     }
-
-    void AttackStunned()
-    {
-        if (attackCooldown == false)
-        {
-            attackCooldown = true;
-            StopCoroutine("Stunned");
-            StartCoroutine("Stunned");
-        }
-    }
-
-    IEnumerator Stunned()
-    {
-        yield return new WaitForSeconds(stunTime);
-        attackCooldown = false;
-    }
-
+    
     public override void Death(int damageType)
     {
         TargetingSystem ts = FindObjectOfType<TargetingSystem>();
@@ -215,7 +205,7 @@ public class EnemyController : Actor
         switch (currentState)
         {
             case EnemyStates.normal:
-                
+                lostPlayer = false;
                 anim.applyRootMotion = false;
                 agent.enabled = true;
                 agent.speed = 1;
@@ -228,7 +218,10 @@ public class EnemyController : Actor
                 }
                 else
                 {
-                    agent.SetDestination(oldPos);
+                    if (returnToPost)
+                    {
+                        agent.SetDestination(oldPos);
+                    }
                 }
 
                 anim.SetBool("inCombat", false);
@@ -237,6 +230,7 @@ public class EnemyController : Actor
                 break;
 
             case EnemyStates.chasing:
+                lostPlayer = false;
                 anim.applyRootMotion = false;
                 agent.enabled = true;
 
@@ -247,6 +241,7 @@ public class EnemyController : Actor
                 break;
 
             case EnemyStates.inCombat:
+                lostPlayer = false;
                 AttackStunned();
 
                 anim.applyRootMotion = true;
@@ -269,6 +264,30 @@ public class EnemyController : Actor
         }
     }
 
+    bool PlayerInSight()
+    {
+        float angel = Vector3.Angle(transform.forward, player.position - transform.position);
+        if (angel <= viewAngle)
+        {
+            RaycastHit hit;
+            Vector3 dir = (player.transform.position - transform.position).normalized;
+            Ray ray = new Ray(transform.position + Vector3.up * 1.2f, dir);
+            Debug.DrawRay(transform.position + Vector3.up * 1.2f, dir * lookDistance, Color.black);
+            if (Physics.Raycast(ray, out hit, lookDistance))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    return true;
+                }
+                return false;
+            }
+            return false;
+        }
+        return false;
+    }
+    
+    #region patrolling
+
     IEnumerator Patrolling()
     {
         Vector3 randomWayPoint = patrolPoints[Random.Range(0, patrolPoints.Length)].position;
@@ -289,23 +308,15 @@ public class EnemyController : Actor
         {
             SwitchState(EnemyStates.inCombat);
         }
-        float angel = Vector3.Angle(transform.forward, player.position - transform.position);
-        if (angel <= viewAngle)
+        if (PlayerInSight())
         {
-            RaycastHit hit;
-            Vector3 dir = (player.transform.position - transform.position).normalized;
-            Ray ray = new Ray(transform.position + Vector3.up * 1.2f, dir);
-            Debug.DrawRay(transform.position + Vector3.up * 1.2f, dir * lookDistance, Color.black);
-            if (Physics.Raycast(ray, out hit, lookDistance))
-            {
-                if (hit.collider.CompareTag("Player"))
-                {
-                    Debug.Log("SeePlayer");
-                    SwitchState(EnemyStates.chasing);
-                }
-            }
+            SwitchState(EnemyStates.chasing);
         }
     }
+
+    #endregion
+
+    #region Chase
 
     void InChase()
     {
@@ -326,7 +337,32 @@ public class EnemyController : Actor
             anim.SetBool("Running", false);
             anim.SetBool("Walking", true);
         }
+        if (lostPlayer == false)
+        {
+            if (PlayerInSight() == false)
+            {
+                lostPlayer = true;
+                StartCoroutine("LosingPlayer");
+            }
+        }
+        if (lostPlayer)
+        {
+            if (PlayerInSight())
+            {
+                StopCoroutine("LosingPlayer");
+            }
+        }
     }
+
+    IEnumerator LosingPlayer()
+    {
+        yield return new WaitForSeconds(chaseTime);
+        anim.SetBool("Running", false);
+        anim.SetBool("Walking", true);
+        SwitchState(EnemyStates.normal);
+    }
+
+    #endregion
 
     #region Combat
 
@@ -376,6 +412,22 @@ public class EnemyController : Actor
         yield return new WaitForSeconds(Random.Range(minThinkTime, maxThinkTime));
         attackCooldown = false;
     }
+    
+    void AttackStunned()
+    {
+        if (attackCooldown == false)
+        {
+            attackCooldown = true;
+            StopCoroutine("Stunned");
+            StartCoroutine("Stunned");
+        }
+    }
+
+    IEnumerator Stunned()
+    {
+        yield return new WaitForSeconds(stunTime);
+        attackCooldown = false;
+    }
 
     void StopWalking()
     {
@@ -422,8 +474,6 @@ public class EnemyController : Actor
         newLookAt.z = 0;
         transform.rotation = Quaternion.Slerp(transform.rotation, newLookAt, Time.deltaTime * 5);
     }
-
-    #endregion
 
     public void ShowBattleUI(bool show)
     {
@@ -480,6 +530,8 @@ public class EnemyController : Actor
         guardPos = GuardStates.None;
     }
 
+    #endregion
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
@@ -490,5 +542,33 @@ public class EnemyController : Actor
         
         Gizmos.DrawRay(transform.position + Vector3.up * 1.2f, (transform.forward + ((transform.right * ((float)viewAngle / 100)) * 4)).normalized * lookDistance);
         Gizmos.DrawRay(transform.position + Vector3.up * 1.2f, (transform.forward + ((-transform.right * ((float)viewAngle / 100)) * 4)).normalized * lookDistance);
+
+        Gizmos.color = Color.cyan;
+
+        Vector3 pointRight = transform.position + Vector3.up * 1.2f + (transform.forward + ((transform.right * ((float)viewAngle / 100)) * 4)).normalized * lookDistance;
+        Gizmos.DrawSphere(pointRight, 0.1f);
+
+        Vector3 pointLeft = transform.position + Vector3.up * 1.2f + (transform.forward + ((-transform.right * ((float)viewAngle / 100)) * 4)).normalized * lookDistance;
+        Gizmos.DrawSphere(pointLeft, 0.1f);
+
+        Vector3 middlePoint = transform.position + Vector3.up * 1.2f + transform.forward * lookDistance;
+        Gizmos.DrawSphere(middlePoint, 0.1f);
+
+        Gizmos.DrawLine(middlePoint, pointLeft);
+        Gizmos.DrawLine(middlePoint, pointRight);
+
+        Gizmos.color = colorDebug;
+
+        if (patrolPoints.Length > 0)
+        {
+            foreach (var t in patrolPoints)
+            {
+                Gizmos.DrawWireMesh(debugPos, t.position - Vector3.up);
+            }
+        }
+        else
+        {
+            Gizmos.DrawWireMesh(debugPos, oldPos - Vector3.up);
+        }
     }
 }

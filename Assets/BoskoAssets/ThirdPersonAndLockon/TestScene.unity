@@ -7731,12 +7731,13 @@ MonoBehaviour:
   parrying: 0
   runDistance: 5
   attackDistance: 1.75
-  lookDistance: 5
+  lookDistance: 15
   hearDistance: 2
   viewAngle: 70
   stunTime: 0.5
   minThinkTime: 0.5
   maxThinkTime: 1
+  chaseTime: 15
   currentState: 0
   guardPos: 4
   dropWeapon: {fileID: 1588958121}
@@ -7748,9 +7749,14 @@ MonoBehaviour:
   - {fileID: 1189420183}
   returnToPost: 0
   oldPos: {x: 0, y: 0, z: 0}
+  debugPos: {fileID: 4300004, guid: b3a849229c6faea448cb1f0200840e8d, type: 3}
+  colorDebug:
+    serializedVersion: 2
+    rgba: 4278190335
   player: {fileID: 1607532530}
   targetOfPlayer: 0
   attackCooldown: 0
+  lostPlayer: 0
   walkBehaviour: 0
   rotateCooldown: 0
   randomInt: 0
@@ -81903,7 +81909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 435441473957600256, guid: 3a5cfd827191f5642bba79ef88d549fb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.922
+      value: -1.6
       objectReference: {fileID: 0}
     - target: {fileID: 435441473957600256, guid: 3a5cfd827191f5642bba79ef88d549fb, type: 3}
       propertyPath: m_LocalRotation.w
