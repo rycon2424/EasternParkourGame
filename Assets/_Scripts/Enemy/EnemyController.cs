@@ -449,12 +449,12 @@ public class EnemyController : Actor
     {
         walkBehaviour = true;
 
-        randomInt = Random.Range(2.0f, 5.0f);
+        randomInt = Random.Range(1.0f, 3.0f);
         yield return new WaitForSeconds(randomInt);
 
         anim.SetBool("Walking", false);
 
-        randomInt = Random.Range(1.0f, 3.0f);
+        randomInt = Random.Range(0.5f, 2.0f);
         yield return new WaitForSeconds(randomInt);
 
         int randomWalkDir = Random.Range(1, 4);
