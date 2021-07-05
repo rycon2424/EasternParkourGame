@@ -7,6 +7,9 @@ public class HitBox : MonoBehaviour
 {
     public List<Actor> targets = new List<Actor>();
     public UnityEvent GotParried;
+    [Space]
+    public bool ignoreEnemyController;
+    public bool ignorePlayerController;
     private Actor ac;
 
     private void Start()
@@ -20,6 +23,20 @@ public class HitBox : MonoBehaviour
         {
             if (target != ac)
             {
+                if (ignoreEnemyController)
+                {
+                    if (target is EnemyController)
+                    {
+                        return;
+                    }
+                }
+                if (ignorePlayerController)
+                {
+                    if (target is PlayerBehaviour)
+                    {
+                        return;
+                    }
+                }
                 if (target.parrying == false)
                 {
                     target.TakeDamage(ac.damage, @event.intParameter, (int)@event.floatParameter);

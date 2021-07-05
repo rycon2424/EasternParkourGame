@@ -95,6 +95,7 @@ MonoBehaviour:
   health: 100
   dead: 0
   damage: 20
+  parrying: 0
   currentStateDebug: 
   tagGround: 
   slideSpeed: 4
@@ -127,6 +128,7 @@ MonoBehaviour:
   anim: {fileID: 524746085221700800}
   lockedOn: 0
   pc: {fileID: 441087096816548148}
+  defaultCenterCc: {x: 0, y: 0, z: 0}
   mono: {fileID: 0}
   startHeight: 0.9
   range: 1.3
@@ -160,6 +162,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Notes: Target swapping is currently ---MouseScroll--- and not customizable yet"
+  mouseClickAttack: 0
+  mouseClickParry: 1
   inputHorizontal: Horizontal
   inputVertical: Vertical
   grab: 101
@@ -180,6 +184,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets: []
+  GotParried:
+    m_PersistentCalls:
+      m_Calls: []
+  ignoreEnemyController: 0
+  ignorePlayerController: 1
 --- !u!114 &5336152270754312360
 MonoBehaviour:
   m_ObjectHideFlags: 0
