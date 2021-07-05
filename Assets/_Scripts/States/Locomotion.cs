@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Locomotion : State
 {
-    Vector3 defaultCCcenter;
     float defaultCCheight;
 
     public override void AnimatorIKUpdate(PlayerBehaviour pb)
@@ -14,7 +13,6 @@ public class Locomotion : State
 
     public override void OnStateEnter(PlayerBehaviour pb)
     {
-        defaultCCcenter = pb.cc.center;
         defaultCCheight = pb.cc.height;
 
         pb.anim.ResetTrigger("Jump");
@@ -25,7 +23,8 @@ public class Locomotion : State
 
     public override void OnStateExit(PlayerBehaviour pb)
     {
-        Crouch(false, pb);
+        pb.cc.center = pb.defaultCenterCc;
+        pb.cc.height = defaultCCheight;
     }
 
     float turnSmoothVelocity;
@@ -77,7 +76,7 @@ public class Locomotion : State
             {
                 return;
             }
-            pb.cc.center = defaultCCcenter;
+            pb.cc.center = pb.defaultCenterCc;
             pb.cc.height = defaultCCheight;
         }
         pb.anim.SetBool("Crouch", crouching);

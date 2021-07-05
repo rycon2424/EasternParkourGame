@@ -49,6 +49,7 @@ public class PlayerBehaviour : Actor
     [HideInInspector] public bool lockedOn;
     [HideInInspector] public PlayerControls pc;
     [HideInInspector] public StateMachine stateMachine;
+    [HideInInspector] public Vector3 defaultCenterCc;
 
     [HideInInspector] public MonoBehaviour mono;
     #endregion
@@ -64,6 +65,8 @@ public class PlayerBehaviour : Actor
         anim = GetComponent<Animator>();
         pc = GetComponent<PlayerControls>();
         bfh = GetComponent<BloodFXHandler>();
+
+        defaultCenterCc = cc.center;
 
         oc = GetComponentInChildren<OrbitCamera>();
         lol = GetComponentInChildren<LockOnLookat>();

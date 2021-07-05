@@ -404,9 +404,7 @@ public class EnemyController : Actor
     {
         attackCooldown = true;
         rotateCooldown = true;
-        yield return new WaitForSeconds(0.3f);
-        NoGuard();
-        yield return new WaitForSeconds(0.9f);
+        yield return new WaitForSeconds(1.2f);
         rotateCooldown = false;
         RandomizeGuard();
         yield return new WaitForSeconds(Random.Range(minThinkTime, maxThinkTime));

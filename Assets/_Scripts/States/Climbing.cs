@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Climbing : State
 {
-    Vector3 defaultCenter = new Vector3(0,1,0);
     float defaultHeight = 1.75f;
     bool legSupport;
 
@@ -74,7 +73,7 @@ public class Climbing : State
 
     public override void OnStateExit(PlayerBehaviour pb)
     {
-        pb.cc.center = defaultCenter;
+        pb.cc.center = pb.defaultCenterCc;
         pb.cc.height = defaultHeight;
         pb.cc.enabled = true;
         pb.airtime = 0;
