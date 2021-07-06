@@ -130,6 +130,8 @@ public class HorseBehaviour : Animal
     public void Unmounted()
     {
         mounted = false;
+        anim.SetFloat("x", 0);
+        anim.SetFloat("y", 0);
     }
 
     public void UpdateMountPos(playerPosition newPos, Humanoid potentialMounter)
