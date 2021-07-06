@@ -28,6 +28,13 @@ public class HorseBehaviour : Animal
             float y = Input.GetAxis("Vertical");
             anim.SetFloat("x", Input.GetAxis("Horizontal"));
             anim.SetFloat("y", y);
+            if (y > 0.1f)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    anim.SetTrigger("Jump");
+                }
+            }
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 if (currentHorseState == horseState.walking && anim.GetBool("Gallop") == false)
