@@ -33,7 +33,7 @@ public class HorseRiding : State
                     pb.currentHorse.Unmounted();
                     exiting = true;
                     pb.anim.applyRootMotion = true;
-                    pb.anim.SetTrigger("LetGo");
+                    pb.anim.SetTrigger("UnMount");
                     pb.mono.StartCoroutine(Exiting(pb));
                 }
             }

@@ -96,6 +96,7 @@ MonoBehaviour:
   dead: 0
   damage: 20
   parrying: 0
+  currentHorse: {fileID: 0}
   closestHorse: {fileID: 0}
   horseMountPosition: -1
   slideSpeed: 4

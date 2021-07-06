@@ -566,7 +566,7 @@ public class EnemyController : Humanoid
         }
         else
         {
-            Gizmos.DrawWireMesh(debugPos, oldPos - Vector3.up);
+            Gizmos.DrawWireMesh(debugPos, transform.position + Vector3.up * 0.1f);
         }
     }
 }
