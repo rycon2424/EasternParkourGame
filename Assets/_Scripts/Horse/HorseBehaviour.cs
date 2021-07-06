@@ -9,6 +9,7 @@ public class HorseBehaviour : Animal
 
     [Header("Debug")]
     public horseState currentHorseState;
+    [SerializeField] private bool jumpCld;
     [SerializeField] private playerPosition currentMountPos;
     [SerializeField] private Humanoid mountActor;
     [SerializeField] private Animator anim;
@@ -30,9 +31,17 @@ public class HorseBehaviour : Animal
             anim.SetFloat("y", y);
             if (y > 0.1f)
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (jumpCld == false)
                 {
-                    anim.SetTrigger("Jump");
+                    if (GroundedCheck())
+                    {
+                        if (Input.GetKeyDown(KeyCode.Space))
+                        {
+                            jumpCld = true;
+                            Invoke("JumpCooldown", 2f);
+                            anim.SetTrigger("Jump");
+                        }
+                    }
                 }
             }
             if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -59,6 +68,27 @@ public class HorseBehaviour : Animal
                 }
             }
         }
+    }
+
+    bool GroundedCheck()
+    {
+        Debug.DrawRay(transform.position + (transform.up * 0.4f), transform.up * -0.6f, Color.blue);
+        Debug.DrawRay(transform.position + (transform.up * 0.4f) + transform.forward, transform.up * -0.6f, Color.blue);
+        RaycastHit hit;
+        if (Physics.Raycast((transform.position + (transform.up * 0.4f)), -transform.up, out hit, 0.6f))
+        {
+            return true;
+        }
+        else if (Physics.Raycast((transform.position + (transform.up * 0.4f) + transform.forward), -transform.up, out hit, 0.6f))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    void JumpCooldown()
+    {
+        jumpCld = false;
     }
 
     public void Mount(Transform mounter)
