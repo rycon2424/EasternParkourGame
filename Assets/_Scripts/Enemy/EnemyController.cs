@@ -25,8 +25,6 @@ public class EnemyController : Humanoid
     public Animator fightAnim;
     [Header("Patrol settings")]
     public Transform[] patrolPoints;
-    public bool returnToPost;
-    public Vector3 oldPos;
 
     [Header("PatrolDebug")]
     [SerializeField] private Mesh debugPos;
@@ -56,8 +54,6 @@ public class EnemyController : Humanoid
         bfh = GetComponent<BloodFXHandler>();
         agent = GetComponent<NavMeshAgent>();
         t = GetComponent<Target>();
-
-        oldPos = transform.position;
         
         fightUI.SetActive(false);
 
@@ -216,13 +212,6 @@ public class EnemyController : Humanoid
                 {
                     StartCoroutine("Patrolling");
                 }
-                else
-                {
-                    if (returnToPost)
-                    {
-                        agent.SetDestination(oldPos);
-                    }
-                }
 
                 anim.SetBool("inCombat", false);
                 
@@ -349,6 +338,7 @@ public class EnemyController : Humanoid
         {
             if (PlayerInSight())
             {
+                lostPlayer = false;
                 StopCoroutine("LosingPlayer");
             }
         }
@@ -563,10 +553,6 @@ public class EnemyController : Humanoid
             {
                 Gizmos.DrawWireMesh(debugPos, t.position - Vector3.up);
             }
-        }
-        else
-        {
-            Gizmos.DrawWireMesh(debugPos, transform.position + Vector3.up * 0.1f);
         }
     }
 }

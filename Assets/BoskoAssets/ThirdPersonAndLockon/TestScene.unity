@@ -8701,12 +8701,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8888412177418113356, guid: 8f5ff9789bdfc214b8c8b9faee907d33, type: 3}
       propertyPath: patrolPoints.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8888412177418113356, guid: 8f5ff9789bdfc214b8c8b9faee907d33, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
-      objectReference: {fileID: 777467096}
+      objectReference: {fileID: 2006185962}
     - target: {fileID: 8888412177418113356, guid: 8f5ff9789bdfc214b8c8b9faee907d33, type: 3}
       propertyPath: patrolPoints.Array.data[1]
       value: 
@@ -11982,6 +11982,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970005545}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2006185961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2006185962}
+  m_Layer: 0
+  m_Name: GameObject (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2006185962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006185961}
+  m_LocalRotation: {x: 0.020323291, y: 0.12934703, z: 0.0041436255, w: -0.9913825}
+  m_LocalPosition: {x: -27.775, y: -1.268, z: 9.035}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2035251280
 GameObject:
   m_ObjectHideFlags: 0
