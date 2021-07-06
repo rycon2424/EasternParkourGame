@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.AI;
 using UnityEngine;
 
-public class EnemyController : Actor
+public class EnemyController : Humanoid
 {
     public float runDistance = 5;
     public float attackDistance = 2f;

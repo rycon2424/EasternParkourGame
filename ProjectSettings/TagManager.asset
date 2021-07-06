@@ -4,9 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Stair
+  - Climb
+  - Fly
   - Ledge
   - Bar
   - Slide
+  - Animal
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -28,6 +33,7 @@ TagManager:
   - 
   - 
   - 
+  - Animal
   - 
   - 
   - 
@@ -37,8 +43,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Item
   - 
   m_SortingLayers:
   - name: Default

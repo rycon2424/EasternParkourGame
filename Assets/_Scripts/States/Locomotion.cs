@@ -39,6 +39,13 @@ public class Locomotion : State
             {
                 Crouch(!pb.crouched, pb);
             }
+            if (pb.closestHorse != null)
+            {
+                if (Input.GetKeyDown(pb.pc.grab))
+                {
+                    pb.stateMachine.GoToState(pb, "HorseRiding");
+                }
+            }
         }
         else
         {

@@ -96,12 +96,14 @@ MonoBehaviour:
   dead: 0
   damage: 20
   parrying: 0
+  closestHorse: {fileID: 0}
+  horseMountPosition: -1
+  slideSpeed: 4
   currentStateDebug: 
   tagGround: 
-  slideSpeed: 4
   everything:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 1048641
   climbing:
     serializedVersion: 2
     m_Bits: 64

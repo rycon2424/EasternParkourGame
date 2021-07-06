@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBehaviour : Actor
+public class PlayerBehaviour : Humanoid
 {
     State currentState;
-    public string currentStateDebug;
-    public string tagGround;
 
     [Header("PlayerStats")]
     public float slideSpeed;
 
     [Header("RaycastInfo")]
+    public string currentStateDebug;
+    public string tagGround;
     public LayerMask everything;
     public LayerMask climbing;
     public Vector3 lastCachedhit;
@@ -84,12 +84,14 @@ public class PlayerBehaviour : Actor
         Climbing cl = new Climbing();
         Combat co = new Combat();
         Sliding sl = new Sliding();
+        HorseRiding hr = new HorseRiding();
 
         stateMachine.allStates.Add(lm);
         stateMachine.allStates.Add(ia);
         stateMachine.allStates.Add(cl);
         stateMachine.allStates.Add(co);
         stateMachine.allStates.Add(sl);
+        stateMachine.allStates.Add(hr);
 
         stateMachine.GoToState(this, "Locomotion");
     }
