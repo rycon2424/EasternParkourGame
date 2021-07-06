@@ -12943,6 +12943,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5259771999715544739}
+  - component: {fileID: 5256292389670453140}
   m_Layer: 20
   m_Name: R HorseLink
   m_TagString: Untagged
@@ -12950,6 +12951,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!136 &5256292389670453140
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5256292389670453139}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.06
+  m_Height: 1
+  m_Direction: 0
+  m_Center: {x: -0.03, y: 0, z: 0}
 --- !u!1 &5256328959198353771
 GameObject:
   m_ObjectHideFlags: 0
@@ -13008,6 +13023,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5260034558851825883}
+  - component: {fileID: 5256389592822341710}
   m_Layer: 20
   m_Name: L HorseLink
   m_TagString: Untagged
@@ -13015,6 +13031,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!136 &5256389592822341710
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5256389592822341709}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.06
+  m_Height: 1
+  m_Direction: 0
+  m_Center: {x: -0.03, y: 0, z: 0}
 --- !u!1 &5256391806461871445
 GameObject:
   m_ObjectHideFlags: 0
@@ -14287,9 +14317,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.07255837
-  m_Height: 0.57272345
+  m_Height: 0.84
   m_Direction: 0
-  m_Center: {x: -0.21143593, y: -0.0005411795, z: -0.00295249}
+  m_Center: {x: -0.48, y: -0.0005411795, z: -0.00295249}
 --- !u!136 &5266138458946379553
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14343,9 +14373,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.07255837
-  m_Height: 0.57272345
+  m_Height: 0.84
   m_Direction: 0
-  m_Center: {x: -0.21143593, y: -0.0005411795, z: 0.00295249}
+  m_Center: {x: -0.48, y: -0.0005411795, z: 0.00295249}
 --- !u!135 &5273166284371064859
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14967,7 +14997,7 @@ Animator:
   m_GameObject: {fileID: 9043975111318629151}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: a05d6a3b33caf354b8868fd4f04362ee, type: 3}
-  m_Controller: {fileID: 9100000, guid: dd9ca5f0c4967c749a7828dc5010498c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0100d009c10e0a24c8a0ee46b06e21ac, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 1
   m_ApplyRootMotion: 1
@@ -15118,6 +15148,7 @@ GameObject:
   - component: {fileID: 9045509843711619383}
   - component: {fileID: 8995759639213237679}
   - component: {fileID: 9043975111318629152}
+  - component: {fileID: 9043975111318629153}
   m_Layer: 20
   m_Name: Player Horse
   m_TagString: Animal
@@ -15145,6 +15176,23 @@ MonoBehaviour:
   mountPosition: {fileID: 5259784153249300855}
   currentMountPos: 0
   mountActor: {fileID: 0}
+  anim: {fileID: 0}
+--- !u!54 &9043975111318629153
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9043975111318629151}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &9044043995275934003
 GameObject:
   m_ObjectHideFlags: 0

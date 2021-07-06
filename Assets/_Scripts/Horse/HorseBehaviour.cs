@@ -4,14 +4,56 @@ using UnityEngine;
 
 public class HorseBehaviour : Animal
 {
-    public bool mounted;
-    public enum playerPosition {none, back, left, right, above, frontLeft, frontRight}
+    [SerializeField] private bool mounted;
     public Transform mountPosition;
 
     [Header("Debug")]
+    public horseState currentHorseState;
     [SerializeField] private playerPosition currentMountPos;
     [SerializeField] private Humanoid mountActor;
-    
+    [SerializeField] private Animator anim;
+
+    public enum playerPosition { none, back, left, right, above, frontLeft, frontRight }
+    public enum horseState { walking, back, sprinting, dead}
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
+    void Update()
+    {
+        if (mounted)
+        {
+            float y = Input.GetAxis("Vertical");
+            anim.SetFloat("x", Input.GetAxis("Horizontal"));
+            anim.SetFloat("y", y);
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                if (currentHorseState == horseState.walking && anim.GetBool("Gallop") == false)
+                {
+                    anim.SetBool("Gallop", true);
+                }
+                else
+                {
+                    currentHorseState = horseState.sprinting;
+                    anim.SetBool("Sprint", true);
+                }
+            }
+
+            if (y < 0.9f)
+            {
+                currentHorseState = horseState.walking;
+                anim.SetBool("Gallop", false);
+                anim.SetBool("Sprint", false);
+                if (y < 0)
+                {
+                    currentHorseState = horseState.back;
+                }
+            }
+        }
+    }
+
     public void Mount(Transform mounter)
     {
         mountActor = mounter.GetComponent<Humanoid>();
@@ -24,6 +66,8 @@ public class HorseBehaviour : Animal
         Animator tempAnim = mountActor.GetComponent<Animator>();
 
         Vector3 goToPos = Vector3.zero;
+
+        mountActor.currentHorse = this;
 
         StartCoroutine(LerpThenStartAnimation((mountPosition.position - mounter.up * 0.55f), 0.5f, tempAnim, mounter));
     }
@@ -43,6 +87,12 @@ public class HorseBehaviour : Animal
             mounter.transform.position = Vector3.Lerp(startPos, pos, t);
             yield return new WaitForEndOfFrame();
         }
+        mounted = true;
+    }
+
+    public void Unmounted()
+    {
+        mounted = false;
     }
 
     public void UpdateMountPos(playerPosition newPos, Humanoid potentialMounter)
@@ -79,11 +129,6 @@ public class HorseBehaviour : Animal
             default:
                 break;
         }
-    }
-
-    void Update()
-    {
-        
     }
 
 }
