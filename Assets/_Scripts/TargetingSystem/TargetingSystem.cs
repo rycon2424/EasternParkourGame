@@ -46,7 +46,10 @@ public class TargetingSystem : MonoBehaviour
 
         if (newTarget != null)
         {
-            currentTarget.OnSwitchTarget.Invoke();
+            if (currentTarget != null)
+            {
+                currentTarget.OnSwitchTarget.Invoke();
+            }
             currentTarget = newTarget;
             currentTarget.OnTarget.Invoke();
             oc.ReceiveEnemy(currentTarget.transform);

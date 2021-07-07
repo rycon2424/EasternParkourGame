@@ -1,1 +1,0 @@
-1: Targeting one enemy and killing him (untargeting automatic) and then targeting a new enemy and throwing an attack will glitch the target system
