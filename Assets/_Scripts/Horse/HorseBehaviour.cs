@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HorseBehaviour : Animal
 {
@@ -9,6 +10,8 @@ public class HorseBehaviour : Animal
 
     [Header("Debug")]
     public horseState currentHorseState;
+    public GameObject ECanvas;
+    [SerializeField] private Image EFill;
     [SerializeField] private bool jumpCld;
     [SerializeField] private playerPosition currentMountPos;
     [SerializeField] private Humanoid mountActor;
@@ -20,6 +23,7 @@ public class HorseBehaviour : Animal
     private void Start()
     {
         anim = GetComponent<Animator>();
+        ECanvas.SetActive(false);
     }
 
     void Update()
@@ -37,9 +41,18 @@ public class HorseBehaviour : Animal
                     {
                         if (Input.GetKeyDown(KeyCode.Space))
                         {
-                            jumpCld = true;
-                            Invoke("JumpCooldown", 2f);
-                            anim.SetTrigger("Jump");
+                            if (FrontSpace())
+                            {
+                                jumpCld = true;
+                                Invoke("JumpCooldown", 2f);
+                                anim.SetTrigger("Jump");
+                            }
+                            else
+                            {
+                                jumpCld = true;
+                                Invoke("JumpCooldown", 2f);
+                                anim.SetTrigger("CannotJump");
+                            }
                         }
                     }
                 }
@@ -68,6 +81,18 @@ public class HorseBehaviour : Animal
                 }
             }
         }
+    }
+
+    bool FrontSpace()
+    {
+        Debug.DrawRay(transform.position + transform.up * 0.5f + transform.forward * 2, transform.forward * 3, Color.blue, 2);
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position + transform.up * 0.5f + transform.forward * 2, transform.forward, out hit, 3))
+        {
+            Debug.Log("Cannot jump because front check hits " + hit.collider.gameObject.name);
+            return false;
+        }
+        return true;
     }
 
     bool GroundedCheck()
@@ -99,6 +124,8 @@ public class HorseBehaviour : Animal
             Debug.LogWarning("The mounter is not an actor");
             return;
         }
+        ECanvas.SetActive(false);
+        ResetCircle();
         mounter.parent = mountPosition;
         Animator tempAnim = mountActor.GetComponent<Animator>();
 
@@ -133,12 +160,32 @@ public class HorseBehaviour : Animal
         anim.SetFloat("x", 0);
         anim.SetFloat("y", 0);
     }
+    
+    public void FillCircle(float fillPercentage)
+    {
+        EFill.fillAmount = fillPercentage;
+    }
 
+    public void ResetCircle()
+    {
+        EFill.fillAmount = 0;
+    }
+    
     public void UpdateMountPos(playerPosition newPos, Humanoid potentialMounter)
     {
+        if (mounted)
+        {
+            return;
+        }
         currentMountPos = newPos;
         mountActor = potentialMounter;
         mountActor.closestHorse = this;
+
+        //Show canvas only for the player not for the AI
+        if (potentialMounter is PlayerBehaviour)
+        {
+            ECanvas.SetActive(true);
+        }
 
         switch (currentMountPos)
         {
@@ -146,6 +193,10 @@ public class HorseBehaviour : Animal
                 potentialMounter.horseMountPosition = -1;
                 mountActor.closestHorse = null;
                 mountActor = null;
+                if (potentialMounter is PlayerBehaviour)
+                {
+                    ECanvas.SetActive(false);
+                }
                 break;
             case playerPosition.back:
                 potentialMounter.horseMountPosition = 0;

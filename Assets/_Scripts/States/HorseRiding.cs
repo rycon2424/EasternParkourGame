@@ -10,14 +10,19 @@ public class HorseRiding : State
         exiting = false;
         pb.closestHorse.Mount(pb.transform);
         pb.cc.enabled = false;
+        
+        startTime = Time.time + 1;
     }
 
     public override void OnStateExit(PlayerBehaviour pb)
     {
+        startTime = Time.time;
+
         pb.airtime = 0;
         pb.anim.applyRootMotion = true;
         pb.cc.enabled = true;
-        
+
+        pb.currentHorse.ResetCircle();
         pb.currentHorse = null;
         pb.closestHorse = null;
     }
@@ -26,17 +31,7 @@ public class HorseRiding : State
     {
         if (exiting == false)
         {
-            if (Input.GetKeyDown(pb.pc.grab))
-            {
-                if (pb.anim.GetCurrentAnimatorClipInfo(0)[0].clip.name == "HorseIdle")
-                {
-                    pb.currentHorse.Unmounted();
-                    exiting = true;
-                    pb.anim.applyRootMotion = true;
-                    pb.anim.SetTrigger("UnMount");
-                    pb.mono.StartCoroutine(Exiting(pb));
-                }
-            }
+            UnMountHorse(pb);
         }
         switch (pb.currentHorse.currentHorseState)
         {
@@ -61,6 +56,48 @@ public class HorseRiding : State
         }
     }
 
+    float timeHeld;
+    float startTime;
+    void UnMountHorse(PlayerBehaviour pb)
+    {
+        if (pb.anim.GetCurrentAnimatorClipInfo(0)[0].clip.name == "HorseIdle")
+        {
+            if (Input.GetKeyDown(pb.pc.grab))
+            {
+                startTime = Time.time;
+            }
+            if (Input.GetKey(pb.pc.grab))
+            {
+                pb.currentHorse.ECanvas.SetActive(true);
+                timeHeld = Time.time - startTime;
+                if (timeHeld > 1f)
+                {
+                    //Debug.Log("On horse held time : " + timeHeld);
+                    pb.currentHorse.Unmounted();
+                    exiting = true;
+                    pb.anim.applyRootMotion = true;
+                    pb.anim.SetTrigger("UnMount");
+                    pb.mono.StartCoroutine(Exiting(pb));
+                }
+                else
+                {
+                    pb.currentHorse.FillCircle(timeHeld);
+                }
+            }
+            if (Input.GetKeyUp(pb.pc.grab))
+            {
+                startTime = 0;
+                pb.currentHorse.ECanvas.SetActive(false);
+                pb.currentHorse.ResetCircle();
+            }
+        }
+        else
+        {
+            pb.currentHorse.ECanvas.SetActive(false);
+            pb.currentHorse.ResetCircle();
+        }
+    }
+    
     IEnumerator Exiting(PlayerBehaviour pb)
     {
         yield return new WaitForSeconds(0.8f);

@@ -14,6 +14,7 @@ public class Locomotion : State
     public override void OnStateEnter(PlayerBehaviour pb)
     {
         defaultCCheight = pb.cc.height;
+        startTime = Time.time;
 
         pb.anim.ResetTrigger("Jump");
         pb.anim.applyRootMotion = true;
@@ -23,12 +24,12 @@ public class Locomotion : State
 
     public override void OnStateExit(PlayerBehaviour pb)
     {
+        startTime = Time.time;
         pb.cc.center = pb.defaultCenterCc;
         pb.cc.height = defaultCCheight;
     }
 
     float turnSmoothVelocity;
-
     public override void StateUpdate(PlayerBehaviour pb)
     {
         if (pb.Grounded())
@@ -39,13 +40,7 @@ public class Locomotion : State
             {
                 Crouch(!pb.crouched, pb);
             }
-            if (pb.closestHorse != null)
-            {
-                if (Input.GetKeyDown(pb.pc.grab))
-                {
-                    pb.stateMachine.GoToState(pb, "HorseRiding");
-                }
-            }
+            HorseSystem(pb);
         }
         else
         {
@@ -68,6 +63,42 @@ public class Locomotion : State
             pb.stateMachine.GoToState(pb, "InAir");
         }
         pb.crouched = pb.anim.GetBool("Crouch");
+    }
+
+    float startTime;
+    float timeHeld;
+    void HorseSystem(PlayerBehaviour pb)
+    {
+        if (pb.closestHorse != null)
+        {
+            if (Input.GetKeyDown(pb.pc.grab))
+            {
+                startTime = Time.time;
+            }
+            if (Input.GetKey(pb.pc.grab))
+            {
+                timeHeld = Time.time - startTime;
+                if (timeHeld > 1f)
+                {
+                    //Debug.Log("On Foot held time : " + timeHeld);
+                    pb.stateMachine.GoToState(pb, "HorseRiding");
+                }
+                else
+                {
+                    pb.closestHorse.FillCircle(timeHeld);
+                }
+            }
+            if (Input.GetKeyUp(pb.pc.grab))
+            {
+                startTime = 0;
+                pb.closestHorse.ResetCircle();
+            }
+        }
+        else
+        {
+            startTime = Time.time;
+            timeHeld = 0;
+        }
     }
 
     void Crouch(bool crouching, PlayerBehaviour pb)
