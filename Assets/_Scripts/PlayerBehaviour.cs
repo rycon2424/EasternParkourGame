@@ -98,6 +98,14 @@ public class PlayerBehaviour : Humanoid
 
     void Update()
     {
+        if (Input.GetKeyDown(pc.pause))
+        {
+            if (PauseSystem.instance.paused == false)
+            {
+                PauseSystem.instance.Pause();
+            }
+        }
+
         ccGrounded = cc.isGrounded;
         currentStateDebug = currentState.GetType().ToString();
         currentState.StateUpdate(this);

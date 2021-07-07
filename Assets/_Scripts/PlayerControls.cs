@@ -20,4 +20,6 @@ public class PlayerControls : MonoBehaviour
     public KeyCode jump = KeyCode.Space;
     public KeyCode crouch = KeyCode.X;
     public KeyCode sprint = KeyCode.LeftShift;
+    public KeyCode inventory = KeyCode.Tab;
+    public KeyCode pause = KeyCode.Escape;
 }
