@@ -8692,6 +8692,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1607532530}
     - target: {fileID: 8888412177418113356, guid: 8f5ff9789bdfc214b8c8b9faee907d33, type: 3}
+      propertyPath: oldPost
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8888412177418113356, guid: 8f5ff9789bdfc214b8c8b9faee907d33, type: 3}
       propertyPath: chaseTime
       value: 5
       objectReference: {fileID: 0}
@@ -8701,7 +8705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8888412177418113356, guid: 8f5ff9789bdfc214b8c8b9faee907d33, type: 3}
       propertyPath: patrolPoints.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8888412177418113356, guid: 8f5ff9789bdfc214b8c8b9faee907d33, type: 3}
       propertyPath: patrolPoints.Array.data[0]

@@ -24,6 +24,8 @@ public class EnemyController : Humanoid
     public GameObject fightUI;
     public Animator fightAnim;
     [Header("Patrol settings")]
+    public bool oldPost;
+    private Vector3 oldPostPos;
     public Transform[] patrolPoints;
 
     [Header("PatrolDebug")]
@@ -54,7 +56,9 @@ public class EnemyController : Humanoid
         bfh = GetComponent<BloodFXHandler>();
         agent = GetComponent<NavMeshAgent>();
         t = GetComponent<Target>();
-        
+
+        oldPostPos = transform.position;
+
         fightUI.SetActive(false);
 
         SwitchState(EnemyStates.normal);
@@ -212,6 +216,10 @@ public class EnemyController : Humanoid
                 {
                     StartCoroutine("Patrolling");
                 }
+                else
+                {
+                    StartCoroutine("GoToPost");
+                }
 
                 anim.SetBool("inCombat", false);
                 
@@ -227,6 +235,7 @@ public class EnemyController : Humanoid
 
                 StopCoroutine("Patrolling");
                 StopCoroutine("WalkDirection");
+                StopCoroutine("GoToPost");
                 break;
 
             case EnemyStates.inCombat:
@@ -245,6 +254,8 @@ public class EnemyController : Humanoid
                 walkBehaviour = false;
 
                 StopCoroutine("Patrolling");
+                StopCoroutine("GoToPost");
+
                 StartCoroutine("WalkDirection");
                 break;
 
@@ -289,6 +300,17 @@ public class EnemyController : Humanoid
         anim.SetBool("Walking", false);
         yield return new WaitForSeconds(Random.Range(minThinkTime, maxThinkTime));
         StartCoroutine("Patrolling");
+    }
+
+    IEnumerator GoToPost()
+    {
+        agent.SetDestination(oldPostPos);
+        anim.SetBool("Walking", true);
+        while (Vector3.Distance(oldPostPos, transform.position) > 1)
+        {
+            yield return new WaitForSeconds(0.25f);
+        }
+        anim.SetBool("Walking", false);
     }
 
     void Patrol()
