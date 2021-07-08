@@ -43,7 +43,12 @@ public class InventoryManager : MonoBehaviour
         }
         instance = this;
     }
-    
+
+    private void Update()
+    {
+        Debug.Log(Input.mousePosition.x);
+    }
+
     public void RotatePlayer()
     {
         playerModel.rotation = Quaternion.Euler(0, -rotateSlider.value, 0);
@@ -151,16 +156,18 @@ public class InventoryManager : MonoBehaviour
         }
 
         display.SetActive(true);
+        Vector3 offset = Vector3.zero;
         Vector3 mousePos = Input.mousePosition;
-        if (mousePos.y > 520)
+        if (mousePos.y <= 520)
         {
-            display.transform.position = Input.mousePosition;
+            offset += new Vector3(0, 480, 0);
         }
-        else
+        if (mousePos.x >= 1600)
         {
-            Vector3 offset = new Vector3(0, 480, 0);
-            display.transform.position = Input.mousePosition + offset;
+            offset += new Vector3(-250, 0, 0);
         }
+
+        display.transform.position = mousePos + offset;
 
         itemName.text = i.itemName;
         itemDescription.text = i.itemDescription;
