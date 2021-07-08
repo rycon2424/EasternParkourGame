@@ -43,12 +43,7 @@ public class InventoryManager : MonoBehaviour
         }
         instance = this;
     }
-
-    private void Update()
-    {
-        Debug.Log(Input.mousePosition.x);
-    }
-
+    
     public void RotatePlayer()
     {
         playerModel.rotation = Quaternion.Euler(0, -rotateSlider.value, 0);
