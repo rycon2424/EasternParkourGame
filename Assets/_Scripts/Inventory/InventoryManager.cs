@@ -104,14 +104,16 @@ public class InventoryManager : MonoBehaviour
         it.ResetSlot();
         HideDisplay();
     }
-
+    
     void EquipGear(InventorySlot equipping, InventorySlot giving)
     {
         //Check if replacing an item or not
         if (equipping.taken)
         {
-            Debug.Log("item was taken");
+            equipping.item.equipped = false;
+            AddItemToInventory(equipping.item);
         }
+        Debug.Log("swapping " + equipping.item.itemName + " with " + giving.item.itemName);
         equipping.item = giving.item;
         equipping.image.sprite = giving.item.itemPotrait;
         equipping.taken = true;
