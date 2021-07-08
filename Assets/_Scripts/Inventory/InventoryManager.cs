@@ -53,7 +53,6 @@ public class InventoryManager : MonoBehaviour
     
     public void HideDisplay()
     {
-        oldSlot = null;
         display.SetActive(false);
     }
 
@@ -64,8 +63,10 @@ public class InventoryManager : MonoBehaviour
         {
             oldSlot.beingHovered = false;
         }
+
         sendSlot.beingHovered = true;
         oldSlot = sendSlot;
+
         if (i == null)
         {
             HideDisplay();

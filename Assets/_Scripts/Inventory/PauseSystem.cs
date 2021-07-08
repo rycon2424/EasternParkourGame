@@ -35,6 +35,7 @@ public class PauseSystem : MonoBehaviour
 
         Time.timeScale = 0;
         menu.SetActive(true);
+        InventoryManager.instance.HideDisplay();
     }
 
     public void Resume()

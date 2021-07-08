@@ -17,7 +17,6 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler
     {
         if (beingHovered == false)
         {
-            beingHovered = true;
             InventoryManager.instance.ShowDisplay(item, this);
         }
     }
