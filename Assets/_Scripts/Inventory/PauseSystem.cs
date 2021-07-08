@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseSystem : MonoBehaviour
 {
-    public bool paused;
     public static PauseSystem instance;
+    public bool paused;
     public GameObject menu;
+    public GameObject inventory;
 
     private void Awake()
     {
@@ -15,6 +17,13 @@ public class PauseSystem : MonoBehaviour
             Destroy(instance);
         }
         instance = this;
+    }
+
+    public void OpenInventory()
+    {
+        Pause();
+        menu.SetActive(false);
+        inventory.SetActive(true);
     }
 
     public void Pause()
@@ -35,5 +44,8 @@ public class PauseSystem : MonoBehaviour
 
         paused = false;
         Time.timeScale = 1;
+
+        menu.SetActive(false);
+        inventory.SetActive(false);
     }
 }

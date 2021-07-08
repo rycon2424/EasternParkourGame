@@ -104,6 +104,21 @@ public class PlayerBehaviour : Humanoid
             {
                 PauseSystem.instance.Pause();
             }
+            else
+            {
+                PauseSystem.instance.Resume();
+            }
+        }
+        if (Input.GetKeyDown(pc.inventory))
+        {
+            if (PauseSystem.instance.paused == false)
+            {
+                PauseSystem.instance.OpenInventory();
+            }
+            else
+            {
+                PauseSystem.instance.Resume();
+            }
         }
 
         ccGrounded = cc.isGrounded;

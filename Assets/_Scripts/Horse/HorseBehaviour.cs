@@ -85,9 +85,9 @@ public class HorseBehaviour : Animal
 
     bool FrontSpace()
     {
-        Debug.DrawRay(transform.position + transform.up * 0.5f + transform.forward * 2, transform.forward * 3, Color.blue, 2);
+        Debug.DrawRay(transform.position + transform.up * 0.5f + transform.forward * 1.5f, transform.forward * 3.5f, Color.blue, 2);
         RaycastHit hit;
-        if (Physics.Raycast(transform.position + transform.up * 0.5f + transform.forward * 2, transform.forward, out hit, 3))
+        if (Physics.Raycast(transform.position + transform.up * 0.5f + transform.forward * 1.5f, transform.forward, out hit, 3.5f))
         {
             Debug.Log("Cannot jump because front check hits " + hit.collider.gameObject.name);
             return false;
