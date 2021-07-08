@@ -152,25 +152,25 @@ public class EnemyController : Humanoid
                 default:
                     break;
             }
-        }
 
-        RandomizeGuard();
+            RandomizeGuard();
 
-        if (damage > 0)
-        {
-            bfh.SlashDamage(damageType);
-        }
+            if (damage > 0)
+            {
+                bfh.SlashDamage(damageType);
+            }
 
-        health -= damage;
+            health -= damage;
 
-        AttackStunned();
+            AttackStunned();
 
-        if (health < 1)
-        {
-            currentState = EnemyStates.dead;
-            dead = true;
-            health = 0;
-            Death(damageType);
+            if (health < 1)
+            {
+                currentState = EnemyStates.dead;
+                dead = true;
+                health = 0;
+                Death(damageType);
+            }
         }
     }
     

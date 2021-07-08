@@ -40,10 +40,12 @@ public class HitBox : MonoBehaviour
                 if (target.parrying == false)
                 {
                     target.TakeDamage(ac.damage, @event.intParameter, (int)@event.floatParameter);
+                    break;
                 }
                 else
                 {
                     GotParried.Invoke();
+                    break;
                 }
             }
         }

@@ -23,6 +23,7 @@ public class PlayerBehaviour : Humanoid
     public GameObject sheatedWeapon;
     public Animator combatUI;
     public GameObject combatUIVisual;
+    private HitBox hb;
 
     [Header("Info")]
     public bool grounded;
@@ -65,6 +66,7 @@ public class PlayerBehaviour : Humanoid
         anim = GetComponent<Animator>();
         pc = GetComponent<PlayerControls>();
         bfh = GetComponent<BloodFXHandler>();
+        hb = GetComponent<HitBox>();
 
         defaultCenterCc = cc.center;
 
@@ -395,7 +397,8 @@ public class PlayerBehaviour : Humanoid
     {
         ts.targets.Remove(targetThatDied);
         ts.StopTargeting();
-
+        hb.targets.Remove(targetThatDied.GetComponent<Actor>());
+        
         ts.SwitchTarget(oc);
         lol.target = ts.currentTarget;
 

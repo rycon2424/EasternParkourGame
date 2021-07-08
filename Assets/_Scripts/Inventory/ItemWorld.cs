@@ -6,11 +6,13 @@ public class ItemWorld : MonoBehaviour
 {
     public bool pickupable;
     [Header("Item Info")]
+    public int itemID;
     public int itemLevel;
     public string itemName;
     public Sprite itemPotrait;
     [TextArea(5, 5)]
     public string itemDescription;
+    public Item.itemType typeItem;
     
     void Update()
     {
@@ -23,6 +25,8 @@ public class ItemWorld : MonoBehaviour
                 tempItem.itemName = itemName;
                 tempItem.itemPotrait = itemPotrait;
                 tempItem.itemDescription = itemDescription;
+                tempItem.ID = itemID;
+                tempItem.typeItem = typeItem;
 
                 InventoryManager.instance.AddItemToInventory(tempItem);
                 Destroy(gameObject);

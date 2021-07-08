@@ -20,4 +20,18 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler
             InventoryManager.instance.ShowDisplay(item, this);
         }
     }
+
+    private void Update()
+    {
+        if (beingHovered)
+        {
+            if (item.typeItem != Item.itemType.NotEquipable)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    InventoryManager.instance.EquipItem(item);
+                }
+            }
+        }
+    }
 }
