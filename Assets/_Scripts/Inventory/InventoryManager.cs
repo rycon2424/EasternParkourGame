@@ -58,54 +58,44 @@ public class InventoryManager : MonoBehaviour
             case Item.itemType.NotEquipable:
                 return;
             case Item.itemType.helmet:
+                EquipGear(helmet, it);
                 TransferItemInfo(it.item, helmet.item);
-                helmet.item = it.item;
-                helmet.image.sprite = helmet.item.itemPotrait;
                 break;
             case Item.itemType.body:
+                EquipGear(body, it);
                 TransferItemInfo(it.item, body.item);
-                body.item = it.item;
-                body.image.sprite = body.item.itemPotrait;
                 break;
             case Item.itemType.gloves:
+                EquipGear(gloves, it);
                 TransferItemInfo(it.item, gloves.item);
-                gloves.item = it.item;
-                gloves.image.sprite = gloves.item.itemPotrait;
                 break;
             case Item.itemType.pants:
+                EquipGear(trousers, it);
                 TransferItemInfo(it.item, trousers.item);
-                trousers.item = it.item;
-                trousers.image.sprite = trousers.item.itemPotrait;
                 break;
             case Item.itemType.boots:
+                EquipGear(boots, it);
                 TransferItemInfo(it.item, boots.item);
-                boots.item = it.item;
-                boots.image.sprite = boots.item.itemPotrait;
                 break;
             case Item.itemType.necklace:
+                EquipGear(necklace, it);
                 TransferItemInfo(it.item, necklace.item);
-                necklace.item = it.item;
-                necklace.image.sprite = necklace.item.itemPotrait;
                 break;
             case Item.itemType.ringone:
+                EquipGear(ring1, it);
                 TransferItemInfo(it.item, ring1.item);
-                ring1.item = it.item;
-                ring1.image.sprite = ring1.item.itemPotrait;
                 break;
             case Item.itemType.ringtwo:
+                EquipGear(ring1, it);
                 TransferItemInfo(it.item, ring2.item);
-                ring2.item = it.item;
-                ring2.image.sprite = ring2.item.itemPotrait;
                 break;
             case Item.itemType.cape:
+                EquipGear(cape, it);
                 TransferItemInfo(it.item, cape.item);
-                cape.item = it.item;
-                cape.image.sprite = cape.item.itemPotrait;
                 break;
             case Item.itemType.weapon:
+                EquipGear(weapon, it);
                 TransferItemInfo(it.item, weapon.item);
-                weapon.item = it.item;
-                weapon.image.sprite = weapon.item.itemPotrait;
                 break;
             default:
                 break;
@@ -113,6 +103,18 @@ public class InventoryManager : MonoBehaviour
         it.item.equipped = true;
         it.ResetSlot();
         HideDisplay();
+    }
+
+    void EquipGear(InventorySlot equipping, InventorySlot giving)
+    {
+        //Check if replacing an item or not
+        if (equipping.taken)
+        {
+            Debug.Log("item was taken");
+        }
+        equipping.item = giving.item;
+        equipping.image.sprite = giving.item.itemPotrait;
+        equipping.taken = true;
     }
     
     public void AddItemToInventory(Item newItem)
