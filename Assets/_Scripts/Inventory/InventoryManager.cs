@@ -42,6 +42,7 @@ public class InventoryManager : MonoBehaviour
             return;
         }
         instance = this;
+        DontDestroyOnLoad(gameObject);
     }
     
     public void RotatePlayer()
