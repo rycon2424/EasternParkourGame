@@ -25,13 +25,34 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler
     {
         if (beingHovered)
         {
-            if (item.typeItem != Item.itemType.NotEquipable)
+            if (item != null)
             {
-                if (Input.GetMouseButtonDown(0))
+                if (item.typeItem != Item.itemType.NotEquipable)
                 {
-                    InventoryManager.instance.EquipItem(item);
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        if (item.equipped)
+                        {
+                            item.equipped = false;
+                            InventoryManager.instance.AddItemToInventory(item);
+                            InventoryManager.instance.HideDisplay();
+                            ResetSlot();
+                        }
+                        else
+                        {
+                            InventoryManager.instance.EquipItem(this);
+                        }
+                    }
                 }
             }
         }
+    }
+
+    public void ResetSlot()
+    {
+        taken = false;
+        item = null;
+        beingHovered = false;
+        image.sprite = InventoryManager.instance.emptyImage;
     }
 }

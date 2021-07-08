@@ -49,66 +49,69 @@ public class InventoryManager : MonoBehaviour
         playerModel.rotation = Quaternion.Euler(0, -rotateSlider.value, 0);
     }
     
-    public void EquipItem(Item it)
+    public void EquipItem(InventorySlot it)
     {
-        Item.itemType typeEquip = it.typeItem;
+        Item.itemType typeEquip = it.item.typeItem;
         switch (typeEquip)
         {
             case Item.itemType.NotEquipable:
                 return;
             case Item.itemType.helmet:
-                TransferItemInfo(it, helmet.item);
-                helmet.item = it;
+                TransferItemInfo(it.item, helmet.item);
+                helmet.item = it.item;
                 helmet.image.sprite = helmet.item.itemPotrait;
                 break;
             case Item.itemType.body:
-                TransferItemInfo(it, body.item);
-                body.item = it;
+                TransferItemInfo(it.item, body.item);
+                body.item = it.item;
                 body.image.sprite = body.item.itemPotrait;
                 break;
             case Item.itemType.gloves:
-                TransferItemInfo(it, gloves.item);
-                gloves.item = it;
+                TransferItemInfo(it.item, gloves.item);
+                gloves.item = it.item;
                 gloves.image.sprite = gloves.item.itemPotrait;
                 break;
             case Item.itemType.pants:
-                TransferItemInfo(it, trousers.item);
-                trousers.item = it;
+                TransferItemInfo(it.item, trousers.item);
+                trousers.item = it.item;
                 trousers.image.sprite = trousers.item.itemPotrait;
                 break;
             case Item.itemType.boots:
-                TransferItemInfo(it, boots.item);
-                boots.item = it;
+                TransferItemInfo(it.item, boots.item);
+                boots.item = it.item;
                 boots.image.sprite = boots.item.itemPotrait;
                 break;
             case Item.itemType.necklace:
-                TransferItemInfo(it, necklace.item);
-                necklace.item = it;
+                TransferItemInfo(it.item, necklace.item);
+                necklace.item = it.item;
                 necklace.image.sprite = necklace.item.itemPotrait;
                 break;
             case Item.itemType.ringone:
-                TransferItemInfo(it, ring1.item);
-                ring1.item = it;
+                TransferItemInfo(it.item, ring1.item);
+                ring1.item = it.item;
                 ring1.image.sprite = ring1.item.itemPotrait;
                 break;
             case Item.itemType.ringtwo:
-                TransferItemInfo(it, ring2.item);
-                ring2.item = it;
+                TransferItemInfo(it.item, ring2.item);
+                ring2.item = it.item;
                 ring2.image.sprite = ring2.item.itemPotrait;
                 break;
             case Item.itemType.cape:
-                TransferItemInfo(it, cape.item);
-                cape.item = it;
+                TransferItemInfo(it.item, cape.item);
+                cape.item = it.item;
                 cape.image.sprite = cape.item.itemPotrait;
                 break;
             case Item.itemType.weapon:
-                TransferItemInfo(it, weapon.item);
-                weapon.item = it;
+                TransferItemInfo(it.item, weapon.item);
+                weapon.item = it.item;
                 weapon.image.sprite = weapon.item.itemPotrait;
                 break;
             default:
                 break;
         }
+        it.item.equipped = true;
+        it.ResetSlot();
+        HideDisplay();
     }
     
     public void AddItemToInventory(Item newItem)
@@ -167,6 +170,10 @@ public class InventoryManager : MonoBehaviour
 
     void TransferItemInfo(Item givingInfo, Item receivingInfo)
     {
+        if (receivingInfo == null)
+        {
+            return;
+        }
         receivingInfo.itemLevel = givingInfo.itemLevel;
         receivingInfo.itemName = givingInfo.itemName;
         receivingInfo.itemDescription = givingInfo.itemDescription;

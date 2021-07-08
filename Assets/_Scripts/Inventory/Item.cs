@@ -14,4 +14,6 @@ public class Item
     [Space]
     public itemType typeItem;
     public enum itemType { NotEquipable, helmet, body, gloves, pants, boots, necklace, ringone, ringtwo, cape, weapon}
+    [Header("Dont assign")]
+    public bool equipped;
 }

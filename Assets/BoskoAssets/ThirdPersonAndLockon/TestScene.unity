@@ -3169,7 +3169,7 @@ MonoBehaviour:
   itemID: 2
   itemLevel: 5
   itemName: Necklace
-  itemPotrait: {fileID: 21300000, guid: fbe9d9fb14d8f3246a383f126a3b8406, type: 3}
+  itemPotrait: {fileID: 21300000, guid: f9a7dfb458091124490427e10c6bc515, type: 3}
   itemDescription: Necklace
   typeItem: 6
 --- !u!4 &333994764
@@ -16587,7 +16587,7 @@ MonoBehaviour:
   itemID: 4
   itemLevel: 5
   itemName: Armour
-  itemPotrait: {fileID: 21300000, guid: fbe9d9fb14d8f3246a383f126a3b8406, type: 3}
+  itemPotrait: {fileID: 21300000, guid: fc476c862eab60d4da1e9e2879fcd844, type: 3}
   itemDescription: Body Armour
   typeItem: 2
 --- !u!4 &1657310836
@@ -18206,7 +18206,7 @@ MonoBehaviour:
   itemID: 1
   itemLevel: 5
   itemName: Boots
-  itemPotrait: {fileID: 21300000, guid: fbe9d9fb14d8f3246a383f126a3b8406, type: 3}
+  itemPotrait: {fileID: 21300000, guid: 111f96d011e41e14781eb984e8c61986, type: 3}
   itemDescription: Nice boots
   typeItem: 5
 --- !u!4 &1792394313
