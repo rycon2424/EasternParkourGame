@@ -9,15 +9,15 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler
     public bool taken;
     [Space]
     public Item item;
-    public bool showingDisplay;
+    public bool beingHovered;
     [Space]
     public Image image;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (showingDisplay == false)
+        if (beingHovered == false)
         {
-            showingDisplay = true;
+            beingHovered = true;
             InventoryManager.instance.ShowDisplay(item, this);
         }
     }

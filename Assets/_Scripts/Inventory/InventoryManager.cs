@@ -62,10 +62,10 @@ public class InventoryManager : MonoBehaviour
     {
         if (oldSlot != null)
         {
-            oldSlot.showingDisplay = false;
+            oldSlot.beingHovered = false;
         }
-        sendSlot.showingDisplay = true;
-
+        sendSlot.beingHovered = true;
+        oldSlot = sendSlot;
         if (i == null)
         {
             HideDisplay();
@@ -78,8 +78,6 @@ public class InventoryManager : MonoBehaviour
         itemDescription.text = i.itemDescription;
         itemLevel.text = ("Level " + i.itemLevel.ToString());
         itemImage.sprite = i.itemPotrait;
-
-        oldSlot = sendSlot;
     }
 
 }
