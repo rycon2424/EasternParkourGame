@@ -110,13 +110,18 @@ public class InventoryManager : MonoBehaviour
         //Check if replacing an item or not
         if (equipping.taken)
         {
-            equipping.item.equipped = false;
-            AddItemToInventory(equipping.item);
+            Debug.Log("swapping " + equipping.item.itemName + " with " + giving.item.itemName);
+            SwapItem(equipping);
         }
-        Debug.Log("swapping " + equipping.item.itemName + " with " + giving.item.itemName);
         equipping.item = giving.item;
         equipping.image.sprite = giving.item.itemPotrait;
         equipping.taken = true;
+    }
+
+    void SwapItem(InventorySlot ivst)
+    {
+        ivst.item.equipped = false;
+        AddItemToInventory(ivst.item);
     }
     
     public void AddItemToInventory(Item newItem)

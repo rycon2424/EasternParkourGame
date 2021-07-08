@@ -11751,7 +11751,6 @@ MonoBehaviour:
   - {fileID: 501065112}
   - {fileID: 828589142}
   inventoryItems: []
-  tempSlot: {fileID: 985515675}
 --- !u!1 &1153751029
 GameObject:
   m_ObjectHideFlags: 0
@@ -11847,59 +11846,6 @@ Transform:
   m_Father: {fileID: 24813716}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1154972163
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1154972164}
-  - component: {fileID: 1154972165}
-  m_Layer: 7
-  m_Name: EquipItems
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1154972164
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1154972163}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1607532530}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1154972165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1154972163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eae5c84a30a48be44a625cc0ef2ffd44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  helmet: []
-  body: []
-  gloves: []
-  trousers: []
-  boots: []
-  necklace: []
-  ring1: []
-  ring2: []
-  cape: []
-  weapon: []
 --- !u!1 &1155152315
 GameObject:
   m_ObjectHideFlags: 0
@@ -89510,17 +89456,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 441087096816548148, guid: 3a5cfd827191f5642bba79ef88d549fb, type: 3}
-      propertyPath: pause
-      value: 27
-      objectReference: {fileID: 0}
     - target: {fileID: 441087096816548552, guid: 3a5cfd827191f5642bba79ef88d549fb, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 441087096816548552, guid: 3a5cfd827191f5642bba79ef88d549fb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a5cfd827191f5642bba79ef88d549fb, type: 3}
