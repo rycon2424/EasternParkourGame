@@ -19,6 +19,7 @@ public class PlayerBehaviour : Humanoid
     public float grabHeight;
 
     [Header("Combat")]
+    public bool hasWeapon;
     public GameObject playerWeapon;
     public GameObject sheatedWeapon;
     public Animator combatUI;
@@ -74,8 +75,7 @@ public class PlayerBehaviour : Humanoid
         lol = GetComponentInChildren<LockOnLookat>();
 
         lol.gameObject.SetActive(false);
-
-        EquipWeapon(0);
+        
         SetupStateMachine();
     }
 
@@ -434,6 +434,10 @@ public class PlayerBehaviour : Humanoid
 
     public void EquipWeapon(int equip)
     {
+        if (playerWeapon == null || sheatedWeapon == null)
+        {
+            return;
+        }
         if (equip == 1)
         {
             playerWeapon.SetActive(true);
@@ -448,10 +452,13 @@ public class PlayerBehaviour : Humanoid
 
     public void ForceHideWeapon()
     {
-        if (playerWeapon.activeSelf == true)
+        if (sheatedWeapon != null)
         {
-            playerWeapon.SetActive(false);
-            sheatedWeapon.SetActive(true);
+            if (playerWeapon.activeSelf == true)
+            {
+                playerWeapon.SetActive(false);
+                sheatedWeapon.SetActive(true);
+            }
         }
     }
 

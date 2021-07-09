@@ -22,10 +22,14 @@ public class EquipSystem : MonoBehaviour
     //public Equipment[] ringOne1700;
     //public Equipment[] ringTwo1800;
     public Equipment[] cape1900;
-    public Equipment[] weapon2000;
+    public GameObject[] weaponsModel;
 
     [Header("PlayerCollection")]
     public GameObject[] playerClothes;
+    public GameObject[] weaponsSheated;
+    public GameObject[] weaponsHand;
+    [Space]
+    public PlayerBehaviour pb;
 
     public static EquipSystem instance;
 
@@ -123,9 +127,6 @@ public class EquipSystem : MonoBehaviour
             case Item.itemType.boots:
                 EquipHelper(0, boots1500, 1500, false);
                 break;
-            case Item.itemType.weapon:
-                EquipHelper(0, weapon2000, 2000, false);
-                break;
             default:
                 break;
         }
@@ -199,11 +200,55 @@ public class EquipSystem : MonoBehaviour
                 capeID = 1900 + ID;
                 break;
             case Item.itemType.weapon:
-                EquipHelper(ID, weapon2000, 2000, equip);
                 weaponID = 2000 + ID;
+                if (removing)
+                {
+                    WeaponHandler("");
+                }
+                else
+                {
+                    WeaponHandler(i.itemName);
+                }
                 break;
             default:
                 break;
+        }
+    }
+
+    void WeaponHandler(string itemName)
+    {
+        if (pb.sheatedWeapon != null)
+        {
+            Debug.Log("unequipping old sword");
+            pb.sheatedWeapon.SetActive(false);
+            pb.playerWeapon.SetActive(false);
+            pb.sheatedWeapon = null;
+            pb.playerWeapon = null;
+        }
+        foreach (GameObject sword in weaponsHand)
+        {
+            if (sword.name == itemName)
+            {
+                pb.playerWeapon = sword;
+                break;
+            }
+        }
+        foreach (GameObject sword in weaponsSheated)
+        {
+            if (sword.name == itemName)
+            {
+                pb.sheatedWeapon = sword;
+                pb.sheatedWeapon.SetActive(true);
+                break;
+            }
+        }
+        foreach (GameObject sword in weaponsModel)
+        {
+            sword.SetActive(false);
+            if (sword.name == itemName)
+            {
+                sword.SetActive(true);
+            }
         }
     }
 }
