@@ -141,6 +141,10 @@ public class InventoryManager : MonoBehaviour
     
     public void HideDisplay()
     {
+        if (oldSlot != null)
+        {
+            oldSlot.beingHovered = false;
+        }
         display.SetActive(false);
     }
 
