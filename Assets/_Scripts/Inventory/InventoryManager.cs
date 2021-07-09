@@ -42,7 +42,6 @@ public class InventoryManager : MonoBehaviour
             return;
         }
         instance = this;
-        DontDestroyOnLoad(gameObject);
     }
     
     public void RotatePlayer()
@@ -110,12 +109,14 @@ public class InventoryManager : MonoBehaviour
         //Check if replacing an item or not
         if (equipping.taken)
         {
-            Debug.Log("swapping " + equipping.item.itemName + " with " + giving.item.itemName);
+            //Debug.Log("swapping " + equipping.item.itemName + " with " + giving.item.itemName);
+            EquipSystem.instance.Equip(equipping.item, false, false);
             SwapItem(equipping);
         }
         equipping.item = giving.item;
         equipping.image.sprite = giving.item.itemPotrait;
         equipping.taken = true;
+        EquipSystem.instance.Equip(equipping.item, true, false);
     }
 
     void SwapItem(InventorySlot ivst)

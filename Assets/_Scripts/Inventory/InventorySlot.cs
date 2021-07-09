@@ -36,6 +36,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler
                             item.equipped = false;
                             InventoryManager.instance.AddItemToInventory(item);
                             InventoryManager.instance.HideDisplay();
+                            EquipSystem.instance.Equip(item, false, true);
                             ResetSlot();
                         }
                         else
