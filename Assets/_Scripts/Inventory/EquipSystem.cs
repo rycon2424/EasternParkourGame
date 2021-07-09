@@ -24,6 +24,9 @@ public class EquipSystem : MonoBehaviour
     public Equipment[] cape1900;
     public Equipment[] weapon2000;
 
+    [Header("PlayerCollection")]
+    public GameObject[] playerClothes;
+
     public static EquipSystem instance;
 
     private void Awake()
@@ -38,6 +41,8 @@ public class EquipSystem : MonoBehaviour
     void EquipHelper(int ID, Equipment[] eq, int extraID, bool equipping)
     {
         ID += extraID;
+        List<string> equipOnModel = new List<string>();
+        List<string> removeOnModel = new List<string>();
         if (equipping)
         {
             foreach (Equipment items in eq)
@@ -46,10 +51,27 @@ public class EquipSystem : MonoBehaviour
                 {
                     foreach (var g in items.equipment)
                     {
+                        equipOnModel.Add(g.name);
                         g.SetActive(true);
                     }
-                    return;
                 }
+            }
+            int amountToAdd = equipOnModel.Count;
+            foreach (string s in equipOnModel)
+            {
+                foreach (GameObject g in playerClothes)
+                {
+                    if (g.name == s)
+                    {
+                        g.SetActive(true);
+                        amountToAdd--;
+                        break;
+                    }
+                }
+            }
+            if (amountToAdd > 0)
+            {
+                Debug.Log("One object could not be added (" + amountToAdd + ")");
             }
         }
         else
@@ -60,13 +82,29 @@ public class EquipSystem : MonoBehaviour
                 {
                     foreach (var g in items.equipment)
                     {
+                        removeOnModel.Add(g.name);
                         g.SetActive(false);
                     }
-                    return;
                 }
             }
+            int amountToRemove = removeOnModel.Count;
+            foreach (string s in removeOnModel)
+            {
+                foreach (GameObject g in playerClothes)
+                {
+                    if (g.name == s)
+                    {
+                        g.SetActive(false);
+                        amountToRemove--;
+                        break;
+                    }
+                }
+            }
+            if (amountToRemove > 0)
+            {
+                Debug.Log("One object could not be removed (" + amountToRemove + ")");
+            }
         }
-        Debug.Log("error no type with such ID (" + ID + ")");
     }
 
     public void RemoveBase(Item.itemType type)
