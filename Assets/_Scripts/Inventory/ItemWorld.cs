@@ -18,18 +18,21 @@ public class ItemWorld : MonoBehaviour
     {
         if (pickupable)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (InventoryManager.instance.RoomInInventory())
             {
-                Item tempItem = new Item();
-                tempItem.itemLevel = itemLevel;
-                tempItem.itemName = itemName;
-                tempItem.itemPotrait = itemPotrait;
-                tempItem.itemDescription = itemDescription;
-                tempItem.ID = itemID;
-                tempItem.typeItem = typeItem;
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Item tempItem = new Item();
+                    tempItem.itemLevel = itemLevel;
+                    tempItem.itemName = itemName;
+                    tempItem.itemPotrait = itemPotrait;
+                    tempItem.itemDescription = itemDescription;
+                    tempItem.ID = itemID;
+                    tempItem.typeItem = typeItem;
 
-                InventoryManager.instance.AddItemToInventory(tempItem);
-                Destroy(gameObject);
+                    InventoryManager.instance.AddItemToInventory(tempItem);
+                    Destroy(gameObject);
+                }
             }
         }
     }

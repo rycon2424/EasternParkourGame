@@ -124,6 +124,18 @@ public class InventoryManager : MonoBehaviour
         ivst.item.equipped = false;
         AddItemToInventory(ivst.item);
     }
+
+    public bool RoomInInventory()
+    {
+        foreach (var slot in inventorySpaces)
+        {
+            if (slot.taken == false)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     
     public void AddItemToInventory(Item newItem)
     {

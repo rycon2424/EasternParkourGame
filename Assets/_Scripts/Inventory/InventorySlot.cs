@@ -33,14 +33,19 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler
                     {
                         if (item.equipped)
                         {
-                            item.equipped = false;
-                            InventoryManager.instance.AddItemToInventory(item);
-                            InventoryManager.instance.HideDisplay();
-                            EquipSystem.instance.Equip(item, false, true);
-                            ResetSlot();
+                            if (InventoryManager.instance.RoomInInventory())
+                            {
+                                //Remove object
+                                item.equipped = false;
+                                InventoryManager.instance.AddItemToInventory(item);
+                                InventoryManager.instance.HideDisplay();
+                                EquipSystem.instance.Equip(item, false, true);
+                                ResetSlot();
+                            }
                         }
                         else
                         {
+                            //Equip/Swap object
                             InventoryManager.instance.EquipItem(this);
                         }
                     }
