@@ -219,7 +219,6 @@ public class EquipSystem : MonoBehaviour
     {
         if (pb.sheatedWeapon != null)
         {
-            Debug.Log("unequipping old sword");
             pb.sheatedWeapon.SetActive(false);
             pb.playerWeapon.SetActive(false);
             pb.sheatedWeapon = null;

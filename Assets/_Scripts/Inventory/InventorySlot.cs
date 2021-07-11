@@ -7,12 +7,14 @@ using UnityEngine.EventSystems;
 public class InventorySlot : MonoBehaviour, IPointerEnterHandler
 {
     public bool taken;
+    public bool toRemove;
     [Space]
     public Item item;
     public bool beingHovered;
     [Space]
     public Image image;
-
+    public GameObject cross;
+    
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (beingHovered == false)
@@ -27,10 +29,24 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler
         {
             if (item != null)
             {
+                if (Input.GetMouseButtonDown(1))
+                {
+                    if (item.equipped == false)
+                    {
+                        toRemove = !toRemove;
+                        cross.SetActive(toRemove);
+                        InventoryManager.instance.CheckForSelected();
+                    }
+                }
                 if (item.typeItem != Item.itemType.NotEquipable)
                 {
                     if (Input.GetMouseButtonDown(0))
                     {
+                        toRemove = false;
+                        if (cross != null)
+                        {
+                            cross.SetActive(false);
+                        }
                         if (item.equipped)
                         {
                             if (InventoryManager.instance.RoomInInventory())
@@ -41,12 +57,19 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler
                                 InventoryManager.instance.HideDisplay();
                                 EquipSystem.instance.Equip(item, false, true);
                                 ResetSlot();
+                                InventoryManager.instance.CheckForSelected();
                             }
                         }
                         else
                         {
                             //Equip/Swap object
+                            toRemove = false;
+                            if (cross != null)
+                            {
+                                cross.SetActive(false);
+                            }
                             InventoryManager.instance.EquipItem(this);
+                            InventoryManager.instance.CheckForSelected();
                         }
                     }
                 }
@@ -56,6 +79,11 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler
 
     public void ResetSlot()
     {
+        toRemove = false;
+        if (cross != null)
+        {
+            cross.SetActive(false);
+        }
         taken = false;
         item = null;
         beingHovered = false;

@@ -33,6 +33,7 @@ public class InventoryManager : MonoBehaviour
     public Sprite emptyImage;
     public InventorySlot[] inventorySpaces;
     public List<Item> inventoryItems;
+    public Button destroyButton;
 
     private void Awake()
     {
@@ -47,6 +48,30 @@ public class InventoryManager : MonoBehaviour
     public void RotatePlayer()
     {
         playerModel.rotation = Quaternion.Euler(0, -rotateSlider.value, 0);
+    }
+
+    public void CheckForSelected()
+    {
+        foreach (var slots in inventorySpaces)
+        {
+            if (slots.toRemove)
+            {
+                destroyButton.interactable = true;
+                return;
+            }
+        }
+        destroyButton.interactable = false;
+    }
+
+    public void DestroySelected()
+    {
+        foreach (var slots in inventorySpaces)
+        {
+            if (slots.toRemove)
+            {
+                slots.ResetSlot();
+            }
+        }
     }
     
     public void EquipItem(InventorySlot it)
