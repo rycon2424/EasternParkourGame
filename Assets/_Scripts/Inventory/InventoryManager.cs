@@ -34,6 +34,9 @@ public class InventoryManager : MonoBehaviour
     public InventorySlot[] inventorySpaces;
     public List<Item> inventoryItems;
     public Button destroyButton;
+    public GameObject inCombatBlock;
+
+    private PlayerBehaviour pb;
 
     private void Awake()
     {
@@ -43,6 +46,7 @@ public class InventoryManager : MonoBehaviour
             return;
         }
         instance = this;
+        pb = FindObjectOfType<PlayerBehaviour>();
     }
     
     public void RotatePlayer()
@@ -71,6 +75,18 @@ public class InventoryManager : MonoBehaviour
             {
                 slots.ResetSlot();
             }
+        }
+    }
+
+    public void CheckForCombat()
+    {
+        if (pb.stateMachine.IsInState("Combat"))
+        {
+            inCombatBlock.SetActive(true);
+        }
+        else
+        {
+            inCombatBlock.SetActive(false);
         }
     }
     

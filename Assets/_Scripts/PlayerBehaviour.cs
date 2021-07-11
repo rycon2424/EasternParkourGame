@@ -10,7 +10,6 @@ public class PlayerBehaviour : Humanoid
     public float slideSpeed;
 
     [Header("RaycastInfo")]
-    public string currentStateDebug;
     public string tagGround;
     public LayerMask everything;
     public LayerMask climbing;
@@ -100,6 +99,14 @@ public class PlayerBehaviour : Humanoid
 
     void Update()
     {
+        Pausing();
+        ccGrounded = cc.isGrounded;
+        currentState.StateUpdate(this);
+        anim.SetBool("Land", Grounded());
+    }
+
+    void Pausing()
+    {
         if (Input.GetKeyDown(pc.pause))
         {
             if (PauseSystem.instance.paused == false)
@@ -122,11 +129,6 @@ public class PlayerBehaviour : Humanoid
                 PauseSystem.instance.Resume();
             }
         }
-
-        ccGrounded = cc.isGrounded;
-        currentStateDebug = currentState.GetType().ToString();
-        currentState.StateUpdate(this);
-        anim.SetBool("Land", Grounded());
     }
 
     public override void TakeDamage(int damage, int damageType, int attackDir)

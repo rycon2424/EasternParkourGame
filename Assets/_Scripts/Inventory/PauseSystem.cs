@@ -24,6 +24,7 @@ public class PauseSystem : MonoBehaviour
         Pause();
         menu.SetActive(false);
         inventory.SetActive(true);
+        InventoryManager.instance.CheckForCombat();
     }
 
     public void Pause()

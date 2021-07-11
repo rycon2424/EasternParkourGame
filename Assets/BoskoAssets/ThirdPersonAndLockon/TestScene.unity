@@ -339,7 +339,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17378674}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.078, y: -0.041, z: -0}
+  m_LocalPosition: {x: -0.078, y: 0.293, z: -0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 913011130}
@@ -1449,7 +1449,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131948178}
   m_LocalRotation: {x: -0, y: -0.35644805, z: -0, w: 0.9343152}
-  m_LocalPosition: {x: -0.6419994, y: -1.283, z: -0.6077714}
+  m_LocalPosition: {x: -0.61, y: -0.87, z: -0.6077714}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1452562569}
@@ -1705,6 +1705,8 @@ GameObject:
   - component: {fileID: 156621401}
   - component: {fileID: 156621403}
   - component: {fileID: 156621402}
+  - component: {fileID: 156621405}
+  - component: {fileID: 156621404}
   m_Layer: 0
   m_Name: Weapon 1
   m_TagString: Untagged
@@ -1759,6 +1761,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: dc044c081f80b284ca7a465e2b969cbe, type: 3}
   itemDescription: Sabre
   typeItem: 10
+--- !u!54 &156621404
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156621400}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &156621405
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156621400}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.1, z: 0.3}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &162549308
 GameObject:
   m_ObjectHideFlags: 0
@@ -2200,7 +2231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192787307}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.716, z: 0}
+  m_LocalPosition: {x: 0, y: -1.327, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1040930582}
@@ -2469,7 +2500,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204618921}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.2700005, y: 0, z: -2.61}
+  m_LocalPosition: {x: 4.2700005, y: 0.323, z: -2.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2058111513}
@@ -2776,6 +2807,8 @@ GameObject:
   - component: {fileID: 273551345}
   - component: {fileID: 273551347}
   - component: {fileID: 273551346}
+  - component: {fileID: 273551349}
+  - component: {fileID: 273551348}
   m_Layer: 0
   m_Name: Gloves (1)
   m_TagString: Untagged
@@ -2831,6 +2864,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: 57940523f326ae34f97eb3f8c1abb751, type: 3}
   itemDescription: Gloves
   typeItem: 3
+--- !u!54 &273551348
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273551344}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &273551349
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273551344}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.38, y: 0.16, z: 0.3}
+  m_Center: {x: 0, y: 0.48, z: 0}
 --- !u!1 &289837532
 GameObject:
   m_ObjectHideFlags: 0
@@ -2857,7 +2919,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289837532}
   m_LocalRotation: {x: 0.61504376, y: -0, z: -0, w: 0.788493}
-  m_LocalPosition: {x: 0, y: -0.09987888, z: -0.4918766}
+  m_LocalPosition: {x: 0, y: 0.266, z: -0.425}
   m_LocalScale: {x: 0.0055, y: 0.004, z: 0.01}
   m_Children: []
   m_Father: {fileID: 679804023}
@@ -3018,6 +3080,8 @@ GameObject:
   - component: {fileID: 333994764}
   - component: {fileID: 333994763}
   - component: {fileID: 333994762}
+  - component: {fileID: 333994766}
+  - component: {fileID: 333994765}
   m_Layer: 0
   m_Name: Necklace 2
   m_TagString: Untagged
@@ -3073,6 +3137,35 @@ Transform:
   m_Father: {fileID: 1572594286}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &333994765
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333994761}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &333994766
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333994761}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.2, z: 0.1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &356593632
 GameObject:
   m_ObjectHideFlags: 0
@@ -3084,6 +3177,8 @@ GameObject:
   - component: {fileID: 356593633}
   - component: {fileID: 356593635}
   - component: {fileID: 356593634}
+  - component: {fileID: 356593637}
+  - component: {fileID: 356593636}
   m_Layer: 0
   m_Name: Hat 1
   m_TagString: Untagged
@@ -3138,6 +3233,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: f560e134a5239814395bf2982d74c1cd, type: 3}
   itemDescription: Hat
   typeItem: 1
+--- !u!54 &356593636
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356593632}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &356593637
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356593632}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!1 &358056813
 GameObject:
   m_ObjectHideFlags: 0
@@ -3149,6 +3273,8 @@ GameObject:
   - component: {fileID: 358056814}
   - component: {fileID: 358056816}
   - component: {fileID: 358056815}
+  - component: {fileID: 358056818}
+  - component: {fileID: 358056817}
   m_Layer: 0
   m_Name: Gloves (2)
   m_TagString: Untagged
@@ -3204,6 +3330,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: 938e5b942f53ad14c8bbab346fb7d4d3, type: 3}
   itemDescription: Gloves
   typeItem: 3
+--- !u!54 &358056817
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358056813}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &358056818
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358056813}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.38, y: 0.16, z: 0.3}
+  m_Center: {x: 0, y: 0.48, z: 0}
 --- !u!1 &383945590
 GameObject:
   m_ObjectHideFlags: 0
@@ -3215,6 +3370,8 @@ GameObject:
   - component: {fileID: 383945591}
   - component: {fileID: 383945593}
   - component: {fileID: 383945592}
+  - component: {fileID: 383945595}
+  - component: {fileID: 383945594}
   m_Layer: 0
   m_Name: Hat 4
   m_TagString: Untagged
@@ -3269,6 +3426,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: 5f497277a7d520b4b9e55c0999d53eba, type: 3}
   itemDescription: Hat
   typeItem: 1
+--- !u!54 &383945594
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383945590}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &383945595
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383945590}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!1 &388937434
 GameObject:
   m_ObjectHideFlags: 0
@@ -3425,7 +3611,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396047153}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0740003, y: -0.041, z: 0}
+  m_LocalPosition: {x: -0.0740003, y: 0.29299986, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1226718434}
@@ -3491,6 +3677,8 @@ GameObject:
   - component: {fileID: 412603863}
   - component: {fileID: 412603862}
   - component: {fileID: 412603861}
+  - component: {fileID: 412603860}
+  - component: {fileID: 412603859}
   m_Layer: 0
   m_Name: Shoes 1
   m_TagString: Untagged
@@ -3498,6 +3686,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!54 &412603859
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412603858}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &412603860
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412603858}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.5, z: 0.3}
+  m_Center: {x: 0, y: 0.48, z: 0}
 --- !u!65 &412603861
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3572,7 +3789,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424281799}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.082, y: -0.040999845, z: 0}
+  m_LocalPosition: {x: 0.082, y: 0.29300004, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1792394313}
@@ -3748,7 +3965,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429183160}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.044999063, y: -0.041, z: 0}
+  m_LocalPosition: {x: -0.044999063, y: 0.29299986, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 412603863}
@@ -3863,7 +4080,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440285973}
   m_LocalRotation: {x: 0.6906223, y: -0.15317382, z: -0.6844528, w: 0.1763604}
-  m_LocalPosition: {x: -0.064686894, y: 1.47, z: -0.8150002}
+  m_LocalPosition: {x: -0.09665406, y: 1.9618144, z: -0.8383385}
   m_LocalScale: {x: 0.002414, y: 0.011802, z: 0.01}
   m_Children: []
   m_Father: {fileID: 333994764}
@@ -4229,7 +4446,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473349660}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.242, y: -0.040999845, z: 0}
+  m_LocalPosition: {x: -0.242, y: 0.29300004, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1226718434}
@@ -5991,6 +6208,8 @@ GameObject:
   - component: {fileID: 637885889}
   - component: {fileID: 637885888}
   - component: {fileID: 637885887}
+  - component: {fileID: 637885886}
+  - component: {fileID: 637885885}
   m_Layer: 0
   m_Name: Shoes 2
   m_TagString: Untagged
@@ -5998,6 +6217,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!54 &637885885
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637885884}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &637885886
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637885884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.5, z: 0.3}
+  m_Center: {x: 0, y: 0.48, z: 0}
 --- !u!65 &637885887
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6072,7 +6320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639121370}
   m_LocalRotation: {x: 0.61504376, y: -0, z: -0, w: 0.788493}
-  m_LocalPosition: {x: -0.00000047683716, y: -0.09987888, z: -0.4918766}
+  m_LocalPosition: {x: 0, y: 0.266, z: -0.425}
   m_LocalScale: {x: 0.0055, y: 0.004, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1299060839}
@@ -6504,6 +6752,8 @@ GameObject:
   - component: {fileID: 679804023}
   - component: {fileID: 679804025}
   - component: {fileID: 679804024}
+  - component: {fileID: 679804027}
+  - component: {fileID: 679804026}
   m_Layer: 0
   m_Name: Cape 3
   m_TagString: Untagged
@@ -6558,6 +6808,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: d6604651876ae4b4095237e074145a74, type: 3}
   itemDescription: Cape
   typeItem: 9
+--- !u!54 &679804026
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679804022}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &679804027
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679804022}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.15, z: 0.6}
+  m_Center: {x: 0, y: 0.6, z: -0.15}
 --- !u!1 &699662088
 GameObject:
   m_ObjectHideFlags: 0
@@ -6977,6 +7256,8 @@ GameObject:
   - component: {fileID: 735058612}
   - component: {fileID: 735058614}
   - component: {fileID: 735058613}
+  - component: {fileID: 735058616}
+  - component: {fileID: 735058615}
   m_Layer: 0
   m_Name: Cape 2
   m_TagString: Untagged
@@ -7031,6 +7312,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: 5cdf621bb2aca314c99be368465bcaa5, type: 3}
   itemDescription: Cape
   typeItem: 9
+--- !u!54 &735058615
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735058611}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &735058616
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735058611}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.15, z: 0.6}
+  m_Center: {x: 0, y: 0.6, z: -0.15}
 --- !u!1 &761834353
 GameObject:
   m_ObjectHideFlags: 0
@@ -7042,6 +7352,8 @@ GameObject:
   - component: {fileID: 761834354}
   - component: {fileID: 761834356}
   - component: {fileID: 761834355}
+  - component: {fileID: 761834358}
+  - component: {fileID: 761834357}
   m_Layer: 0
   m_Name: Cape 1
   m_TagString: Untagged
@@ -7096,6 +7408,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: 57d0dd65b74d7fc4fb362aebead4b1f6, type: 3}
   itemDescription: Cape
   typeItem: 9
+--- !u!54 &761834357
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761834353}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &761834358
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761834353}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.15, z: 0.6}
+  m_Center: {x: 0, y: 0.6, z: -0.15}
 --- !u!1 &764059396
 GameObject:
   m_ObjectHideFlags: 0
@@ -7247,7 +7588,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779667244}
   m_LocalRotation: {x: 0.61504376, y: -0, z: -0, w: 0.788493}
-  m_LocalPosition: {x: 0, y: -0.09987888, z: -0.4918766}
+  m_LocalPosition: {x: 0, y: 0.266, z: -0.425}
   m_LocalScale: {x: 0.0055, y: 0.004, z: 0.01}
   m_Children: []
   m_Father: {fileID: 735058612}
@@ -7313,6 +7654,8 @@ GameObject:
   - component: {fileID: 786850430}
   - component: {fileID: 786850432}
   - component: {fileID: 786850431}
+  - component: {fileID: 786850434}
+  - component: {fileID: 786850433}
   m_Layer: 0
   m_Name: Hat 3
   m_TagString: Untagged
@@ -7367,6 +7710,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: 2b50f5408f841694f99e60c700623c72, type: 3}
   itemDescription: Hat
   typeItem: 1
+--- !u!54 &786850433
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786850429}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &786850434
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786850429}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!1 &799228160
 GameObject:
   m_ObjectHideFlags: 0
@@ -7854,7 +8226,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824581562}
   m_LocalRotation: {x: -0, y: -0.35644805, z: -0, w: 0.9343152}
-  m_LocalPosition: {x: -0.6419994, y: -1.283, z: -0.6077714}
+  m_LocalPosition: {x: -0.61000174, y: -0.8699999, z: -0.6077714}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1608174327}
@@ -7935,7 +8307,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844388670}
   m_LocalRotation: {x: 0.3562505, y: -0.011873622, z: 0.9337965, w: 0.03112295}
-  m_LocalPosition: {x: 0.71, y: 1.3527683, z: -0.6077714}
+  m_LocalPosition: {x: 0.74199766, y: 1.7657684, z: -0.6077714}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1831002127}
@@ -8301,7 +8673,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873005468}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.17400256, y: -0.040999845, z: 0}
+  m_LocalPosition: {x: -0.17400256, y: 0.29300004, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 637885889}
@@ -8467,6 +8839,8 @@ GameObject:
   - component: {fileID: 913011130}
   - component: {fileID: 913011129}
   - component: {fileID: 913011128}
+  - component: {fileID: 913011132}
+  - component: {fileID: 913011131}
   m_Layer: 0
   m_Name: Shoes 4
   m_TagString: Untagged
@@ -8522,6 +8896,35 @@ Transform:
   m_Father: {fileID: 2022363977}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &913011131
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913011127}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &913011132
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913011127}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.5, z: 0.3}
+  m_Center: {x: 0, y: 0.48, z: 0}
 --- !u!1 &915734728
 GameObject:
   m_ObjectHideFlags: 0
@@ -9483,6 +9886,8 @@ GameObject:
   - component: {fileID: 1020095612}
   - component: {fileID: 1020095614}
   - component: {fileID: 1020095613}
+  - component: {fileID: 1020095616}
+  - component: {fileID: 1020095615}
   m_Layer: 0
   m_Name: Body 4
   m_TagString: Untagged
@@ -9537,6 +9942,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: e86130d9753dcaa4ba2c7182dcde6130, type: 3}
   itemDescription: Body Armour
   typeItem: 2
+--- !u!54 &1020095615
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020095611}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1020095616
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020095611}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.49, y: 0.7, z: 0.42}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!1 &1026001712
 GameObject:
   m_ObjectHideFlags: 0
@@ -9753,7 +10187,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1034913610}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.716, z: 0}
+  m_LocalPosition: {x: 0, y: -1.327, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1676979662}
@@ -9819,6 +10253,8 @@ GameObject:
   - component: {fileID: 1040930582}
   - component: {fileID: 1040930584}
   - component: {fileID: 1040930583}
+  - component: {fileID: 1040930586}
+  - component: {fileID: 1040930585}
   m_Layer: 0
   m_Name: Hat 5
   m_TagString: Untagged
@@ -9873,6 +10309,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: 7e5f056bc3eeb4c4ab4626d4aecd0379, type: 3}
   itemDescription: Hat
   typeItem: 1
+--- !u!54 &1040930585
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040930581}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1040930586
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040930581}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!1 &1068369159
 GameObject:
   m_ObjectHideFlags: 0
@@ -9979,6 +10444,8 @@ GameObject:
   - component: {fileID: 1084367746}
   - component: {fileID: 1084367748}
   - component: {fileID: 1084367747}
+  - component: {fileID: 1084367750}
+  - component: {fileID: 1084367749}
   m_Layer: 0
   m_Name: Pants (5)
   m_TagString: Untagged
@@ -10013,7 +10480,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1, z: 1.5}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 0.32, z: 0}
 --- !u!114 &1084367748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10033,6 +10500,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: 8beec38f5a27c8341937d3eb169ef72a, type: 3}
   itemDescription: Pants
   typeItem: 4
+--- !u!54 &1084367749
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084367745}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1084367750
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084367745}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.46, y: 0.51, z: 0.38}
+  m_Center: {x: 0, y: 0.21, z: 0}
 --- !u!1 &1092370819
 GameObject:
   m_ObjectHideFlags: 0
@@ -10154,7 +10650,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128940053}
   m_LocalRotation: {x: 0.3562505, y: -0.011873622, z: 0.9337965, w: 0.03112295}
-  m_LocalPosition: {x: 0.71, y: 1.3527683, z: -0.6077714}
+  m_LocalPosition: {x: 0.74199766, y: 1.7657684, z: -0.6077714}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 273551345}
@@ -10506,7 +11002,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155152315}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.25, y: -0.040999845, z: 0}
+  m_LocalPosition: {x: 0.25, y: 0.29300004, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1792394313}
@@ -10682,7 +11178,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217126989}
   m_LocalRotation: {x: 0.3562505, y: -0.011873622, z: 0.9337965, w: 0.03112295}
-  m_LocalPosition: {x: 0.71, y: 1.3527683, z: -0.6077714}
+  m_LocalPosition: {x: 0.74199766, y: 1.7657684, z: -0.6077714}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1608174327}
@@ -10748,6 +11244,8 @@ GameObject:
   - component: {fileID: 1226718434}
   - component: {fileID: 1226718433}
   - component: {fileID: 1226718432}
+  - component: {fileID: 1226718431}
+  - component: {fileID: 1226718430}
   m_Layer: 0
   m_Name: Shoes 3
   m_TagString: Untagged
@@ -10755,6 +11253,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!54 &1226718430
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226718429}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1226718431
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226718429}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.5, z: 0.3}
+  m_Center: {x: 0, y: 0.48, z: 0}
 --- !u!65 &1226718432
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11290,7 +11817,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274414489}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.716, z: 0}
+  m_LocalPosition: {x: 0, y: -1.327, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 356593633}
@@ -11466,7 +11993,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295478873}
   m_LocalRotation: {x: -0, y: -0.35644805, z: -0, w: 0.9343152}
-  m_LocalPosition: {x: -0.6419994, y: -1.283, z: -0.6077714}
+  m_LocalPosition: {x: -0.61000174, y: -0.8699999, z: -0.6077714}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1831002127}
@@ -11532,6 +12059,8 @@ GameObject:
   - component: {fileID: 1299060839}
   - component: {fileID: 1299060841}
   - component: {fileID: 1299060840}
+  - component: {fileID: 1299060843}
+  - component: {fileID: 1299060842}
   m_Layer: 0
   m_Name: Cape 5
   m_TagString: Untagged
@@ -11586,6 +12115,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: 7304603008b2a424d9824e0304ee9984, type: 3}
   itemDescription: Cape
   typeItem: 9
+--- !u!54 &1299060842
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299060838}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1299060843
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299060838}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.15, z: 0.6}
+  m_Center: {x: 0, y: 0.6, z: -0.15}
 --- !u!1 &1305159879
 GameObject:
   m_ObjectHideFlags: 0
@@ -11992,7 +12550,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368508180}
   m_LocalRotation: {x: -0, y: -0.35644805, z: -0, w: 0.9343152}
-  m_LocalPosition: {x: -0.6419994, y: -1.283, z: -0.6077714}
+  m_LocalPosition: {x: -0.61000174, y: -0.8699999, z: -0.6077714}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 273551345}
@@ -12058,6 +12616,8 @@ GameObject:
   - component: {fileID: 1375559362}
   - component: {fileID: 1375559364}
   - component: {fileID: 1375559363}
+  - component: {fileID: 1375559366}
+  - component: {fileID: 1375559365}
   m_Layer: 0
   m_Name: Pants (2)
   m_TagString: Untagged
@@ -12092,7 +12652,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1, z: 1.5}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 0.32, z: 0}
 --- !u!114 &1375559364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12112,6 +12672,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: db04b10fbb6dd1d45a3fd94496714155, type: 3}
   itemDescription: Pants
   typeItem: 4
+--- !u!54 &1375559365
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375559361}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1375559366
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375559361}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.46, y: 0.51, z: 0.38}
+  m_Center: {x: 0, y: 0.21, z: 0}
 --- !u!1 &1382448879
 GameObject:
   m_ObjectHideFlags: 0
@@ -12918,6 +13507,8 @@ GameObject:
   - component: {fileID: 1452562569}
   - component: {fileID: 1452562571}
   - component: {fileID: 1452562570}
+  - component: {fileID: 1452562573}
+  - component: {fileID: 1452562572}
   m_Layer: 0
   m_Name: Gloves (3)
   m_TagString: Untagged
@@ -12973,6 +13564,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: 75f614e7a0a386943b5d43f36328667e, type: 3}
   itemDescription: Gloves
   typeItem: 3
+--- !u!54 &1452562572
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452562568}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1452562573
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452562568}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.38, y: 0.16, z: 0.3}
+  m_Center: {x: 0, y: 0.48, z: 0}
 --- !u!1 &1461889312
 GameObject:
   m_ObjectHideFlags: 0
@@ -13079,6 +13699,8 @@ GameObject:
   - component: {fileID: 1473275618}
   - component: {fileID: 1473275620}
   - component: {fileID: 1473275619}
+  - component: {fileID: 1473275622}
+  - component: {fileID: 1473275621}
   m_Layer: 0
   m_Name: Body 20
   m_TagString: Untagged
@@ -13133,6 +13755,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: 4b4a326125a5d844a8cc39e44bd7f5ba, type: 3}
   itemDescription: Body Armour
   typeItem: 2
+--- !u!54 &1473275621
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473275617}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1473275622
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473275617}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.49, y: 0.7, z: 0.42}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!1 &1478862708
 GameObject:
   m_ObjectHideFlags: 0
@@ -13159,7 +13810,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478862708}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.194, y: -0.040999845, z: 0}
+  m_LocalPosition: {x: -0.194, y: 0.29300004, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1883477390}
@@ -13767,6 +14418,8 @@ GameObject:
   - component: {fileID: 1534231384}
   - component: {fileID: 1534231386}
   - component: {fileID: 1534231385}
+  - component: {fileID: 1534231388}
+  - component: {fileID: 1534231387}
   m_Layer: 0
   m_Name: Weapon 2
   m_TagString: Untagged
@@ -13821,6 +14474,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: e6bcb604f3714eb43b9e24b519bfd01e, type: 3}
   itemDescription: Longsword
   typeItem: 10
+--- !u!54 &1534231387
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534231383}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1534231388
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534231383}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.1, z: 0.3}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1541026398
 GameObject:
   m_ObjectHideFlags: 0
@@ -13927,6 +14609,8 @@ GameObject:
   - component: {fileID: 1542754722}
   - component: {fileID: 1542754724}
   - component: {fileID: 1542754723}
+  - component: {fileID: 1542754726}
+  - component: {fileID: 1542754725}
   m_Layer: 0
   m_Name: Body 2
   m_TagString: Untagged
@@ -13981,6 +14665,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: c69411f4cce65e147ba630030c7a433a, type: 3}
   itemDescription: Body Armour
   typeItem: 2
+--- !u!54 &1542754725
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542754721}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1542754726
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542754721}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.49, y: 0.7, z: 0.42}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!1 &1548856564
 GameObject:
   m_ObjectHideFlags: 0
@@ -14492,7 +15205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601580843}
   m_LocalRotation: {x: -0, y: -0.35644805, z: -0, w: 0.9343152}
-  m_LocalPosition: {x: -0.6419994, y: -1.283, z: -0.6077714}
+  m_LocalPosition: {x: -0.61000174, y: -0.8699999, z: -0.6077714}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 358056814}
@@ -14658,6 +15371,8 @@ GameObject:
   - component: {fileID: 1608174327}
   - component: {fileID: 1608174329}
   - component: {fileID: 1608174328}
+  - component: {fileID: 1608174331}
+  - component: {fileID: 1608174330}
   m_Layer: 0
   m_Name: Gloves (4)
   m_TagString: Untagged
@@ -14713,6 +15428,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: 7f6cfc681e106c84faa997366586589f, type: 3}
   itemDescription: Gloves
   typeItem: 3
+--- !u!54 &1608174330
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608174326}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1608174331
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608174326}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.38, y: 0.16, z: 0.3}
+  m_Center: {x: 0, y: 0.48, z: 0}
 --- !u!1 &1617095162
 GameObject:
   m_ObjectHideFlags: 0
@@ -14739,7 +15483,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617095162}
   m_LocalRotation: {x: 0.3562505, y: -0.011873622, z: 0.9337965, w: 0.03112295}
-  m_LocalPosition: {x: 0.71, y: 1.3527683, z: -0.6077714}
+  m_LocalPosition: {x: 0.74199766, y: 1.7657684, z: -0.6077714}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1452562569}
@@ -15090,6 +15834,8 @@ GameObject:
   - component: {fileID: 1657731847}
   - component: {fileID: 1657731849}
   - component: {fileID: 1657731848}
+  - component: {fileID: 1657731851}
+  - component: {fileID: 1657731850}
   m_Layer: 0
   m_Name: Pants (4)
   m_TagString: Untagged
@@ -15124,7 +15870,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1, z: 1.5}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 0.32, z: 0}
 --- !u!114 &1657731849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15144,6 +15890,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: cd153a26a6d572e40b397c41d0fc98ef, type: 3}
   itemDescription: Pants
   typeItem: 4
+--- !u!54 &1657731850
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657731846}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1657731851
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657731846}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.46, y: 0.51, z: 0.38}
+  m_Center: {x: 0, y: 0.21, z: 0}
 --- !u!1 &1664345381
 GameObject:
   m_ObjectHideFlags: 0
@@ -15170,7 +15945,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664345381}
   m_LocalRotation: {x: 0.61504376, y: -0, z: -0, w: 0.788493}
-  m_LocalPosition: {x: 0, y: -0.09987888, z: -0.4918766}
+  m_LocalPosition: {x: 0, y: 0.266, z: -0.425}
   m_LocalScale: {x: 0.0055, y: 0.004, z: 0.01}
   m_Children: []
   m_Father: {fileID: 761834354}
@@ -15331,6 +16106,8 @@ GameObject:
   - component: {fileID: 1676979662}
   - component: {fileID: 1676979664}
   - component: {fileID: 1676979663}
+  - component: {fileID: 1676979666}
+  - component: {fileID: 1676979665}
   m_Layer: 0
   m_Name: Hat 2
   m_TagString: Untagged
@@ -15385,6 +16162,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: ea1c86757c2aa7144a25705edfd045f6, type: 3}
   itemDescription: Hat
   typeItem: 1
+--- !u!54 &1676979665
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676979661}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1676979666
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676979661}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!1 &1699423191
 GameObject:
   m_ObjectHideFlags: 0
@@ -16128,6 +16934,8 @@ GameObject:
   - component: {fileID: 1792394313}
   - component: {fileID: 1792394311}
   - component: {fileID: 1792394310}
+  - component: {fileID: 1792394314}
+  - component: {fileID: 1792394312}
   m_Layer: 0
   m_Name: Shoes 6
   m_TagString: Untagged
@@ -16167,6 +16975,22 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: 9a3677b57aa4e14498be710160659538, type: 3}
   itemDescription: Nice boots
   typeItem: 5
+--- !u!54 &1792394312
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792394309}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &1792394313
 Transform:
   m_ObjectHideFlags: 0
@@ -16183,6 +17007,19 @@ Transform:
   m_Father: {fileID: 2022363977}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1792394314
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792394309}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.5, z: 0.3}
+  m_Center: {x: 0, y: 0.48, z: 0}
 --- !u!1 &1831002126
 GameObject:
   m_ObjectHideFlags: 0
@@ -16194,6 +17031,8 @@ GameObject:
   - component: {fileID: 1831002127}
   - component: {fileID: 1831002129}
   - component: {fileID: 1831002128}
+  - component: {fileID: 1831002131}
+  - component: {fileID: 1831002130}
   m_Layer: 0
   m_Name: Gloves (5)
   m_TagString: Untagged
@@ -16249,6 +17088,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: ff696190ae2153447b2e0ec292d1bc0a, type: 3}
   itemDescription: Gloves
   typeItem: 3
+--- !u!54 &1831002130
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831002126}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1831002131
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831002126}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.38, y: 0.16, z: 0.3}
+  m_Center: {x: 0, y: 0.48, z: 0}
 --- !u!1 &1848943611
 GameObject:
   m_ObjectHideFlags: 0
@@ -16370,7 +17238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878006645}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.026, y: -0.040999845, z: 0}
+  m_LocalPosition: {x: -0.026, y: 0.29300004, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1883477390}
@@ -16436,6 +17304,8 @@ GameObject:
   - component: {fileID: 1878221454}
   - component: {fileID: 1878221456}
   - component: {fileID: 1878221455}
+  - component: {fileID: 1878221458}
+  - component: {fileID: 1878221457}
   m_Layer: 0
   m_Name: Body 5
   m_TagString: Untagged
@@ -16490,6 +17360,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: 694164c4842cb1e49bce1be6689ad43c, type: 3}
   itemDescription: Body Armour
   typeItem: 2
+--- !u!54 &1878221457
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878221453}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1878221458
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878221453}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.49, y: 0.7, z: 0.42}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!1 &1883477387
 GameObject:
   m_ObjectHideFlags: 0
@@ -16501,6 +17400,8 @@ GameObject:
   - component: {fileID: 1883477390}
   - component: {fileID: 1883477389}
   - component: {fileID: 1883477388}
+  - component: {fileID: 1883477392}
+  - component: {fileID: 1883477391}
   m_Layer: 0
   m_Name: Shoes 5
   m_TagString: Untagged
@@ -16556,6 +17457,35 @@ Transform:
   m_Father: {fileID: 2022363977}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1883477391
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883477387}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1883477392
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883477387}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.5, z: 0.3}
+  m_Center: {x: 0, y: 0.48, z: 0}
 --- !u!1 &1895471591
 GameObject:
   m_ObjectHideFlags: 0
@@ -16582,7 +17512,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895471591}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.716, z: 0}
+  m_LocalPosition: {x: 0, y: -1.327, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 786850430}
@@ -16648,6 +17578,8 @@ GameObject:
   - component: {fileID: 1909683733}
   - component: {fileID: 1909683735}
   - component: {fileID: 1909683734}
+  - component: {fileID: 1909683737}
+  - component: {fileID: 1909683736}
   m_Layer: 0
   m_Name: Pants (3)
   m_TagString: Untagged
@@ -16682,7 +17614,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1, z: 1.5}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 0.32, z: 0}
 --- !u!114 &1909683735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16702,6 +17634,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: 1356fc8b27966f8419266dbf57b713bc, type: 3}
   itemDescription: Pants
   typeItem: 4
+--- !u!54 &1909683736
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909683732}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1909683737
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909683732}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.46, y: 0.51, z: 0.38}
+  m_Center: {x: 0, y: 0.21, z: 0}
 --- !u!1 &1922812882
 GameObject:
   m_ObjectHideFlags: 0
@@ -16918,7 +17879,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962500706}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.716, z: -0}
+  m_LocalPosition: {x: 0, y: -1.327, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 383945591}
@@ -17094,9 +18055,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1969243867}
-  m_LocalRotation: {x: -0.014441089, y: 0.9829166, z: -0.16095398, w: -0.088092364}
-  m_LocalPosition: {x: 0.025, y: -0.08178878, z: 0.024}
-  m_LocalScale: {x: 0.088135555, y: 0.088135555, z: 0.088135555}
+  m_LocalRotation: {x: -0.014441089, y: 0.9829166, z: -0.160954, w: -0.08809237}
+  m_LocalPosition: {x: -0.007, y: 0.419, z: 0.021}
+  m_LocalScale: {x: 0.07144093, y: 0.06855537, z: 0.041146964}
   m_Children: []
   m_Father: {fileID: 333994764}
   m_RootOrder: 0
@@ -17282,7 +18243,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994976675}
   m_LocalRotation: {x: -0, y: 0.30169222, z: -0, w: 0.95340544}
-  m_LocalPosition: {x: 6.137886, y: 0.32700002, z: -7.84}
+  m_LocalPosition: {x: 6.137886, y: 0.01, z: -7.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 356593633}
@@ -17466,7 +18427,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2022488186}
   m_LocalRotation: {x: 0.3562505, y: -0.011873622, z: 0.9337965, w: 0.03112295}
-  m_LocalPosition: {x: 0.71, y: 1.3527683, z: -0.6077714}
+  m_LocalPosition: {x: 0.74199766, y: 1.7657684, z: -0.6077714}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 358056814}
@@ -17547,7 +18508,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2023105300}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.24600005, y: -0.040999845, z: 0}
+  m_LocalPosition: {x: -0.24600005, y: 0.29300004, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 913011130}
@@ -17723,7 +18684,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038166977}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.213, y: -0.040999845, z: 0}
+  m_LocalPosition: {x: -0.213, y: 0.29300004, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 412603863}
@@ -17884,6 +18845,8 @@ GameObject:
   - component: {fileID: 2058111513}
   - component: {fileID: 2058111515}
   - component: {fileID: 2058111514}
+  - component: {fileID: 2058111517}
+  - component: {fileID: 2058111516}
   m_Layer: 0
   m_Name: Pants (1)
   m_TagString: Untagged
@@ -17918,7 +18881,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1, z: 1.5}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 0.32, z: 0}
 --- !u!114 &2058111515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17938,6 +18901,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: 0d6bb8471b8d3724aab4962bc8abb7f0, type: 3}
   itemDescription: Pants
   typeItem: 4
+--- !u!54 &2058111516
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058111512}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &2058111517
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058111512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.46, y: 0.51, z: 0.38}
+  m_Center: {x: 0, y: 0.21, z: 0}
 --- !u!1 &2070412934
 GameObject:
   m_ObjectHideFlags: 0
@@ -18059,7 +19051,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071746825}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.006, y: -0.041, z: 0}
+  m_LocalPosition: {x: -0.006, y: 0.29299986, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 637885889}
@@ -18315,6 +19307,8 @@ GameObject:
   - component: {fileID: 2088497030}
   - component: {fileID: 2088497032}
   - component: {fileID: 2088497031}
+  - component: {fileID: 2088497034}
+  - component: {fileID: 2088497033}
   m_Layer: 0
   m_Name: Cape 4
   m_TagString: Untagged
@@ -18369,6 +19363,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: eb9b2ec3937c13d44830d8671c5873e7, type: 3}
   itemDescription: Cape
   typeItem: 9
+--- !u!54 &2088497033
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088497029}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &2088497034
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088497029}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.15, z: 0.6}
+  m_Center: {x: 0, y: 0.6, z: -0.15}
 --- !u!1 &2093139396
 GameObject:
   m_ObjectHideFlags: 0
@@ -18665,6 +19688,8 @@ GameObject:
   - component: {fileID: 2118811060}
   - component: {fileID: 2118811062}
   - component: {fileID: 2118811061}
+  - component: {fileID: 2118811064}
+  - component: {fileID: 2118811063}
   m_Layer: 0
   m_Name: Body 3
   m_TagString: Untagged
@@ -18719,6 +19744,35 @@ MonoBehaviour:
   itemPotrait: {fileID: 21300000, guid: 53c79139f3b51fb459dab615dcbfdf71, type: 3}
   itemDescription: Body Armour
   typeItem: 2
+--- !u!54 &2118811063
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118811059}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &2118811064
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118811059}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.49, y: 0.7, z: 0.42}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!1 &2136872983
 GameObject:
   m_ObjectHideFlags: 0
@@ -18745,7 +19799,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136872983}
   m_LocalRotation: {x: 0.61504376, y: -0, z: -0, w: 0.788493}
-  m_LocalPosition: {x: 0, y: -0.09987888, z: -0.4918766}
+  m_LocalPosition: {x: 0, y: 0.266, z: -0.425}
   m_LocalScale: {x: 0.0055, y: 0.004, z: 0.01}
   m_Children: []
   m_Father: {fileID: 2088497030}
@@ -18952,7 +20006,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 962245451051382148}
   m_LocalRotation: {x: 0.557986, y: -0.46991244, z: 0.44059473, w: 0.52317315}
-  m_LocalPosition: {x: 0.6497806, y: -0.031, z: -0.0721488}
+  m_LocalPosition: {x: 0.6497806, y: 0.479, z: -0.068}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 156621401}
@@ -19108,7 +20162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566903657905560052}
   m_LocalRotation: {x: 0.557986, y: -0.46991244, z: 0.44059473, w: 0.52317315}
-  m_LocalPosition: {x: 0.6497806, y: -0.031, z: -0.0721488}
+  m_LocalPosition: {x: 0.6497806, y: 0.47899988, z: -0.06800032}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1534231384}
