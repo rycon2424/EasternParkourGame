@@ -962,7 +962,22 @@ ModelImporter:
       has translation animation that will be discarded.\n\t'ball_r' has translation
       animation that will be discarded.\n\t'spine_01' has translation animation that
       will be discarded.\n"
-    animationRetargetingWarnings: 
+    animationRetargetingWarnings: "\nRetargeting quality report for clip 'Take 001':\n\tLeftLowerLeg
+      average position error 4.2 mm and maximum position error 5.5 mm at time 0:37
+      (74.0%) Frame 37\n\tLeftFoot average position error 4.2 mm and maximum position
+      error 5.4 mm at time 0:38 (76.0%) Frame 38\n\tRightLowerLeg average position
+      error 4.0 mm and maximum position error 5.4 mm at time 0:15 (30.0%) Frame 15\n\tRightFoot
+      average position error 3.9 mm and maximum position error 5.4 mm at time 0:15
+      (30.0%) Frame 15\n\tLeftUpperArm average position error 4.3 mm and maximum
+      position error 8.4 mm at time 0:38 (76.0%) Frame 38\n\tLeftLowerArm average
+      position error 4.4 mm and maximum position error 8.4 mm at time 0:38 (76.0%)
+      Frame 38\n\tLeftHand average position error 6.1 mm and maximum position error
+      8.1 mm at time 0:38 (76.0%) Frame 38\n\tRightUpperArm average position error
+      4.3 mm and maximum position error 9.0 mm at time 0:38 (76.0%) Frame 38\n\tRightLowerArm
+      average position error 4.9 mm and maximum position error 10.0 mm at time 0:38
+      (76.0%) Frame 38\n\tRightHand average position error 5.9 mm and maximum position
+      error 10.8 mm at time 0:38 (76.0%) Frame 38\n\tHead average position error
+      4.4 mm and maximum position error 8.5 mm at time 0:38 (76.0%) Frame 38\n"
     animationDoRetargetingWarnings: 1
     importAnimatedCustomProperties: 0
     importConstraints: 0

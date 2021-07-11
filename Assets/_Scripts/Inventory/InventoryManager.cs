@@ -76,6 +76,7 @@ public class InventoryManager : MonoBehaviour
                 slots.ResetSlot();
             }
         }
+        destroyButton.interactable = false;
     }
 
     public void CheckForCombat()
