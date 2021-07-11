@@ -7,6 +7,8 @@ public class PlayerBehaviour : Humanoid
     State currentState;
 
     [Header("PlayerStats")]
+    public int weaponDamage;
+    public int unArmedDamage;
     public float slideSpeed;
 
     [Header("RaycastInfo")]
@@ -144,7 +146,14 @@ public class PlayerBehaviour : Humanoid
         }
         if (stateMachine.IsInState("Combat"))
         {
-            anim.Play("Hit");
+            if (anim.GetBool("Armed"))
+            {
+                anim.Play("Hit Armed");
+            }
+            else
+            {
+                anim.Play("Hit UnArmed");
+            }
         }
         if (injured == false && health < 50)
         {

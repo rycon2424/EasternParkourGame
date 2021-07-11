@@ -221,6 +221,7 @@ public class EquipSystem : MonoBehaviour
         {
             pb.sheatedWeapon.SetActive(false);
             pb.playerWeapon.SetActive(false);
+            pb.anim.SetBool("Armed", false);
             pb.sheatedWeapon = null;
             pb.playerWeapon = null;
         }
@@ -238,6 +239,7 @@ public class EquipSystem : MonoBehaviour
             {
                 pb.sheatedWeapon = sword;
                 pb.sheatedWeapon.SetActive(true);
+                pb.anim.SetBool("Armed", true);
                 break;
             }
         }
