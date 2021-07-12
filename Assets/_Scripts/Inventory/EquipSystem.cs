@@ -246,8 +246,10 @@ public class EquipSystem : MonoBehaviour
         foreach (GameObject sword in weaponsModel)
         {
             sword.SetActive(false);
+            //Debug.Log(sword.name + " and " + itemName);
             if (sword.name == itemName)
             {
+                //Debug.Log(sword.name);
                 sword.SetActive(true);
             }
         }
