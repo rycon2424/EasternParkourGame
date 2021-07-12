@@ -11,6 +11,11 @@ public class Merchant : MonoBehaviour
     public GameObject buying;
     public List<Item> sellingItems = new List<Item>();
 
+    private void Start()
+    {
+        buying.SetActive(false);
+    }
+
     private void Update()
     {
         if (playerInRange)
@@ -33,6 +38,7 @@ public class Merchant : MonoBehaviour
         if (pb != null)
         {
             playerInRange = true;
+            buying.SetActive(true);
         }
     }
 
@@ -42,6 +48,7 @@ public class Merchant : MonoBehaviour
         if (pb != null)
         {
             playerInRange = false;
+            buying.SetActive(false);
         }
     }
 }
