@@ -6,6 +6,7 @@ public class Merchant : MonoBehaviour
 {
     public float gold;
     public bool playerInRange;
+    public float goldMultiplyer;
     [Space]
     public GameObject buying;
     public List<Item> sellingItems = new List<Item>();
@@ -19,7 +20,8 @@ public class Merchant : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     PauseSystem.instance.OpenInventory();
-                    InventoryManager.instance.sellMode.SetActive(true);
+                    InventoryManager.instance.shop.SetActive(true);
+                    InventoryManager.instance.LoadShop(sellingItems, this);
                 }
             }
         }

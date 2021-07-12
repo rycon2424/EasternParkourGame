@@ -1661,8 +1661,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gold: 0
   playerInRange: 0
+  goldMultiplyer: 1.1
   buying: {fileID: 0}
-  sellingItems: []
+  sellingItems:
+  - ID: 1
+    itemLevel: 5
+    itemName: Boots
+    itemPotrait: {fileID: 21300000, guid: 3d759d2510f57214186c633fdd00f236, type: 3}
+    itemDescription: Boots
+    weight: 5
+    gold: 2
+    typeItem: 5
+    equipped: 0
+  - ID: 4
+    itemLevel: 5
+    itemName: Broadsword
+    itemPotrait: {fileID: 21300000, guid: 0a657da6361c83a479680d7dd022dd33, type: 3}
+    itemDescription: Broadsword
+    weight: 2
+    gold: 5
+    typeItem: 10
+    equipped: 0
 --- !u!1 &142922813
 GameObject:
   m_ObjectHideFlags: 0
@@ -89519,34 +89538,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 95864830, guid: 3a5cfd827191f5642bba79ef88d549fb, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 95864830, guid: 3a5cfd827191f5642bba79ef88d549fb, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 627953390, guid: 3a5cfd827191f5642bba79ef88d549fb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1157813960, guid: 3a5cfd827191f5642bba79ef88d549fb, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1157813960, guid: 3a5cfd827191f5642bba79ef88d549fb, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1157813960, guid: 3a5cfd827191f5642bba79ef88d549fb, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1206972003, guid: 3a5cfd827191f5642bba79ef88d549fb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 435441473957600256, guid: 3a5cfd827191f5642bba79ef88d549fb, type: 3}
       propertyPath: m_RootOrder
       value: 1

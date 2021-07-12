@@ -42,7 +42,10 @@ public class InventoryManager : MonoBehaviour
     public List<Item> inventoryItems;
     public Button destroyButton;
     public GameObject inCombatBlock;
-    public GameObject sellMode;
+    [Header("Shop")]
+    public GameObject shop;
+    public GameObject shopWindow;
+    public MerchantItem[] shopItems;
 
     private PlayerBehaviour pb;
 
@@ -57,6 +60,25 @@ public class InventoryManager : MonoBehaviour
         pb = FindObjectOfType<PlayerBehaviour>();
     }
 
+    public void LoadShop(List<Item> items, Merchant mc)
+    {
+        shopWindow.SetActive(true);
+        foreach (var t in shopItems)
+        {
+            t.gameObject.SetActive(false);
+        }
+        if (items.Count < 1)
+        {
+            return;
+        }
+        for (int i = 0; i < items.Count; i++)
+        {
+            shopItems[i].gameObject.SetActive(true);
+            shopItems[i].SetupMerchant(mc);
+            shopItems[i].SetupItem(items[i]);
+        }
+    }
+
     public void AddSubstractGold(float gain)
     {
         gold += gain;
@@ -65,7 +87,7 @@ public class InventoryManager : MonoBehaviour
 
     public void ExitSellingMode()
     {
-        sellMode.SetActive(false);
+        shop.SetActive(false);
         PauseSystem.instance.Resume();
     }
 
