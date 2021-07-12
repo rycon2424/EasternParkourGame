@@ -117,6 +117,7 @@ public class PlayerBehaviour : Humanoid
             }
             else
             {
+                InventoryManager.instance.ExitSellingMode();
                 PauseSystem.instance.Resume();
             }
         }
@@ -128,6 +129,7 @@ public class PlayerBehaviour : Humanoid
             }
             else
             {
+                InventoryManager.instance.ExitSellingMode();
                 PauseSystem.instance.Resume();
             }
         }

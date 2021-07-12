@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
+    [Header("InventoryStats")]
+    public float weight;
+    public float gold;
+    public Text weightT;
+    public Text goldT;
+
     public static InventoryManager instance;
     [Header("PlayerVisual")]
     public Slider rotateSlider;
@@ -15,6 +21,7 @@ public class InventoryManager : MonoBehaviour
     public Text itemName;
     public Text itemDescription;
     public Text itemLevel;
+    public Text goldWorth;
     public Image itemImage;
 
     [Header("Inventory Slots")]
@@ -35,6 +42,7 @@ public class InventoryManager : MonoBehaviour
     public List<Item> inventoryItems;
     public Button destroyButton;
     public GameObject inCombatBlock;
+    public GameObject sellMode;
 
     private PlayerBehaviour pb;
 
@@ -47,6 +55,30 @@ public class InventoryManager : MonoBehaviour
         }
         instance = this;
         pb = FindObjectOfType<PlayerBehaviour>();
+    }
+
+    public void AddSubstractGold(float gain)
+    {
+        gold += gain;
+        goldT.text = gold.ToString();
+    }
+
+    public void ExitSellingMode()
+    {
+        sellMode.SetActive(false);
+        PauseSystem.instance.Resume();
+    }
+
+    public void SellItems()
+    {
+        foreach (var slots in inventorySpaces)
+        {
+            if (slots.toRemove)
+            {
+                AddSubstractGold(slots.item.gold);
+                slots.ResetSlot();
+            }
+        }
     }
     
     public void RotatePlayer()
@@ -237,6 +269,7 @@ public class InventoryManager : MonoBehaviour
         itemDescription.text = i.itemDescription;
         itemLevel.text = ("Level " + i.itemLevel.ToString());
         itemImage.sprite = i.itemPotrait;
+        goldWorth.text = i.gold.ToString();
     }
 
     void TransferItemInfo(Item givingInfo, Item receivingInfo)
