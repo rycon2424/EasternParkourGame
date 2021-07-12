@@ -33,6 +33,7 @@ public class EnemyController : Humanoid
     [SerializeField] private Color32 colorDebug;
 
     [Header("Private/Dont Assign")]
+    [SerializeField] private int notWalkedStraight;
     [SerializeField] private Transform player;
     [SerializeField] private bool targetOfPlayer;
     [SerializeField] private bool attackCooldown;
@@ -461,7 +462,7 @@ public class EnemyController : Humanoid
     {
         walkBehaviour = true;
 
-        randomInt = Random.Range(1.0f, 3.0f);
+        randomInt = Random.Range(1.5f, 3.0f);
         yield return new WaitForSeconds(randomInt);
 
         anim.SetBool("Walking", false);
@@ -470,6 +471,19 @@ public class EnemyController : Humanoid
         yield return new WaitForSeconds(randomInt);
 
         int randomWalkDir = Random.Range(1, 4);
+        if (randomWalkDir != 1)
+        {
+            notWalkedStraight++;
+            if (notWalkedStraight > 2)
+            {
+                randomWalkDir = 1;
+                notWalkedStraight = 0;
+            }
+        }
+        else
+        {
+            notWalkedStraight = 0;
+        }
         anim.SetBool("Walking", true);
         anim.SetInteger("WalkingDir", randomWalkDir);
         RandomizeGuard();
