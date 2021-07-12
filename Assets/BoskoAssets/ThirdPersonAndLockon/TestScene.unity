@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 17378675}
   - component: {fileID: 17378677}
   - component: {fileID: 17378676}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Male Boots L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1434,7 +1434,7 @@ GameObject:
   - component: {fileID: 131948179}
   - component: {fileID: 131948181}
   - component: {fileID: 131948180}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Glove R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1791,7 +1791,7 @@ GameObject:
   - component: {fileID: 156621402}
   - component: {fileID: 156621405}
   - component: {fileID: 156621404}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Weapon 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2077,7 +2077,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 173605189}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: SideCape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2304,7 +2304,7 @@ GameObject:
   - component: {fileID: 192787308}
   - component: {fileID: 192787310}
   - component: {fileID: 192787309}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2573,7 +2573,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 204618922}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Trousers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2897,7 +2897,7 @@ GameObject:
   - component: {fileID: 273551346}
   - component: {fileID: 273551349}
   - component: {fileID: 273551348}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Gloves (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2996,7 +2996,7 @@ GameObject:
   - component: {fileID: 289837533}
   - component: {fileID: 289837535}
   - component: {fileID: 289837534}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Cape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3174,7 +3174,7 @@ GameObject:
   - component: {fileID: 333994762}
   - component: {fileID: 333994766}
   - component: {fileID: 333994765}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Necklace 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3275,7 +3275,7 @@ GameObject:
   - component: {fileID: 356593634}
   - component: {fileID: 356593637}
   - component: {fileID: 356593636}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Hat 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3375,7 +3375,7 @@ GameObject:
   - component: {fileID: 358056815}
   - component: {fileID: 358056818}
   - component: {fileID: 358056817}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Gloves (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3476,7 +3476,7 @@ GameObject:
   - component: {fileID: 383945592}
   - component: {fileID: 383945595}
   - component: {fileID: 383945594}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Hat 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3667,7 +3667,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 389232714}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Gloves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3704,7 +3704,7 @@ GameObject:
   - component: {fileID: 396047154}
   - component: {fileID: 396047156}
   - component: {fileID: 396047155}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Male Boots L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3787,7 +3787,7 @@ GameObject:
   - component: {fileID: 412603861}
   - component: {fileID: 412603860}
   - component: {fileID: 412603859}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Shoes 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3886,7 +3886,7 @@ GameObject:
   - component: {fileID: 424516327}
   - component: {fileID: 427416263}
   - component: {fileID: 426285063}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Male Boots 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4062,7 +4062,7 @@ GameObject:
   - component: {fileID: 429183161}
   - component: {fileID: 429183163}
   - component: {fileID: 429183162}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Male Boots L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4176,7 +4176,7 @@ GameObject:
   - component: {fileID: 440285974}
   - component: {fileID: 440285976}
   - component: {fileID: 440285975}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Necklace Armour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4542,7 +4542,7 @@ GameObject:
   - component: {fileID: 473349661}
   - component: {fileID: 473349663}
   - component: {fileID: 473349662}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Male Boots R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5098,7 +5098,7 @@ GameObject:
   - component: {fileID: 534561087}
   - component: {fileID: 534561089}
   - component: {fileID: 534561088}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Male Body 20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6321,7 +6321,7 @@ GameObject:
   - component: {fileID: 637885887}
   - component: {fileID: 637885886}
   - component: {fileID: 637885885}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Shoes 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6420,7 +6420,7 @@ GameObject:
   - component: {fileID: 639121371}
   - component: {fileID: 639121373}
   - component: {fileID: 639121372}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Cape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6786,7 +6786,7 @@ GameObject:
   - component: {fileID: 668572359}
   - component: {fileID: 668572361}
   - component: {fileID: 668572360}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Male Body 20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6869,7 +6869,7 @@ GameObject:
   - component: {fileID: 679804024}
   - component: {fileID: 679804027}
   - component: {fileID: 679804026}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Cape 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7377,7 +7377,7 @@ GameObject:
   - component: {fileID: 735058613}
   - component: {fileID: 735058616}
   - component: {fileID: 735058615}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Cape 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7477,7 +7477,7 @@ GameObject:
   - component: {fileID: 761834355}
   - component: {fileID: 761834358}
   - component: {fileID: 761834357}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Cape 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7700,7 +7700,7 @@ GameObject:
   - component: {fileID: 779667245}
   - component: {fileID: 779667247}
   - component: {fileID: 779667246}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Cape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7783,7 +7783,7 @@ GameObject:
   - component: {fileID: 786850431}
   - component: {fileID: 786850434}
   - component: {fileID: 786850433}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Hat 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8261,7 +8261,7 @@ GameObject:
   - component: {fileID: 820670500}
   - component: {fileID: 820670502}
   - component: {fileID: 820670501}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Male Body 20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8342,7 +8342,7 @@ GameObject:
   - component: {fileID: 824581563}
   - component: {fileID: 824581565}
   - component: {fileID: 824581564}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Glove R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8423,7 +8423,7 @@ GameObject:
   - component: {fileID: 844388671}
   - component: {fileID: 844388673}
   - component: {fileID: 844388672}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Glove L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8789,7 +8789,7 @@ GameObject:
   - component: {fileID: 873005469}
   - component: {fileID: 873005471}
   - component: {fileID: 873005470}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Male Boots R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8972,7 +8972,7 @@ GameObject:
   - component: {fileID: 913011128}
   - component: {fileID: 913011132}
   - component: {fileID: 913011131}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Shoes 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10098,7 +10098,7 @@ GameObject:
   - component: {fileID: 1020095613}
   - component: {fileID: 1020095616}
   - component: {fileID: 1020095615}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Body 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10386,7 +10386,7 @@ GameObject:
   - component: {fileID: 1034913611}
   - component: {fileID: 1034913613}
   - component: {fileID: 1034913612}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10469,7 +10469,7 @@ GameObject:
   - component: {fileID: 1040930583}
   - component: {fileID: 1040930586}
   - component: {fileID: 1040930585}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Hat 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10664,7 +10664,7 @@ GameObject:
   - component: {fileID: 1084367747}
   - component: {fileID: 1084367750}
   - component: {fileID: 1084367749}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Pants (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10857,7 +10857,7 @@ GameObject:
   - component: {fileID: 1128940054}
   - component: {fileID: 1128940056}
   - component: {fileID: 1128940055}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Glove L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11033,7 +11033,7 @@ GameObject:
   - component: {fileID: 1138530037}
   - component: {fileID: 1138530039}
   - component: {fileID: 1138530038}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Male Body 20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11209,7 +11209,7 @@ GameObject:
   - component: {fileID: 1155376539}
   - component: {fileID: 1156179387}
   - component: {fileID: 1157146491}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Male Boots 6 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11385,7 +11385,7 @@ GameObject:
   - component: {fileID: 1217126990}
   - component: {fileID: 1217126992}
   - component: {fileID: 1217126991}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Glove L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11468,7 +11468,7 @@ GameObject:
   - component: {fileID: 1226718432}
   - component: {fileID: 1226718431}
   - component: {fileID: 1226718430}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Shoes 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11662,7 +11662,7 @@ GameObject:
   - component: {fileID: 1247424045}
   - component: {fileID: 1247424047}
   - component: {fileID: 1247424046}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Male Body 20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12028,7 +12028,7 @@ GameObject:
   - component: {fileID: 1274414490}
   - component: {fileID: 1274414492}
   - component: {fileID: 1274414491}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12204,7 +12204,7 @@ GameObject:
   - component: {fileID: 1295478874}
   - component: {fileID: 1295478876}
   - component: {fileID: 1295478875}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Glove R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12287,7 +12287,7 @@ GameObject:
   - component: {fileID: 1299060840}
   - component: {fileID: 1299060843}
   - component: {fileID: 1299060842}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Cape 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12765,7 +12765,7 @@ GameObject:
   - component: {fileID: 1368508181}
   - component: {fileID: 1368508183}
   - component: {fileID: 1368508182}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Glove R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12848,7 +12848,7 @@ GameObject:
   - component: {fileID: 1375559363}
   - component: {fileID: 1375559366}
   - component: {fileID: 1375559365}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Pants (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14859,7 +14859,7 @@ GameObject:
   - component: {fileID: 1452562570}
   - component: {fileID: 1452562573}
   - component: {fileID: 1452562572}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Gloves (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15055,7 +15055,7 @@ GameObject:
   - component: {fileID: 1473275619}
   - component: {fileID: 1473275622}
   - component: {fileID: 1473275621}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Body 20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15153,7 +15153,7 @@ GameObject:
   - component: {fileID: 1478862709}
   - component: {fileID: 1478862711}
   - component: {fileID: 1478862710}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Male Boots 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15329,7 +15329,7 @@ GameObject:
   - component: {fileID: 1503251252}
   - component: {fileID: 1503251254}
   - component: {fileID: 1503251253}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Pants
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15600,7 +15600,7 @@ GameObject:
   - component: {fileID: 1526670031}
   - component: {fileID: 1526670033}
   - component: {fileID: 1526670032}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Pants
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15778,7 +15778,7 @@ GameObject:
   - component: {fileID: 1534231385}
   - component: {fileID: 1534231388}
   - component: {fileID: 1534231387}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Weapon 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15973,7 +15973,7 @@ GameObject:
   - component: {fileID: 1542754723}
   - component: {fileID: 1542754726}
   - component: {fileID: 1542754725}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Body 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16166,7 +16166,7 @@ GameObject:
   - component: {fileID: 1552933683}
   - component: {fileID: 1552933685}
   - component: {fileID: 1552933684}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Pants
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16247,7 +16247,7 @@ GameObject:
   - component: {fileID: 1561827192}
   - component: {fileID: 1561827194}
   - component: {fileID: 1561827193}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Pants
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16516,7 +16516,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1572594286}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Items
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16556,7 +16556,7 @@ GameObject:
   - component: {fileID: 1601580844}
   - component: {fileID: 1601580846}
   - component: {fileID: 1601580845}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Glove R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16739,7 +16739,7 @@ GameObject:
   - component: {fileID: 1608174328}
   - component: {fileID: 1608174331}
   - component: {fileID: 1608174330}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Gloves (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16838,7 +16838,7 @@ GameObject:
   - component: {fileID: 1617095163}
   - component: {fileID: 1617095165}
   - component: {fileID: 1617095164}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Glove L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17206,7 +17206,7 @@ GameObject:
   - component: {fileID: 1657731848}
   - component: {fileID: 1657731851}
   - component: {fileID: 1657731850}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Pants (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17304,7 +17304,7 @@ GameObject:
   - component: {fileID: 1664345382}
   - component: {fileID: 1664345384}
   - component: {fileID: 1664345383}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Cape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17557,7 +17557,7 @@ GameObject:
   - component: {fileID: 1676979663}
   - component: {fileID: 1676979666}
   - component: {fileID: 1676979665}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Hat 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18033,7 +18033,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1723209327}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18067,7 +18067,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1735098387}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Bodys
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18391,7 +18391,7 @@ GameObject:
   - component: {fileID: 1792394310}
   - component: {fileID: 1792394314}
   - component: {fileID: 1792394312}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Shoes 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18608,7 +18608,7 @@ GameObject:
   - component: {fileID: 1831002128}
   - component: {fileID: 1831002131}
   - component: {fileID: 1831002130}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Gloves (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18802,7 +18802,7 @@ GameObject:
   - component: {fileID: 1878006646}
   - component: {fileID: 1878006648}
   - component: {fileID: 1878006647}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Male Boots 5 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18885,7 +18885,7 @@ GameObject:
   - component: {fileID: 1878221455}
   - component: {fileID: 1878221458}
   - component: {fileID: 1878221457}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Body 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18985,7 +18985,7 @@ GameObject:
   - component: {fileID: 1883477388}
   - component: {fileID: 1883477392}
   - component: {fileID: 1883477391}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Shoes 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19084,7 +19084,7 @@ GameObject:
   - component: {fileID: 1895471592}
   - component: {fileID: 1895471594}
   - component: {fileID: 1895471593}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19167,7 +19167,7 @@ GameObject:
   - component: {fileID: 1909683734}
   - component: {fileID: 1909683737}
   - component: {fileID: 1909683736}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Pants (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19455,7 +19455,7 @@ GameObject:
   - component: {fileID: 1962500707}
   - component: {fileID: 1962500709}
   - component: {fileID: 1962500708}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19632,7 +19632,7 @@ GameObject:
   - component: {fileID: 1969243871}
   - component: {fileID: 1969243870}
   - component: {fileID: 1969243869}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19819,7 +19819,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1994976676}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Hats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19856,7 +19856,7 @@ GameObject:
   - component: {fileID: 2021687945}
   - component: {fileID: 2021687947}
   - component: {fileID: 2021687946}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Pants
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19935,7 +19935,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2022363977}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Shoes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19973,7 +19973,7 @@ GameObject:
   - component: {fileID: 2022488187}
   - component: {fileID: 2022488189}
   - component: {fileID: 2022488188}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Glove L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20054,7 +20054,7 @@ GameObject:
   - component: {fileID: 2023105301}
   - component: {fileID: 2023105303}
   - component: {fileID: 2023105302}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Male Boots R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20230,7 +20230,7 @@ GameObject:
   - component: {fileID: 2038166978}
   - component: {fileID: 2038166980}
   - component: {fileID: 2038166979}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Male Boots R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20313,7 +20313,7 @@ GameObject:
   - component: {fileID: 2039666256}
   - component: {fileID: 2039666255}
   - component: {fileID: 2039666254}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Weapon 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20508,7 +20508,7 @@ GameObject:
   - component: {fileID: 2058111514}
   - component: {fileID: 2058111517}
   - component: {fileID: 2058111516}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Pants (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20701,7 +20701,7 @@ GameObject:
   - component: {fileID: 2071746826}
   - component: {fileID: 2071746828}
   - component: {fileID: 2071746827}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Male Boots L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20974,7 +20974,7 @@ GameObject:
   - component: {fileID: 2088497031}
   - component: {fileID: 2088497034}
   - component: {fileID: 2088497033}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Cape 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21359,7 +21359,7 @@ GameObject:
   - component: {fileID: 2118811061}
   - component: {fileID: 2118811064}
   - component: {fileID: 2118811063}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Body 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21459,7 +21459,7 @@ GameObject:
   - component: {fileID: 2126458120}
   - component: {fileID: 2126458119}
   - component: {fileID: 2126458118}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Weapon 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21557,7 +21557,7 @@ GameObject:
   - component: {fileID: 2136872984}
   - component: {fileID: 2136872986}
   - component: {fileID: 2136872985}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Cape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89791,7 +89791,7 @@ GameObject:
   - component: {fileID: 962245451050953124}
   - component: {fileID: 962245451050183042}
   - component: {fileID: 962245451049184066}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89915,7 +89915,7 @@ GameObject:
   - component: {fileID: 1566903657905980884}
   - component: {fileID: 1566903657902589426}
   - component: {fileID: 1566903657903556402}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Longsword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90789,7 +90789,7 @@ GameObject:
   - component: {fileID: 4791729423893082340}
   - component: {fileID: 4791729423891787970}
   - component: {fileID: 4791729423890657794}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Scimitar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90900,7 +90900,7 @@ GameObject:
   - component: {fileID: 8876043777124532887}
   - component: {fileID: 8876043777125860019}
   - component: {fileID: 8876043777126826099}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Broadsword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
