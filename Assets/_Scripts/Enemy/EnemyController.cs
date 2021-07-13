@@ -272,10 +272,11 @@ public class EnemyController : Humanoid
         {
             RaycastHit hit;
             Vector3 dir = (player.transform.position - transform.position).normalized;
-            Ray ray = new Ray(transform.position + Vector3.up * 1.2f, dir);
-            Debug.DrawRay(transform.position + Vector3.up * 1.2f, dir * lookDistance, Color.black);
+            Ray ray = new Ray(transform.position + Vector3.up, dir);
+            Debug.DrawRay(transform.position + Vector3.up, dir * lookDistance, Color.black);
             if (Physics.Raycast(ray, out hit, lookDistance))
             {
+                //Debug.Log(hit.collider.tag);
                 if (hit.collider.CompareTag("Player"))
                 {
                     return true;
@@ -318,7 +319,10 @@ public class EnemyController : Humanoid
     {
         if (distancePlayer <= hearDistance)
         {
-            SwitchState(EnemyStates.inCombat);
+            if (pb.crouched == false)
+            {
+                SwitchState(EnemyStates.inCombat);
+            }
         }
         if (PlayerInSight())
         {
@@ -564,15 +568,15 @@ public class EnemyController : Humanoid
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position + Vector3.up * 1.2f, transform.forward * lookDistance);
         
-        Gizmos.DrawRay(transform.position + Vector3.up * 1.2f, (transform.forward + ((transform.right * ((float)viewAngle / 100)) * 4)).normalized * lookDistance);
-        Gizmos.DrawRay(transform.position + Vector3.up * 1.2f, (transform.forward + ((-transform.right * ((float)viewAngle / 100)) * 4)).normalized * lookDistance);
+        Gizmos.DrawRay(transform.position + Vector3.up * 1.2f, (transform.forward + ((transform.right * ((float)viewAngle / 100)) * 2)).normalized * lookDistance);
+        Gizmos.DrawRay(transform.position + Vector3.up * 1.2f, (transform.forward + ((-transform.right * ((float)viewAngle / 100)) * 2)).normalized * lookDistance);
 
         Gizmos.color = Color.cyan;
 
-        Vector3 pointRight = transform.position + Vector3.up * 1.2f + (transform.forward + ((transform.right * ((float)viewAngle / 100)) * 4)).normalized * lookDistance;
+        Vector3 pointRight = transform.position + Vector3.up * 1.2f + (transform.forward + ((transform.right * ((float)viewAngle / 100)) * 2)).normalized * lookDistance;
         Gizmos.DrawSphere(pointRight, 0.1f);
 
-        Vector3 pointLeft = transform.position + Vector3.up * 1.2f + (transform.forward + ((-transform.right * ((float)viewAngle / 100)) * 4)).normalized * lookDistance;
+        Vector3 pointLeft = transform.position + Vector3.up * 1.2f + (transform.forward + ((-transform.right * ((float)viewAngle / 100)) * 2)).normalized * lookDistance;
         Gizmos.DrawSphere(pointLeft, 0.1f);
 
         Vector3 middlePoint = transform.position + Vector3.up * 1.2f + transform.forward * lookDistance;

@@ -27,6 +27,8 @@ public class Locomotion : State
         startTime = Time.time;
         pb.cc.center = pb.defaultCenterCc;
         pb.cc.height = defaultCCheight;
+        pb.crouched = false;
+        pb.anim.SetBool("Crouch", false);
     }
 
     float turnSmoothVelocity;
