@@ -445,6 +445,15 @@ public class PlayerBehaviour : Humanoid
         transform.Rotate(rot);
     }
 
+    public bool IsInAnimation(string animName)
+    {
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName(animName))
+        {
+            return true;
+        }
+        return false;
+    }
+
     public void EquipWeapon(int equip)
     {
         if (playerWeapon == null || sheatedWeapon == null)
