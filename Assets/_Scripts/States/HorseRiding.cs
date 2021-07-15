@@ -7,6 +7,8 @@ public class HorseRiding : State
     bool exiting;
     public override void OnStateEnter(PlayerBehaviour pb)
     {
+        pb.anim.SetInteger("DisMountType", 0);
+
         exiting = false;
         pb.closestHorse.Mount(pb.transform);
         pb.cc.enabled = false;
@@ -16,6 +18,8 @@ public class HorseRiding : State
 
     public override void OnStateExit(PlayerBehaviour pb)
     {
+        pb.anim.SetInteger("DisMountType", 0);
+
         startTime = Time.time;
 
         pb.airtime = 0;
@@ -73,11 +77,16 @@ public class HorseRiding : State
                 if (timeHeld > 1f)
                 {
                     //Debug.Log("On horse held time : " + timeHeld);
-                    pb.currentHorse.Unmounted();
-                    exiting = true;
-                    pb.anim.applyRootMotion = true;
-                    pb.anim.SetTrigger("UnMount");
-                    pb.mono.StartCoroutine(Exiting(pb));
+                    if (pb.RayHit(pb.transform.position, pb.transform.right, 1.25f, pb.everything) == false)
+                    {
+                        pb.anim.SetInteger("DisMountType", 1);
+                        pb.mono.StartCoroutine(Exiting(pb));
+                    }
+                    if (pb.RayHit(pb.transform.position, -pb.transform.right, 1.25f, pb.everything) == false)
+                    {
+                        pb.anim.SetInteger("DisMountType", -1);
+                        pb.mono.StartCoroutine(Exiting(pb));
+                    }
                 }
                 else
                 {
@@ -100,6 +109,10 @@ public class HorseRiding : State
     
     IEnumerator Exiting(PlayerBehaviour pb)
     {
+        pb.currentHorse.Unmounted();
+        exiting = true;
+        pb.anim.applyRootMotion = true;
+        pb.anim.SetTrigger("UnMount");
         yield return new WaitForSeconds(0.8f);
         pb.cc.enabled = true;
         pb.transform.parent = null;
