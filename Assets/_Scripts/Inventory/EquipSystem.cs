@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EquipSystem : MonoBehaviour
 {
-    public int helmetID;
-    public int bodyID;
-    public int glovesID;
-    public int trousersID;
-    public int bootsID;
-    public int capeID;
-    public int weaponID;
+    public Item currentHelm;
+    public Item currentBody;
+    public Item currentGloves;
+    public Item currentTrousers;
+    public Item currentBoots;
+    public Item currentCape;
+    public Item currentNecklace;
+    public Item currentWeapon;
     [Space]
     public Equipment[] helmet1100;
     public Equipment[] body1200;
@@ -30,6 +32,8 @@ public class EquipSystem : MonoBehaviour
     public GameObject[] weaponsHand;
     [Space]
     public PlayerBehaviour pb;
+    public Text apLevel;
+    public Text arLevel;
 
     public static EquipSystem instance;
 
@@ -40,6 +44,11 @@ public class EquipSystem : MonoBehaviour
             Destroy(instance);
         }
         instance = this;
+    }
+
+    private void Start()
+    {
+        CalculateStats();
     }
 
     void EquipHelper(int ID, Equipment[] eq, int extraID, bool equipping)
@@ -146,64 +155,76 @@ public class EquipSystem : MonoBehaviour
                 return;
             case Item.itemType.helmet:
                 EquipHelper(ID, helmet1100, 1100, equip);
-                helmetID = 1100 + ID;
+                currentHelm = i;
                 if (removing)
                 {
                     EquipHelper(0, helmet1100, 1100, true);
+                    currentHelm = null;
                 }
                 break;
             case Item.itemType.body:
                 EquipHelper(ID, body1200, 1200, equip);
-                bodyID = 1200 + ID;
+                currentBody = i;
                 if (removing)
                 {
                     EquipHelper(0, body1200, 1200, true);
+                    currentBody = null;
                 }
                 break;
             case Item.itemType.gloves:
                 EquipHelper(ID, gloves1300, 1300, equip);
-                glovesID = 1300 + ID;
+                currentGloves = i;
                 if (removing)
                 {
                     EquipHelper(0, gloves1300, 1300, true);
+                    currentGloves = null;
                 }
                 break;
             case Item.itemType.pants:
                 EquipHelper(ID, trousers1400, 1400, equip);
-                trousersID = 1400 + ID;
+                currentTrousers = i;
                 if (removing)
                 {
                     EquipHelper(0, trousers1400, 1400, true);
+                    currentTrousers = null;
                 }
                 break;
             case Item.itemType.boots:
                 EquipHelper(ID, boots1500, 1500, equip);
-                bootsID = 1500 + ID;
+                currentBoots = i;
                 if (removing)
                 {
                     EquipHelper(0, boots1500, 1500, true);
+                    currentBoots = null;
                 }
                 break;
             #region unused equipment
             case Item.itemType.necklace:
-                return;
-                //EquipHelper(ID, necklace1600, 1600, equip);
+                currentNecklace = i;
+                if (removing)
+                {
+                    currentNecklace = null;
+                }
+                break;
             case Item.itemType.ringone:
-                return;
-                //EquipHelper(ID, ringOne1700, 1700, equip);
+                break;
             case Item.itemType.ringtwo:
-                return;
-            //EquipHelper(ID, ringTwo1800, 1800, equip);
+                break;
             #endregion
             case Item.itemType.cape:
                 EquipHelper(ID, cape1900, 1900, equip);
-                capeID = 1900 + ID;
+                currentCape = i;
+                if (removing)
+                {
+                    currentCape = null;
+                }
                 break;
             case Item.itemType.weapon:
-                weaponID = 2000 + ID;
+                currentWeapon = i;
                 if (removing)
                 {
                     WeaponHandler("");
+                    currentWeapon = null;
                 }
                 else
                 {
@@ -213,6 +234,7 @@ public class EquipSystem : MonoBehaviour
             default:
                 break;
         }
+        CalculateStats();
     }
 
     void WeaponHandler(string itemName)
@@ -253,6 +275,52 @@ public class EquipSystem : MonoBehaviour
                 sword.SetActive(true);
             }
         }
+    }
+
+    void CalculateStats()
+    {
+        int armorRating = 0;
+        int weaponDamage;
+        if (currentHelm != null)
+        {
+            armorRating += currentHelm.itemLevel;
+        }
+        if (currentBody != null)
+        {
+            armorRating += currentBody.itemLevel;
+        }
+        if (currentGloves != null)
+        {
+            armorRating += currentGloves.itemLevel;
+        }
+        if (currentTrousers != null)
+        {
+            armorRating += currentTrousers.itemLevel;
+        }
+        if (currentBoots != null)
+        {
+            armorRating += currentBoots.itemLevel;
+        }
+        if (currentCape != null)
+        {
+            armorRating += currentCape.itemLevel;
+        }
+        if (currentNecklace != null)
+        {
+            armorRating += currentNecklace.itemLevel;
+        }
+        weaponDamage = 8;
+        if (currentWeapon != null)
+        {
+            weaponDamage += 3 * currentWeapon.itemLevel;
+        }
+
+        pb.currentDamage = weaponDamage;
+        pb.armorRating = armorRating;
+        pb.damage = pb.currentDamage;
+
+        apLevel.text = "Attack Power = " + weaponDamage.ToString();
+        arLevel.text = "Armor Level = " + armorRating.ToString();
     }
 }
 

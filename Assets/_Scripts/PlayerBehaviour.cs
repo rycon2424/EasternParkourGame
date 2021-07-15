@@ -7,8 +7,8 @@ public class PlayerBehaviour : Humanoid
     State currentState;
 
     [Header("PlayerStats")]
-    public int weaponDamage;
-    public int unArmedDamage;
+    public int currentDamage;
+    public float armorRating;
     public float slideSpeed;
 
     [Header("RaycastInfo")]
@@ -138,6 +138,10 @@ public class PlayerBehaviour : Humanoid
     public override void TakeDamage(int damage, int damageType, int attackDir)
     {
         base.TakeDamage(damage, damageType, attackDir);
+        if (dead)
+        {
+            return;
+        }
         if (stateMachine.IsInState("Locomotion"))
         {
             if (ts.SelectTarget(oc))
@@ -163,13 +167,18 @@ public class PlayerBehaviour : Humanoid
         }
         bfh.SlashDamage(damageType);
 
-        health -= damage;
+        float damageToCalculate = damage;
+
+        damageToCalculate = damageToCalculate * (armorRating / 60);
+        int damageReduction = Mathf.RoundToInt(damageToCalculate);
+
+        health -= (damage - damageReduction);
 
         if (health < 1)
         {
             dead = true;
             health = 0;
-            Death(damageType);
+            //Death(damageType);
         }
     }
 

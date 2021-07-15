@@ -6,14 +6,6 @@ public class Combat : State
 {
     public override void OnStateEnter(PlayerBehaviour pb)
     {
-        if (pb.anim.GetBool("Armed"))
-        {
-            pb.damage = pb.weaponDamage;
-        }
-        else
-        {
-            pb.damage = pb.unArmedDamage;
-        }
         pb.anim.SetBool("Target", true);
         pb.lockedOn = true;
         pb.lol.gameObject.SetActive(true);
