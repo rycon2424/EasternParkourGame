@@ -1673,6 +1673,7 @@ MonoBehaviour:
     weight: 5
     gold: 2
     typeItem: 5
+    typeWeapon: 0
     equipped: 0
   - ID: 4
     itemLevel: 5
@@ -1682,6 +1683,7 @@ MonoBehaviour:
     weight: 2
     gold: 5
     typeItem: 10
+    typeWeapon: 0
     equipped: 0
 --- !u!1 &142922813
 GameObject:
@@ -1792,7 +1794,7 @@ GameObject:
   - component: {fileID: 156621405}
   - component: {fileID: 156621404}
   m_Layer: 30
-  m_Name: Weapon 1
+  m_Name: Sword 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1848,6 +1850,7 @@ MonoBehaviour:
     weight: 0
     gold: 15
     typeItem: 10
+    typeWeapon: 1
     equipped: 0
 --- !u!54 &156621404
 Rigidbody:
@@ -2955,6 +2958,7 @@ MonoBehaviour:
     weight: 0
     gold: 0.25
     typeItem: 3
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &273551348
 Rigidbody:
@@ -3216,6 +3220,7 @@ MonoBehaviour:
     weight: 0
     gold: 10
     typeItem: 6
+    typeWeapon: 0
     equipped: 0
 --- !u!4 &333994764
 Transform:
@@ -3332,6 +3337,7 @@ MonoBehaviour:
     weight: 0
     gold: 2
     typeItem: 1
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &356593636
 Rigidbody:
@@ -3433,6 +3439,7 @@ MonoBehaviour:
     weight: 0
     gold: 0.25
     typeItem: 3
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &358056817
 Rigidbody:
@@ -3533,6 +3540,7 @@ MonoBehaviour:
     weight: 0
     gold: 2
     typeItem: 1
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &383945594
 Rigidbody:
@@ -3858,6 +3866,7 @@ MonoBehaviour:
     weight: 0
     gold: 2
     typeItem: 5
+    typeWeapon: 0
     equipped: 0
 --- !u!4 &412603863
 Transform:
@@ -6392,6 +6401,7 @@ MonoBehaviour:
     weight: 0
     gold: 2
     typeItem: 5
+    typeWeapon: 0
     equipped: 0
 --- !u!4 &637885889
 Transform:
@@ -6926,6 +6936,7 @@ MonoBehaviour:
     weight: 0
     gold: 1.2
     typeItem: 9
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &679804026
 Rigidbody:
@@ -7434,6 +7445,7 @@ MonoBehaviour:
     weight: 0
     gold: 1.2
     typeItem: 9
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &735058615
 Rigidbody:
@@ -7534,6 +7546,7 @@ MonoBehaviour:
     weight: 0
     gold: 1.2
     typeItem: 9
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &761834357
 Rigidbody:
@@ -7840,6 +7853,7 @@ MonoBehaviour:
     weight: 0
     gold: 2
     typeItem: 1
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &786850433
 Rigidbody:
@@ -9014,6 +9028,7 @@ MonoBehaviour:
     weight: 0
     gold: 2
     typeItem: 5
+    typeWeapon: 0
     equipped: 0
 --- !u!4 &913011130
 Transform:
@@ -10155,6 +10170,7 @@ MonoBehaviour:
     weight: 0
     gold: 5
     typeItem: 2
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &1020095615
 Rigidbody:
@@ -10526,6 +10542,7 @@ MonoBehaviour:
     weight: 0
     gold: 2
     typeItem: 1
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &1040930585
 Rigidbody:
@@ -10721,6 +10738,7 @@ MonoBehaviour:
     weight: 0
     gold: 1.5
     typeItem: 4
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &1084367749
 Rigidbody:
@@ -11539,6 +11557,7 @@ MonoBehaviour:
     weight: 0
     gold: 2
     typeItem: 5
+    typeWeapon: 0
     equipped: 0
 --- !u!4 &1226718434
 Transform:
@@ -12344,6 +12363,7 @@ MonoBehaviour:
     weight: 0
     gold: 1.2
     typeItem: 9
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &1299060842
 Rigidbody:
@@ -12905,6 +12925,7 @@ MonoBehaviour:
     weight: 0
     gold: 1.5
     typeItem: 4
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &1375559365
 Rigidbody:
@@ -14917,6 +14938,7 @@ MonoBehaviour:
     weight: 0
     gold: 0.25
     typeItem: 3
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &1452562572
 Rigidbody:
@@ -15112,6 +15134,7 @@ MonoBehaviour:
     weight: 0
     gold: 5
     typeItem: 2
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &1473275621
 Rigidbody:
@@ -15779,7 +15802,7 @@ GameObject:
   - component: {fileID: 1534231388}
   - component: {fileID: 1534231387}
   m_Layer: 30
-  m_Name: Weapon 2
+  m_Name: Sword 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15835,6 +15858,7 @@ MonoBehaviour:
     weight: 0
     gold: 15
     typeItem: 10
+    typeWeapon: 1
     equipped: 0
 --- !u!54 &1534231387
 Rigidbody:
@@ -16030,6 +16054,7 @@ MonoBehaviour:
     weight: 0
     gold: 5
     typeItem: 2
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &1542754725
 Rigidbody:
@@ -16797,6 +16822,7 @@ MonoBehaviour:
     weight: 0
     gold: 0.25
     typeItem: 3
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &1608174330
 Rigidbody:
@@ -17263,6 +17289,7 @@ MonoBehaviour:
     weight: 0
     gold: 1.5
     typeItem: 4
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &1657731850
 Rigidbody:
@@ -17614,6 +17641,7 @@ MonoBehaviour:
     weight: 0
     gold: 2
     typeItem: 1
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &1676979665
 Rigidbody:
@@ -18433,6 +18461,7 @@ MonoBehaviour:
     weight: 0
     gold: 2
     typeItem: 5
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &1792394312
 Rigidbody:
@@ -18666,6 +18695,7 @@ MonoBehaviour:
     weight: 0
     gold: 0.25
     typeItem: 3
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &1831002130
 Rigidbody:
@@ -18942,6 +18972,7 @@ MonoBehaviour:
     weight: 0
     gold: 5
     typeItem: 2
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &1878221457
 Rigidbody:
@@ -19027,6 +19058,7 @@ MonoBehaviour:
     weight: 0
     gold: 2
     typeItem: 5
+    typeWeapon: 0
     equipped: 0
 --- !u!4 &1883477390
 Transform:
@@ -19224,6 +19256,7 @@ MonoBehaviour:
     weight: 0
     gold: 1.5
     typeItem: 4
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &1909683736
 Rigidbody:
@@ -20314,7 +20347,7 @@ GameObject:
   - component: {fileID: 2039666255}
   - component: {fileID: 2039666254}
   m_Layer: 30
-  m_Name: Weapon 3
+  m_Name: Sword 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20399,6 +20432,7 @@ MonoBehaviour:
     weight: 0
     gold: 15
     typeItem: 10
+    typeWeapon: 1
     equipped: 0
 --- !u!1 &2041244472
 GameObject:
@@ -20565,6 +20599,7 @@ MonoBehaviour:
     weight: 0
     gold: 1.5
     typeItem: 4
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &2058111516
 Rigidbody:
@@ -21031,6 +21066,7 @@ MonoBehaviour:
     weight: 0
     gold: 1.2
     typeItem: 9
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &2088497033
 Rigidbody:
@@ -21416,6 +21452,7 @@ MonoBehaviour:
     weight: 0
     gold: 5
     typeItem: 2
+    typeWeapon: 0
     equipped: 0
 --- !u!54 &2118811063
 Rigidbody:
@@ -21460,7 +21497,7 @@ GameObject:
   - component: {fileID: 2126458119}
   - component: {fileID: 2126458118}
   m_Layer: 30
-  m_Name: Weapon 4
+  m_Name: Sword 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21545,6 +21582,7 @@ MonoBehaviour:
     weight: 0
     gold: 15
     typeItem: 10
+    typeWeapon: 1
     equipped: 0
 --- !u!1 &2136872983
 GameObject:

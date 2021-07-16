@@ -16,7 +16,9 @@ public class Item
     public float gold;
     [Space]
     public itemType typeItem;
-    public enum itemType { NotEquipable, helmet, body, gloves, pants, boots, necklace, ringone, ringtwo, cape, weapon}
+    public enum itemType { NotEquipable, helmet, body, gloves, pants, boots, necklace, ringone, ringtwo, cape, weapon }
+    public weaponType typeWeapon;
+    public enum weaponType { none, sword, spear, greatsword }
     [Header("Dont assign")]
     public bool equipped;
 }

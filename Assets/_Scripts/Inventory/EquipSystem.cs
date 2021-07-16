@@ -223,12 +223,12 @@ public class EquipSystem : MonoBehaviour
                 currentWeapon = i;
                 if (removing)
                 {
-                    WeaponHandler("");
+                    WeaponHandler("", Item.weaponType.none);
                     currentWeapon = null;
                 }
                 else
                 {
-                    WeaponHandler(i.itemName);
+                    WeaponHandler(i.itemName, i.typeWeapon);
                 }
                 break;
             default:
@@ -237,13 +237,13 @@ public class EquipSystem : MonoBehaviour
         CalculateStats();
     }
 
-    void WeaponHandler(string itemName)
+    void WeaponHandler(string itemName, Item.weaponType wt)
     {
         if (pb.sheatedWeapon != null)
         {
             pb.sheatedWeapon.SetActive(false);
             pb.playerWeapon.SetActive(false);
-            pb.anim.SetBool("Armed", false);
+            pb.anim.SetInteger("ArmedType", 0);
             pb.sheatedWeapon = null;
             pb.playerWeapon = null;
         }
@@ -261,7 +261,23 @@ public class EquipSystem : MonoBehaviour
             {
                 pb.sheatedWeapon = sword;
                 pb.sheatedWeapon.SetActive(true);
-                pb.anim.SetBool("Armed", true);
+                switch (wt)
+                {
+                    case Item.weaponType.none:
+                        pb.anim.SetInteger("ArmedType", 0);
+                        break;
+                    case Item.weaponType.sword:
+                        pb.anim.SetInteger("ArmedType", 1);
+                        break;
+                    case Item.weaponType.spear:
+                        pb.anim.SetInteger("ArmedType", 2);
+                        break;
+                    case Item.weaponType.greatsword:
+                        pb.anim.SetInteger("ArmedType", 3);
+                        break;
+                    default:
+                        break;
+                }
                 break;
             }
         }
