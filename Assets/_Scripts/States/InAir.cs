@@ -17,7 +17,7 @@ public class InAir : State
     public override void StateUpdate(PlayerBehaviour pb)
     {
         pb.Grounded();
-        if (pb.IsInAnimation("Fall"))
+        if (pb.IsInAnimation("Fall") || pb.IsInAnimation("Jump"))
         {
             if (Input.GetKey(pb.pc.grab))
             {

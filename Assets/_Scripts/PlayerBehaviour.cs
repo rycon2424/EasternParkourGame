@@ -152,13 +152,17 @@ public class PlayerBehaviour : Humanoid
         }
         if (stateMachine.IsInState("Combat"))
         {
-            if (anim.GetBool("Armed"))
+            int armedType = anim.GetInteger("ArmedType");
+            switch (armedType)
             {
-                anim.Play("Hit Armed");
-            }
-            else
-            {
-                anim.Play("Hit UnArmed");
+                case 0:
+                    anim.Play("Hit UnArmed");
+                    break;
+                case 1:
+                    anim.Play("Hit Armed");
+                    break;
+                default:
+                    break;
             }
         }
         if (injured == false && health < 50)
