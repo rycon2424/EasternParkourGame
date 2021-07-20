@@ -159,7 +159,10 @@ public class PlayerBehaviour : Humanoid
                     anim.Play("Hit UnArmed");
                     break;
                 case 1:
-                    anim.Play("Hit Armed");
+                    anim.Play("Hit Sword");
+                    break;
+                case 2:
+                    anim.Play("Hit Dagger");
                     break;
                 default:
                     break;

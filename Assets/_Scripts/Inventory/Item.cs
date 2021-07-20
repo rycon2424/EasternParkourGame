@@ -18,7 +18,7 @@ public class Item
     public itemType typeItem;
     public enum itemType { NotEquipable, helmet, body, gloves, pants, boots, necklace, ringone, ringtwo, cape, weapon }
     public weaponType typeWeapon;
-    public enum weaponType { none, sword, spear, greatsword }
+    public enum weaponType { none, sword, daggers, greatsword }
     [Header("Dont assign")]
     public bool equipped;
 }

@@ -269,7 +269,7 @@ public class EquipSystem : MonoBehaviour
                     case Item.weaponType.sword:
                         pb.anim.SetInteger("ArmedType", 1);
                         break;
-                    case Item.weaponType.spear:
+                    case Item.weaponType.daggers:
                         pb.anim.SetInteger("ArmedType", 2);
                         break;
                     case Item.weaponType.greatsword:
