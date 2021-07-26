@@ -9,11 +9,21 @@ public class Merchant : MonoBehaviour
     public float goldMultiplyer;
     [Space]
     public GameObject buying;
-    public List<Item> sellingItems = new List<Item>();
+    public List<ItemSelling> itemsSelling;
+
+    [HideInInspector] public List<Item> sellingItems = new List<Item>();
 
     private void Start()
     {
         buying.SetActive(false);
+        foreach (var sellingItem in itemsSelling)
+        {
+            if (sellingItem.randomID)
+            {
+                sellingItem.RandomizeID();
+            }
+            sellingItems.Add(ItemDataBase.instance.GetItemInfo(sellingItem.ID, sellingItem.type));
+        }
     }
 
     private void Update()
@@ -52,3 +62,32 @@ public class Merchant : MonoBehaviour
         }
     }
 }
+
+[System.Serializable]
+public class ItemSelling
+{
+    public int ID;
+    public Item.itemType type;
+    public bool randomID;
+
+    public void RandomizeID()
+    {
+        foreach (var itemSet in ItemDataBase.instance.itemLibrary)
+        {
+            if (itemSet.type == type)
+            {
+                if (itemSet.items.Count > 1)
+                {
+                    ID = Random.Range(0, itemSet.items.Count);
+                    return;
+                }
+                else
+                {
+                    ID = itemSet.items[0].ID;
+                    return;
+                }
+            }
+        }
+    }
+}
+

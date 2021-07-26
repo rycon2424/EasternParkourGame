@@ -27154,6 +27154,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8620841836330070089, guid: 7364b14050643244b9f22cfae368a646, type: 3}
+      propertyPath: itemsSelling.Array.data[0].ID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620841836330070089, guid: 7364b14050643244b9f22cfae368a646, type: 3}
+      propertyPath: itemsSelling.Array.data[1].ID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620841836330070089, guid: 7364b14050643244b9f22cfae368a646, type: 3}
+      propertyPath: itemsSelling.Array.data[0].randomID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620841836330070089, guid: 7364b14050643244b9f22cfae368a646, type: 3}
+      propertyPath: itemsSelling.Array.data[1].randomID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8620841836330070090, guid: 7364b14050643244b9f22cfae368a646, type: 3}
       propertyPath: m_Name
       value: Merchant

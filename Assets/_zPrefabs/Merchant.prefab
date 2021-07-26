@@ -7828,27 +7828,12 @@ MonoBehaviour:
   playerInRange: 0
   goldMultiplyer: 1.1
   buying: {fileID: 8620841837901665286}
-  sellingItems:
-  - ID: 1
-    itemLevel: 5
-    itemName: Boots
-    itemPotrait: {fileID: 21300000, guid: 3d759d2510f57214186c633fdd00f236, type: 3}
-    itemDescription: Boots
-    weight: 5
-    gold: 2
-    typeItem: 5
-    typeWeapon: 0
-    equipped: 0
+  itemsSelling:
   - ID: 2
-    itemLevel: 5
-    itemName: Mournblade
-    itemPotrait: {fileID: 21300000, guid: a1b690743c589224fa78b80bc1c3e81d, type: 3}
-    itemDescription: Mournblade
-    weight: 2
-    gold: 5
-    typeItem: 10
-    typeWeapon: 1
-    equipped: 0
+    type: 3
+  - ID: 2
+    type: 6
+  sellingItems: []
 --- !u!65 &8620841836330070088
 BoxCollider:
   m_ObjectHideFlags: 0
