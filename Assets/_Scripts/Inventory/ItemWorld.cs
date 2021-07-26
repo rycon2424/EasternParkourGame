@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class ItemWorld : MonoBehaviour
 {
+    public int itemID;
+    public Item.itemType itemType;
+    [Space]
     public bool pickupable;
-
-    public Item itemInfo;
     
     void Update()
     {
@@ -16,8 +17,12 @@ public class ItemWorld : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    InventoryManager.instance.AddItemToInventory(itemInfo);
-                    Destroy(gameObject);
+                    Item temp = ItemDataBase.instance.GetItemInfo(itemID, itemType);
+                    if (temp != null)
+                    {
+                        InventoryManager.instance.AddItemToInventory(temp);
+                        Destroy(gameObject);
+                    }
                 }
             }
         }

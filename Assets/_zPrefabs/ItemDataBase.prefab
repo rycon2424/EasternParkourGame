@@ -1,0 +1,494 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4924246283650026775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4924246283650026773}
+  - component: {fileID: 4924246283650026772}
+  m_Layer: 0
+  m_Name: ItemDataBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4924246283650026773
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4924246283650026775}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -28.023563, y: 8.833167, z: -13.532274}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4924246283650026772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4924246283650026775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 264f85d2a5df50044bb6126fa5303a8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  itemLibrary:
+  - name: Boots
+    type: 5
+    items:
+    - ID: 1
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 3d759d2510f57214186c633fdd00f236, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 5
+      typeWeapon: 0
+      equipped: 0
+    - ID: 2
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 9058a75391ee59946962ee43ca585892, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 5
+      typeWeapon: 0
+      equipped: 0
+    - ID: 3
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 89af3c6199157904e8c91ba8e5db2399, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 5
+      typeWeapon: 0
+      equipped: 0
+    - ID: 4
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 5b8936506cae19d4f8470d3abbfc3bad, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 5
+      typeWeapon: 0
+      equipped: 0
+    - ID: 5
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 2a2dbc0644b9bde4380acdff455bd98d, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 5
+      typeWeapon: 0
+      equipped: 0
+    - ID: 6
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 9a3677b57aa4e14498be710160659538, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 5
+      typeWeapon: 0
+      equipped: 0
+  - name: Helmet
+    type: 1
+    items:
+    - ID: 1
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: f560e134a5239814395bf2982d74c1cd, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 1
+      typeWeapon: 0
+      equipped: 0
+    - ID: 2
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: ea1c86757c2aa7144a25705edfd045f6, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 1
+      typeWeapon: 0
+      equipped: 0
+    - ID: 3
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 2b50f5408f841694f99e60c700623c72, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 1
+      typeWeapon: 0
+      equipped: 0
+    - ID: 4
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 5f497277a7d520b4b9e55c0999d53eba, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 1
+      typeWeapon: 0
+      equipped: 0
+    - ID: 5
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 7e5f056bc3eeb4c4ab4626d4aecd0379, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 1
+      typeWeapon: 0
+      equipped: 0
+  - name: Body
+    type: 2
+    items:
+    - ID: 2
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: c69411f4cce65e147ba630030c7a433a, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 2
+      typeWeapon: 0
+      equipped: 0
+    - ID: 3
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 53c79139f3b51fb459dab615dcbfdf71, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 2
+      typeWeapon: 0
+      equipped: 0
+    - ID: 4
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: e86130d9753dcaa4ba2c7182dcde6130, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 2
+      typeWeapon: 0
+      equipped: 0
+    - ID: 5
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 694164c4842cb1e49bce1be6689ad43c, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 2
+      typeWeapon: 0
+      equipped: 0
+    - ID: 20
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 4b4a326125a5d844a8cc39e44bd7f5ba, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 2
+      typeWeapon: 0
+      equipped: 0
+  - name: Trousers
+    type: 4
+    items:
+    - ID: 1
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 0d6bb8471b8d3724aab4962bc8abb7f0, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 4
+      typeWeapon: 0
+      equipped: 0
+    - ID: 2
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: db04b10fbb6dd1d45a3fd94496714155, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 4
+      typeWeapon: 0
+      equipped: 0
+    - ID: 3
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 1356fc8b27966f8419266dbf57b713bc, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 4
+      typeWeapon: 0
+      equipped: 0
+    - ID: 4
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: cd153a26a6d572e40b397c41d0fc98ef, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 4
+      typeWeapon: 0
+      equipped: 0
+    - ID: 5
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 8beec38f5a27c8341937d3eb169ef72a, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 4
+      typeWeapon: 0
+      equipped: 0
+  - name: Gloves
+    type: 3
+    items:
+    - ID: 1
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 57940523f326ae34f97eb3f8c1abb751, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 3
+      typeWeapon: 0
+      equipped: 0
+    - ID: 2
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 938e5b942f53ad14c8bbab346fb7d4d3, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 3
+      typeWeapon: 0
+      equipped: 0
+    - ID: 3
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 75f614e7a0a386943b5d43f36328667e, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 3
+      typeWeapon: 0
+      equipped: 0
+    - ID: 4
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 7f6cfc681e106c84faa997366586589f, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 3
+      typeWeapon: 0
+      equipped: 0
+    - ID: 5
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: ff696190ae2153447b2e0ec292d1bc0a, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 3
+      typeWeapon: 0
+      equipped: 0
+  - name: Cape
+    type: 9
+    items:
+    - ID: 1
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 57d0dd65b74d7fc4fb362aebead4b1f6, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 9
+      typeWeapon: 0
+      equipped: 0
+    - ID: 2
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 5cdf621bb2aca314c99be368465bcaa5, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 9
+      typeWeapon: 0
+      equipped: 0
+    - ID: 3
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: d6604651876ae4b4095237e074145a74, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 9
+      typeWeapon: 0
+      equipped: 0
+    - ID: 4
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: eb9b2ec3937c13d44830d8671c5873e7, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 9
+      typeWeapon: 0
+      equipped: 0
+    - ID: 5
+      itemLevel: 0
+      itemName: 
+      itemPotrait: {fileID: 21300000, guid: 7304603008b2a424d9824e0304ee9984, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 9
+      typeWeapon: 0
+      equipped: 0
+  - name: Necklaces
+    type: 6
+    items:
+    - ID: 2
+      itemLevel: 0
+      itemName: Necklace
+      itemPotrait: {fileID: 21300000, guid: e31d88872d0e89748a4d4305ced79c6b, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 6
+      typeWeapon: 0
+      equipped: 0
+  - name: Swords
+    type: 10
+    items:
+    - ID: 1
+      itemLevel: 0
+      itemName: Old StraightSword
+      itemPotrait: {fileID: 21300000, guid: e00d79f5559723443b44c23973b57ecf, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 10
+      typeWeapon: 1
+      equipped: 0
+    - ID: 2
+      itemLevel: 0
+      itemName: Mournblade
+      itemPotrait: {fileID: 21300000, guid: a1b690743c589224fa78b80bc1c3e81d, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 10
+      typeWeapon: 1
+      equipped: 0
+    - ID: 3
+      itemLevel: 0
+      itemName: Barbarian Etcher
+      itemPotrait: {fileID: 21300000, guid: fc8d2b1d051c6474b9de70e0bc52d427, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 10
+      typeWeapon: 1
+      equipped: 0
+    - ID: 4
+      itemLevel: 0
+      itemName: Prick
+      itemPotrait: {fileID: 21300000, guid: 6fb45a185d545ea46b876941108267fd, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 10
+      typeWeapon: 1
+      equipped: 0
+    - ID: 5
+      itemLevel: 0
+      itemName: Knight's Fall
+      itemPotrait: {fileID: 21300000, guid: dbe0d1da84772f14a9c21366611e5621, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 10
+      typeWeapon: 1
+      equipped: 0
+    - ID: 6
+      itemLevel: 0
+      itemName: Justifier
+      itemPotrait: {fileID: 21300000, guid: baf498cec2e4e414d984509f4155cf20, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 10
+      typeWeapon: 1
+      equipped: 0
+    - ID: 8
+      itemLevel: 0
+      itemName: Skeletal Crusader
+      itemPotrait: {fileID: 21300000, guid: eb716cefe2d1a97449ee8a0355d4d602, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 10
+      typeWeapon: 1
+      equipped: 0
+    - ID: 9
+      itemLevel: 0
+      itemName: EndBringer
+      itemPotrait: {fileID: 21300000, guid: afbbd77d3d55f1a4b8a19eaf74638bf1, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 10
+      typeWeapon: 1
+      equipped: 0
+  - name: Daggers
+    type: 10
+    items:
+    - ID: 101
+      itemLevel: 0
+      itemName: Unholy Carver
+      itemPotrait: {fileID: 21300000, guid: 96467a4f771c2f14d8c1d041f6461fc0, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 10
+      typeWeapon: 2
+      equipped: 0
+    - ID: 102
+      itemLevel: 0
+      itemName: Abyssal Shard
+      itemPotrait: {fileID: 21300000, guid: 590197cc446a335488f859e9f158aa45, type: 3}
+      itemDescription: 
+      weight: 0
+      gold: 0
+      typeItem: 10
+      typeWeapon: 2
+      equipped: 0
