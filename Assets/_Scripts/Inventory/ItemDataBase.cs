@@ -8,6 +8,12 @@ public class ItemDataBase : MonoBehaviour
 
     public bool debug;
     public List<TypeItems> itemLibrary;
+    [Header("Colours")]
+    public Color32 common;
+    public Color32 uncommon;
+    public Color32 rare;
+    public Color32 epic;
+    public Color32 legendary;
 
     void Awake()
     {
@@ -43,6 +49,7 @@ public class ItemDataBase : MonoBehaviour
         }
         if (i != null)
         {
+            ErrorMessage(3, i.itemName, i.ID);
             return i;
         }
         ErrorMessage(2, type.ToString(), id);
@@ -67,6 +74,7 @@ public class ItemDataBase : MonoBehaviour
                 Debug.Log("FINAL: Found no item in library " + extraMessage + " with ID " + id);
                 break;
             case 3:
+                Debug.Log("FINAL: SUCCES FOUND ITEM " + extraMessage + " with ID " + id);
                 break;
             default:
                 break;

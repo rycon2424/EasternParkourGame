@@ -49,71 +49,76 @@ MonoBehaviour:
     type: 5
     items:
     - ID: 1
-      itemLevel: 0
-      itemName: 
+      itemName: Steel Treads
       itemPotrait: {fileID: 21300000, guid: 3d759d2510f57214186c633fdd00f236, type: 3}
       itemDescription: 
-      weight: 0
-      gold: 0
+      weight: 1
+      gold: 5
       typeItem: 5
       typeWeapon: 0
       equipped: 0
-    - ID: 2
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 2
+      itemName: Leather Boots
       itemPotrait: {fileID: 21300000, guid: 9058a75391ee59946962ee43ca585892, type: 3}
       itemDescription: 
-      weight: 0
-      gold: 0
+      weight: 1
+      gold: 5
       typeItem: 5
       typeWeapon: 0
       equipped: 0
-    - ID: 3
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 3
+      itemName: Golden Greaves
       itemPotrait: {fileID: 21300000, guid: 89af3c6199157904e8c91ba8e5db2399, type: 3}
       itemDescription: 
-      weight: 0
-      gold: 0
+      weight: 1
+      gold: 5
       typeItem: 5
       typeWeapon: 0
       equipped: 0
-    - ID: 4
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 4
+      itemName: Leather Walkers
       itemPotrait: {fileID: 21300000, guid: 5b8936506cae19d4f8470d3abbfc3bad, type: 3}
       itemDescription: 
-      weight: 0
-      gold: 0
+      weight: 1
+      gold: 5
       typeItem: 5
       typeWeapon: 0
       equipped: 0
-    - ID: 5
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 5
+      itemName: Padded Footguards
       itemPotrait: {fileID: 21300000, guid: 2a2dbc0644b9bde4380acdff455bd98d, type: 3}
       itemDescription: 
-      weight: 0
-      gold: 0
+      weight: 1
+      gold: 5
       typeItem: 5
       typeWeapon: 0
       equipped: 0
-    - ID: 6
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 6
+      itemName: Doom Walkers
       itemPotrait: {fileID: 21300000, guid: 9a3677b57aa4e14498be710160659538, type: 3}
       itemDescription: 
-      weight: 0
-      gold: 0
+      weight: 1
+      gold: 5
       typeItem: 5
       typeWeapon: 0
       equipped: 0
+      itemLevel: 0
+      rarity: 0
   - name: Helmet
     type: 1
     items:
     - ID: 1
-      itemLevel: 0
-      itemName: 
+      itemName: Helm of Divine Lands
       itemPotrait: {fileID: 21300000, guid: f560e134a5239814395bf2982d74c1cd, type: 3}
       itemDescription: 
       weight: 0
@@ -121,9 +126,10 @@ MonoBehaviour:
       typeItem: 1
       typeWeapon: 0
       equipped: 0
-    - ID: 2
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 2
+      itemName: Eternal Helm
       itemPotrait: {fileID: 21300000, guid: ea1c86757c2aa7144a25705edfd045f6, type: 3}
       itemDescription: 
       weight: 0
@@ -131,9 +137,10 @@ MonoBehaviour:
       typeItem: 1
       typeWeapon: 0
       equipped: 0
-    - ID: 3
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 3
+      itemName: Scaled Hood
       itemPotrait: {fileID: 21300000, guid: 2b50f5408f841694f99e60c700623c72, type: 3}
       itemDescription: 
       weight: 0
@@ -141,9 +148,10 @@ MonoBehaviour:
       typeItem: 1
       typeWeapon: 0
       equipped: 0
-    - ID: 4
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 4
+      itemName: Promise of Hate
       itemPotrait: {fileID: 21300000, guid: 5f497277a7d520b4b9e55c0999d53eba, type: 3}
       itemDescription: 
       weight: 0
@@ -151,9 +159,10 @@ MonoBehaviour:
       typeItem: 1
       typeWeapon: 0
       equipped: 0
-    - ID: 5
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 5
+      itemName: Faceguard of the Void
       itemPotrait: {fileID: 21300000, guid: 7e5f056bc3eeb4c4ab4626d4aecd0379, type: 3}
       itemDescription: 
       weight: 0
@@ -161,12 +170,13 @@ MonoBehaviour:
       typeItem: 1
       typeWeapon: 0
       equipped: 0
+      itemLevel: 0
+      rarity: 0
   - name: Body
     type: 2
     items:
     - ID: 2
-      itemLevel: 0
-      itemName: 
+      itemName: Barbarians Fur
       itemPotrait: {fileID: 21300000, guid: c69411f4cce65e147ba630030c7a433a, type: 3}
       itemDescription: 
       weight: 0
@@ -174,9 +184,10 @@ MonoBehaviour:
       typeItem: 2
       typeWeapon: 0
       equipped: 0
-    - ID: 3
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 3
+      itemName: Conquered Protection
       itemPotrait: {fileID: 21300000, guid: 53c79139f3b51fb459dab615dcbfdf71, type: 3}
       itemDescription: 
       weight: 0
@@ -184,9 +195,10 @@ MonoBehaviour:
       typeItem: 2
       typeWeapon: 0
       equipped: 0
-    - ID: 4
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 4
+      itemName: Lonely Golden Armor
       itemPotrait: {fileID: 21300000, guid: e86130d9753dcaa4ba2c7182dcde6130, type: 3}
       itemDescription: 
       weight: 0
@@ -194,9 +206,10 @@ MonoBehaviour:
       typeItem: 2
       typeWeapon: 0
       equipped: 0
-    - ID: 5
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 5
+      itemName: Soul of the Gladiator
       itemPotrait: {fileID: 21300000, guid: 694164c4842cb1e49bce1be6689ad43c, type: 3}
       itemDescription: 
       weight: 0
@@ -204,9 +217,10 @@ MonoBehaviour:
       typeItem: 2
       typeWeapon: 0
       equipped: 0
-    - ID: 20
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 20
+      itemName: Vicious Batteplate
       itemPotrait: {fileID: 21300000, guid: 4b4a326125a5d844a8cc39e44bd7f5ba, type: 3}
       itemDescription: 
       weight: 0
@@ -214,12 +228,13 @@ MonoBehaviour:
       typeItem: 2
       typeWeapon: 0
       equipped: 0
+      itemLevel: 0
+      rarity: 0
   - name: Trousers
     type: 4
     items:
     - ID: 1
-      itemLevel: 0
-      itemName: 
+      itemName: Barbarians Pants
       itemPotrait: {fileID: 21300000, guid: 0d6bb8471b8d3724aab4962bc8abb7f0, type: 3}
       itemDescription: 
       weight: 0
@@ -227,9 +242,10 @@ MonoBehaviour:
       typeItem: 4
       typeWeapon: 0
       equipped: 0
-    - ID: 2
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 2
+      itemName: Broken Ancestors
       itemPotrait: {fileID: 21300000, guid: db04b10fbb6dd1d45a3fd94496714155, type: 3}
       itemDescription: 
       weight: 0
@@ -237,9 +253,10 @@ MonoBehaviour:
       typeItem: 4
       typeWeapon: 0
       equipped: 0
-    - ID: 3
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 3
+      itemName: Robes of Ancient Hope
       itemPotrait: {fileID: 21300000, guid: 1356fc8b27966f8419266dbf57b713bc, type: 3}
       itemDescription: 
       weight: 0
@@ -247,9 +264,10 @@ MonoBehaviour:
       typeItem: 4
       typeWeapon: 0
       equipped: 0
-    - ID: 4
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 4
+      itemName: Reach of Strength
       itemPotrait: {fileID: 21300000, guid: cd153a26a6d572e40b397c41d0fc98ef, type: 3}
       itemDescription: 
       weight: 0
@@ -257,9 +275,10 @@ MonoBehaviour:
       typeItem: 4
       typeWeapon: 0
       equipped: 0
-    - ID: 5
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 5
+      itemName: Kilt of Kings
       itemPotrait: {fileID: 21300000, guid: 8beec38f5a27c8341937d3eb169ef72a, type: 3}
       itemDescription: 
       weight: 0
@@ -267,12 +286,13 @@ MonoBehaviour:
       typeItem: 4
       typeWeapon: 0
       equipped: 0
+      itemLevel: 0
+      rarity: 0
   - name: Gloves
     type: 3
     items:
     - ID: 1
-      itemLevel: 0
-      itemName: 
+      itemName: Simple Gloves
       itemPotrait: {fileID: 21300000, guid: 57940523f326ae34f97eb3f8c1abb751, type: 3}
       itemDescription: 
       weight: 0
@@ -280,9 +300,10 @@ MonoBehaviour:
       typeItem: 3
       typeWeapon: 0
       equipped: 0
-    - ID: 2
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 2
+      itemName: Warfists of Slaying
       itemPotrait: {fileID: 21300000, guid: 938e5b942f53ad14c8bbab346fb7d4d3, type: 3}
       itemDescription: 
       weight: 0
@@ -290,9 +311,10 @@ MonoBehaviour:
       typeItem: 3
       typeWeapon: 0
       equipped: 0
-    - ID: 3
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 3
+      itemName: Obsidian Gloves
       itemPotrait: {fileID: 21300000, guid: 75f614e7a0a386943b5d43f36328667e, type: 3}
       itemDescription: 
       weight: 0
@@ -300,9 +322,10 @@ MonoBehaviour:
       typeItem: 3
       typeWeapon: 0
       equipped: 0
-    - ID: 4
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 4
+      itemName: Padded Grasps
       itemPotrait: {fileID: 21300000, guid: 7f6cfc681e106c84faa997366586589f, type: 3}
       itemDescription: 
       weight: 0
@@ -310,9 +333,10 @@ MonoBehaviour:
       typeItem: 3
       typeWeapon: 0
       equipped: 0
-    - ID: 5
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 5
+      itemName: Handguards of Riddles
       itemPotrait: {fileID: 21300000, guid: ff696190ae2153447b2e0ec292d1bc0a, type: 3}
       itemDescription: 
       weight: 0
@@ -320,12 +344,13 @@ MonoBehaviour:
       typeItem: 3
       typeWeapon: 0
       equipped: 0
+      itemLevel: 0
+      rarity: 0
   - name: Cape
     type: 9
     items:
     - ID: 1
-      itemLevel: 0
-      itemName: 
+      itemName: Captain's Padded Shroud
       itemPotrait: {fileID: 21300000, guid: 57d0dd65b74d7fc4fb362aebead4b1f6, type: 3}
       itemDescription: 
       weight: 0
@@ -333,9 +358,10 @@ MonoBehaviour:
       typeItem: 9
       typeWeapon: 0
       equipped: 0
-    - ID: 2
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 2
+      itemName: Silent Cloak
       itemPotrait: {fileID: 21300000, guid: 5cdf621bb2aca314c99be368465bcaa5, type: 3}
       itemDescription: 
       weight: 0
@@ -343,9 +369,10 @@ MonoBehaviour:
       typeItem: 9
       typeWeapon: 0
       equipped: 0
-    - ID: 3
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 3
+      itemName: Wool Cape
       itemPotrait: {fileID: 21300000, guid: d6604651876ae4b4095237e074145a74, type: 3}
       itemDescription: 
       weight: 0
@@ -353,9 +380,10 @@ MonoBehaviour:
       typeItem: 9
       typeWeapon: 0
       equipped: 0
-    - ID: 4
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 4
+      itemName: Champion's Wrap
       itemPotrait: {fileID: 21300000, guid: eb9b2ec3937c13d44830d8671c5873e7, type: 3}
       itemDescription: 
       weight: 0
@@ -363,9 +391,10 @@ MonoBehaviour:
       typeItem: 9
       typeWeapon: 0
       equipped: 0
-    - ID: 5
       itemLevel: 0
-      itemName: 
+      rarity: 0
+    - ID: 5
+      itemName: Sinister Cape
       itemPotrait: {fileID: 21300000, guid: 7304603008b2a424d9824e0304ee9984, type: 3}
       itemDescription: 
       weight: 0
@@ -373,122 +402,159 @@ MonoBehaviour:
       typeItem: 9
       typeWeapon: 0
       equipped: 0
+      itemLevel: 0
+      rarity: 0
   - name: Necklaces
     type: 6
     items:
     - ID: 2
-      itemLevel: 0
       itemName: Necklace
       itemPotrait: {fileID: 21300000, guid: e31d88872d0e89748a4d4305ced79c6b, type: 3}
-      itemDescription: 
-      weight: 0
-      gold: 0
+      itemDescription: An old necklace with a red gem attached
+      weight: 0.5
+      gold: 20
       typeItem: 6
       typeWeapon: 0
       equipped: 0
+      itemLevel: 0
+      rarity: 0
   - name: Swords
     type: 10
     items:
     - ID: 1
-      itemLevel: 0
       itemName: Old StraightSword
       itemPotrait: {fileID: 21300000, guid: e00d79f5559723443b44c23973b57ecf, type: 3}
-      itemDescription: 
-      weight: 0
-      gold: 0
+      itemDescription: This weapon is used by just about anybody. A respectable weapon
+        for mostly respectable people
+      weight: 1
+      gold: 2
       typeItem: 10
       typeWeapon: 1
       equipped: 0
-    - ID: 2
       itemLevel: 0
+      rarity: 0
+    - ID: 2
       itemName: Mournblade
       itemPotrait: {fileID: 21300000, guid: a1b690743c589224fa78b80bc1c3e81d, type: 3}
-      itemDescription: 
-      weight: 0
-      gold: 0
+      itemDescription: This weapon is used by champions and proven fighters. An excellent
+        weapon for the defense of the country.
+      weight: 2
+      gold: 5
       typeItem: 10
       typeWeapon: 1
       equipped: 0
-    - ID: 3
       itemLevel: 0
+      rarity: 0
+    - ID: 3
       itemName: Barbarian Etcher
       itemPotrait: {fileID: 21300000, guid: fc8d2b1d051c6474b9de70e0bc52d427, type: 3}
-      itemDescription: 
-      weight: 0
-      gold: 0
+      itemDescription: With a single, sharp edge this weapon is ideal for both cleaving
+        enemies as well as blocking their attacks
+      weight: 2
+      gold: 5
       typeItem: 10
       typeWeapon: 1
       equipped: 0
-    - ID: 4
       itemLevel: 0
+      rarity: 0
+    - ID: 4
       itemName: Prick
       itemPotrait: {fileID: 21300000, guid: 6fb45a185d545ea46b876941108267fd, type: 3}
-      itemDescription: 
-      weight: 0
-      gold: 0
+      itemDescription: A fairly small, broad, smooth blade
+      weight: 1
+      gold: 5
       typeItem: 10
       typeWeapon: 1
       equipped: 0
-    - ID: 5
       itemLevel: 0
+      rarity: 0
+    - ID: 5
       itemName: Knight's Fall
       itemPotrait: {fileID: 21300000, guid: dbe0d1da84772f14a9c21366611e5621, type: 3}
-      itemDescription: 
-      weight: 0
-      gold: 0
+      itemDescription: This weapon is used by higher ranked guards. None deserve
+        this weapon more than the greatest fighters of all
+      weight: 3
+      gold: 8
       typeItem: 10
       typeWeapon: 1
       equipped: 0
-    - ID: 6
       itemLevel: 0
+      rarity: 0
+    - ID: 6
       itemName: Justifier
       itemPotrait: {fileID: 21300000, guid: baf498cec2e4e414d984509f4155cf20, type: 3}
-      itemDescription: 
-      weight: 0
-      gold: 0
+      itemDescription: A sharp, dual-edged blade makes this weapon the choice for
+        any warrior looking for a versatile weapon ideal for any combat style
+      weight: 2
+      gold: 10
       typeItem: 10
       typeWeapon: 1
       equipped: 0
-    - ID: 8
       itemLevel: 0
+      rarity: 0
+    - ID: 8
       itemName: Skeletal Crusader
       itemPotrait: {fileID: 21300000, guid: eb716cefe2d1a97449ee8a0355d4d602, type: 3}
-      itemDescription: 
-      weight: 0
-      gold: 0
+      itemDescription: This sword is from another world
+      weight: 2
+      gold: 20
       typeItem: 10
       typeWeapon: 1
       equipped: 0
-    - ID: 9
       itemLevel: 0
+      rarity: 0
+    - ID: 9
       itemName: EndBringer
       itemPotrait: {fileID: 21300000, guid: afbbd77d3d55f1a4b8a19eaf74638bf1, type: 3}
-      itemDescription: 
-      weight: 0
-      gold: 0
+      itemDescription: A fairly large pommel is decorated with gilded linings, no
+        expense is spared for this gorgeous weapon from the underworld
+      weight: 2
+      gold: 100
       typeItem: 10
       typeWeapon: 1
       equipped: 0
+      itemLevel: 0
+      rarity: 0
   - name: Daggers
     type: 10
     items:
     - ID: 101
-      itemLevel: 0
       itemName: Unholy Carver
       itemPotrait: {fileID: 21300000, guid: 96467a4f771c2f14d8c1d041f6461fc0, type: 3}
-      itemDescription: 
-      weight: 0
-      gold: 0
+      itemDescription: A short, thin, warped blade made of titanium is held by a
+        grip wrapped in lavish, scarlet deerskin
+      weight: 1
+      gold: 10
       typeItem: 10
       typeWeapon: 2
       equipped: 0
-    - ID: 102
       itemLevel: 0
+      rarity: 0
+    - ID: 102
       itemName: Abyssal Shard
       itemPotrait: {fileID: 21300000, guid: 590197cc446a335488f859e9f158aa45, type: 3}
-      itemDescription: 
-      weight: 0
-      gold: 0
+      itemDescription: With a single, sharp edge this weapon will protect you from
+        incoming blows while also giving you the ability to shred your enemies to
+        pieces
+      weight: 1
+      gold: 20
       typeItem: 10
       typeWeapon: 2
       equipped: 0
+      itemLevel: 0
+      rarity: 0
+  common:
+    serializedVersion: 2
+    rgba: 4294967295
+  uncommon:
+    serializedVersion: 2
+    rgba: 4294180608
+  rare:
+    serializedVersion: 2
+    rgba: 4278255608
+  epic:
+    serializedVersion: 2
+    rgba: 4278217215
+  legendary:
+    serializedVersion: 2
+    rgba: 4290773247

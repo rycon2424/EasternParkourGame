@@ -287,6 +287,27 @@ public class InventoryManager : MonoBehaviour
 
         display.transform.position = mousePos + offset;
 
+        switch (i.CurrentRarity)
+        {
+            case Item.Rarity.common:
+                itemName.color = ItemDataBase.instance.common;
+                break;
+            case Item.Rarity.uncommon:
+                itemName.color = ItemDataBase.instance.uncommon;
+                break;
+            case Item.Rarity.rare:
+                itemName.color = ItemDataBase.instance.rare;
+                break;
+            case Item.Rarity.epic:
+                itemName.color = ItemDataBase.instance.epic;
+                break;
+            case Item.Rarity.legendary:
+                itemName.color = ItemDataBase.instance.legendary;
+                break;
+            default:
+                break;
+        }
+        
         itemName.text = i.itemName;
         itemDescription.text = i.itemDescription;
         itemLevel.text = ("Level " + i.itemLevel.ToString());

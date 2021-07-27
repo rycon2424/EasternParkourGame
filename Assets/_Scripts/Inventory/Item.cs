@@ -7,7 +7,6 @@ public class Item
 {
     public int ID;
     [Space]
-    public int itemLevel;
     public string itemName;
     public Sprite itemPotrait;
     [TextArea(5, 5)]
@@ -21,4 +20,20 @@ public class Item
     public enum weaponType { none, sword, daggers, greatsword }
     [Header("Dont assign")]
     public bool equipped;
+    public int itemLevel;
+
+    public enum Rarity { common, uncommon, rare, epic, legendary}
+    [SerializeField] Rarity rarity;
+    
+    public Rarity CurrentRarity
+    {
+        get
+        {
+            return rarity;
+        }
+        set
+        {
+            rarity = value;
+        }
+    }
 }
