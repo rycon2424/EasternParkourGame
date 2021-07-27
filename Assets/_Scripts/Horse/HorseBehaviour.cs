@@ -157,6 +157,8 @@ public class HorseBehaviour : Animal
     public void Unmounted()
     {
         mounted = false;
+        anim.SetBool("Gallop", false);
+        anim.SetBool("Sprint", false);
         anim.SetFloat("x", 0);
         anim.SetFloat("y", 0);
     }

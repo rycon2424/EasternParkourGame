@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BloodFXHandler : MonoBehaviour
 {
+    [SerializeField] bool canBleed = true;
     [Header("FX")]
     [SerializeField] ParticleSystem slashHigh;
     [SerializeField] ParticleSystem slashMid;
@@ -14,6 +15,10 @@ public class BloodFXHandler : MonoBehaviour
 
     public void SlashDamage(int type)
     {
+        if (canBleed == false)
+        {
+            return;
+        }
         switch (type)
         {
             case 1:
@@ -33,6 +38,10 @@ public class BloodFXHandler : MonoBehaviour
 
     public void DeathBleed(int type)
     {
+        if (canBleed == false)
+        {
+            return;
+        }
         switch (type)
         {
             case 2:
