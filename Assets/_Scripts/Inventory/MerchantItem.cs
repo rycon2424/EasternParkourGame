@@ -22,7 +22,29 @@ public class MerchantItem : MonoBehaviour
 
         potrait.sprite = i.itemPotrait;
         itemName.text = i.itemName;
-        itemLevel.text = i.itemLevel.ToString();
+        
+        switch (i.CurrentRarity)
+        {
+            case Item.Rarity.common:
+                itemName.color = ItemDataBase.instance.common;
+                break;
+            case Item.Rarity.uncommon:
+                itemName.color = ItemDataBase.instance.uncommon;
+                break;
+            case Item.Rarity.rare:
+                itemName.color = ItemDataBase.instance.rare;
+                break;
+            case Item.Rarity.epic:
+                itemName.color = ItemDataBase.instance.epic;
+                break;
+            case Item.Rarity.legendary:
+                itemName.color = ItemDataBase.instance.legendary;
+                break;
+            default:
+                break;
+        }
+
+        itemLevel.text =  "Level " + i.itemLevel.ToString();
         prize = i.gold * mc.goldMultiplyer;
         itemPrice.text = prize.ToString();
         itemWeight.text = i.weight.ToString();

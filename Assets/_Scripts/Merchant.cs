@@ -7,11 +7,12 @@ public class Merchant : MonoBehaviour
     public float gold;
     public bool playerInRange;
     public float goldMultiplyer;
+    [Range(1, 20)] public int maxRandomLevel;
     [Space]
     public GameObject buying;
     public List<ItemSelling> itemsSelling;
-
-    [HideInInspector] public List<Item> sellingItems = new List<Item>();
+    [Space]
+    public List<Item> sellingItems = new List<Item>();
 
     private void Start()
     {
@@ -68,6 +69,8 @@ public class ItemSelling
 {
     public int ID;
     public Item.itemType type;
+    public Item.Rarity rarity;
+    [Space]
     public bool randomID;
 
     public void RandomizeID()
@@ -78,7 +81,7 @@ public class ItemSelling
             {
                 if (itemSet.items.Count > 1)
                 {
-                    ID = Random.Range(0, itemSet.items.Count);
+                    ID = itemSet.items[Random.Range(0, itemSet.items.Count)].ID;
                     return;
                 }
                 else

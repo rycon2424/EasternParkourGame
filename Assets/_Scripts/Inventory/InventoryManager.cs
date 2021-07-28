@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
     [Header("InventoryStats")]
+    public float maxWeight;
     public float weight;
     public float gold;
     public Text weightT;
+    public Text weightMaxT;
     public Text goldT;
 
     public static InventoryManager instance;
@@ -22,6 +24,7 @@ public class InventoryManager : MonoBehaviour
     public Text itemDescription;
     public Text itemLevel;
     public Text goldWorth;
+    public Text itemWeight;
     public Image itemImage;
 
     [Header("Inventory Slots")]
@@ -60,6 +63,12 @@ public class InventoryManager : MonoBehaviour
         pb = FindObjectOfType<PlayerBehaviour>();
     }
 
+    private void Start()
+    {
+        UpdateWeightText();
+        weightMaxT.text = maxWeight.ToString();
+    }
+
     public void LoadShop(List<Item> items, Merchant mc)
     {
         shopWindow.SetActive(true);
@@ -76,6 +85,21 @@ public class InventoryManager : MonoBehaviour
             shopItems[i].gameObject.SetActive(true);
             shopItems[i].SetupMerchant(mc);
             shopItems[i].SetupItem(items[i]);
+        }
+    }
+
+    void UpdateWeightText()
+    {
+        weightT.text = weight.ToString() + "/";
+        if (weight > maxWeight)
+        {
+            weightT.color = new Color32(255, 0, 0, 255);
+            weightMaxT.color = new Color32(255, 0, 0, 255);
+        }
+        else
+        {
+            weightT.color = new Color32(255, 255, 0, 255);
+            weightMaxT.color = new Color32(255, 255, 0, 255);
         }
     }
 
@@ -98,6 +122,8 @@ public class InventoryManager : MonoBehaviour
             if (slots.toRemove)
             {
                 AddSubstractGold(slots.item.gold);
+                weight -= slots.item.weight;
+                UpdateWeightText();
                 slots.ResetSlot();
             }
         }
@@ -127,6 +153,8 @@ public class InventoryManager : MonoBehaviour
         {
             if (slots.toRemove)
             {
+                weight -= slots.item.weight;
+                UpdateWeightText();
                 slots.ResetSlot();
             }
         }
@@ -212,6 +240,8 @@ public class InventoryManager : MonoBehaviour
         equipping.item = giving.item;
         equipping.image.sprite = giving.item.itemPotrait;
         equipping.taken = true;
+        weight -= equipping.item.weight;
+        UpdateWeightText();
         EquipSystem.instance.Equip(equipping.item, true, false);
     }
 
@@ -242,6 +272,8 @@ public class InventoryManager : MonoBehaviour
                 slot.taken = true;
                 slot.image.sprite = newItem.itemPotrait;
                 slot.item = newItem;
+                weight += newItem.weight;
+                UpdateWeightText();
                 break;
             }
         }
@@ -311,6 +343,7 @@ public class InventoryManager : MonoBehaviour
         itemName.text = i.itemName;
         itemDescription.text = i.itemDescription;
         itemLevel.text = ("Level " + i.itemLevel.ToString());
+        itemWeight.text = i.weight.ToString();
         itemImage.sprite = i.itemPotrait;
         goldWorth.text = i.gold.ToString();
     }

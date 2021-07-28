@@ -15,6 +15,7 @@ public class ItemWorld : MonoBehaviour
     [Header("Dont Assign")]
     [SerializeField] Light haloLight;
     [SerializeField] bool pickupable;
+    [SerializeField] Rigidbody rb;
 
     private void Start()
     {
@@ -26,7 +27,7 @@ public class ItemWorld : MonoBehaviour
             itemID = randomItem.ID;
             itemType = randomItem.typeItem;
         }
-
+        rb = GetComponent<Rigidbody>();
         haloLight = GetComponent<Light>();
         Color32 tempColor = new Color32(255,255,255,255);
         switch (rarity)
@@ -50,6 +51,12 @@ public class ItemWorld : MonoBehaviour
                 break;
         }
         haloLight.color = tempColor;
+        ShootToRandomDirection();
+    }
+
+    void ShootToRandomDirection()
+    {
+        rb.AddForce(new Vector3(Random.Range(-1f , 1f), Random.Range(-0.5f, 1f) * Random.Range(1f , 3f), Random.Range(-1f, 1f)), ForceMode.Impulse);
     }
 
     void Update()
