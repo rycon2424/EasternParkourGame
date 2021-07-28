@@ -32,6 +32,7 @@ public class PlayerBehaviour : Humanoid
     public bool ccGrounded;
     public bool crouched;
     public bool failedClimb;
+    public bool overWeight;
 
     [Header("IK")]
     public bool injured;
@@ -521,6 +522,11 @@ public class PlayerBehaviour : Humanoid
     public void Parrying()
     {
         parrying = !parrying;
+    }
+
+    public void TooHeavy(bool restrictmovement)
+    {
+        overWeight = restrictmovement;
     }
 
 }

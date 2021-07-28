@@ -194,10 +194,13 @@ public class Locomotion : State
             pb.anim.SetBool("Sprinting", false);
         }
         //Jump
-        if (Input.GetKeyDown(pb.pc.jump))
+        if (pb.overWeight == false)
         {
-            pb.anim.SetTrigger("Jump");
-            pb.stateMachine.GoToState(pb, "InAir");
+            if (Input.GetKeyDown(pb.pc.jump))
+            {
+                pb.anim.SetTrigger("Jump");
+                pb.stateMachine.GoToState(pb, "InAir");
+            }
         }
     }
 }

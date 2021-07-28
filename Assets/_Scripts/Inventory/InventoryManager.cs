@@ -13,6 +13,9 @@ public class InventoryManager : MonoBehaviour
     public Text weightMaxT;
     public Text goldT;
 
+    [Header("Buffs/Debuffs")]
+    public GameObject weightIcon;
+
     public static InventoryManager instance;
     [Header("PlayerVisual")]
     public Slider rotateSlider;
@@ -95,11 +98,15 @@ public class InventoryManager : MonoBehaviour
         {
             weightT.color = new Color32(255, 0, 0, 255);
             weightMaxT.color = new Color32(255, 0, 0, 255);
+            ShowHideIcon("Weight", true);
+            pb.TooHeavy(true);
         }
         else
         {
             weightT.color = new Color32(255, 255, 0, 255);
             weightMaxT.color = new Color32(255, 255, 0, 255);
+            ShowHideIcon("Weight", false);
+            pb.TooHeavy(false);
         }
     }
 
@@ -362,4 +369,15 @@ public class InventoryManager : MonoBehaviour
         receivingInfo.itemLevel = givingInfo.itemLevel;
     }
 
+    public void ShowHideIcon(string icon, bool show)
+    {
+        switch (icon)
+        {
+            case "Weight":
+                weightIcon.SetActive(show);
+                break;
+            default:
+                break;
+        }
+    }
 }
