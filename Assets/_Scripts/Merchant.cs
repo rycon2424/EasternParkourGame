@@ -5,9 +5,11 @@ using UnityEngine;
 public class Merchant : MonoBehaviour
 {
     public float gold;
-    public bool playerInRange;
+    private bool playerInRange;
     public float goldMultiplyer;
-    [Range(1, 20)] public int maxRandomLevel;
+    [Space]
+    public bool randomLevel;
+    [Range(1, 20)] public int level;
     [Space]
     public GameObject buying;
     public List<ItemSelling> itemsSelling;
@@ -23,7 +25,17 @@ public class Merchant : MonoBehaviour
             {
                 sellingItem.RandomizeID();
             }
-            sellingItems.Add(ItemDataBase.instance.GetItemInfo(sellingItem.ID, sellingItem.type));
+            Item copyItem = ItemDataBase.instance.GetItemInfo(sellingItem.ID, sellingItem.type);
+            copyItem.CurrentRarity = sellingItem.rarity;
+            if (randomLevel)
+            {
+                copyItem.itemLevel = Random.Range(1, level + 1);
+            }
+            else
+            {
+                copyItem.itemLevel = level;
+            }
+            sellingItems.Add(copyItem);
         }
     }
 

@@ -1810,7 +1810,7 @@ MonoBehaviour:
   itemLevel: 3
   rarity: 4
   itemType: 10
-  randomSpawn: 0
+  randomSpawn: 1
   haloLight: {fileID: 139894791}
   pickupable: 0
   rb: {fileID: 0}
@@ -4784,7 +4784,7 @@ MonoBehaviour:
   itemLevel: 3
   rarity: 3
   itemType: 10
-  randomSpawn: 0
+  randomSpawn: 1
   haloLight: {fileID: 437931185}
   pickupable: 0
   rb: {fileID: 0}
@@ -27393,14 +27393,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4924246283650026772, guid: 1b502010aee57c7438b5085dd2fcb05c, type: 3}
-      propertyPath: epic.rgba
-      value: 4278204927
-      objectReference: {fileID: 0}
-    - target: {fileID: 4924246283650026772, guid: 1b502010aee57c7438b5085dd2fcb05c, type: 3}
-      propertyPath: uncommon.rgba
-      value: 4294932480
-      objectReference: {fileID: 0}
     - target: {fileID: 4924246283650026773, guid: 1b502010aee57c7438b5085dd2fcb05c, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -28268,6 +28260,22 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8620841836330070089, guid: 7364b14050643244b9f22cfae368a646, type: 3}
+      propertyPath: level
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620841836330070089, guid: 7364b14050643244b9f22cfae368a646, type: 3}
+      propertyPath: randomLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620841836330070089, guid: 7364b14050643244b9f22cfae368a646, type: 3}
+      propertyPath: playerInRange
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620841836330070089, guid: 7364b14050643244b9f22cfae368a646, type: 3}
+      propertyPath: itemsSelling.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620841836330070089, guid: 7364b14050643244b9f22cfae368a646, type: 3}
       propertyPath: itemsSelling.Array.data[0].ID
       value: 0
       objectReference: {fileID: 0}
@@ -28276,11 +28284,39 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8620841836330070089, guid: 7364b14050643244b9f22cfae368a646, type: 3}
+      propertyPath: itemsSelling.Array.data[2].type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620841836330070089, guid: 7364b14050643244b9f22cfae368a646, type: 3}
+      propertyPath: itemsSelling.Array.data[3].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620841836330070089, guid: 7364b14050643244b9f22cfae368a646, type: 3}
+      propertyPath: itemsSelling.Array.data[1].rarity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620841836330070089, guid: 7364b14050643244b9f22cfae368a646, type: 3}
+      propertyPath: itemsSelling.Array.data[2].rarity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620841836330070089, guid: 7364b14050643244b9f22cfae368a646, type: 3}
+      propertyPath: itemsSelling.Array.data[3].rarity
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620841836330070089, guid: 7364b14050643244b9f22cfae368a646, type: 3}
       propertyPath: itemsSelling.Array.data[0].randomID
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8620841836330070089, guid: 7364b14050643244b9f22cfae368a646, type: 3}
       propertyPath: itemsSelling.Array.data[1].randomID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620841836330070089, guid: 7364b14050643244b9f22cfae368a646, type: 3}
+      propertyPath: itemsSelling.Array.data[2].randomID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620841836330070089, guid: 7364b14050643244b9f22cfae368a646, type: 3}
+      propertyPath: itemsSelling.Array.data[3].randomID
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8620841836330070090, guid: 7364b14050643244b9f22cfae368a646, type: 3}
