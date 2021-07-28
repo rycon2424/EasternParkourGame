@@ -7801,7 +7801,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8620841836330070090}
-  m_LocalRotation: {x: -0, y: 0.70793205, z: -0, w: 0.7062806}
+  m_LocalRotation: {x: 0, y: 0.7079331, z: 0, w: 0.70627946}
   m_LocalPosition: {x: -13.66, y: 3.1, z: 3.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7825,14 +7825,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gold: 0
-  playerInRange: 0
   goldMultiplyer: 1.1
+  randomLevel: 1
+  level: 10
+  rarities: 0
   buying: {fileID: 8620841837901665286}
   itemsSelling:
-  - ID: 2
+  - ID: 0
     type: 3
-  - ID: 2
+    rarity: 0
+    random: 0
+  - ID: 0
     type: 6
+    rarity: 1
+    random: 0
+  - ID: 0
+    type: 2
+    rarity: 2
+    random: 0
+  - ID: 0
+    type: 1
+    rarity: 4
+    random: 0
   sellingItems: []
 --- !u!65 &8620841836330070088
 BoxCollider:

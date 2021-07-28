@@ -10,6 +10,7 @@ public class Merchant : MonoBehaviour
     [Space]
     public bool randomLevel;
     [Range(1, 20)] public int level;
+    [Range(0, 4)] public int rarities;
     [Space]
     public GameObject buying;
     public List<ItemSelling> itemsSelling;
@@ -21,12 +22,17 @@ public class Merchant : MonoBehaviour
         buying.SetActive(false);
         foreach (var sellingItem in itemsSelling)
         {
-            if (sellingItem.randomID)
+            if (sellingItem.random)
             {
-                sellingItem.RandomizeID();
+                sellingItem.RandomizeItem();
             }
             Item copyItem = ItemDataBase.instance.GetItemInfo(sellingItem.ID, sellingItem.type);
             copyItem.CurrentRarity = sellingItem.rarity;
+            if (sellingItem.random)
+            {
+                copyItem.RandomRarity(rarities);
+                sellingItem.rarity = copyItem.CurrentRarity;
+            }
             if (randomLevel)
             {
                 copyItem.itemLevel = Random.Range(1, level + 1);
@@ -83,9 +89,9 @@ public class ItemSelling
     public Item.itemType type;
     public Item.Rarity rarity;
     [Space]
-    public bool randomID;
+    public bool random;
 
-    public void RandomizeID()
+    public void RandomizeItem()
     {
         foreach (var itemSet in ItemDataBase.instance.itemLibrary)
         {

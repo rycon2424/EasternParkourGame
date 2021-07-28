@@ -37,6 +37,31 @@ public class Item
         }
     }
 
+    public void RandomRarity(int max)
+    {
+        int randomRange = Random.Range(0, max + 1);
+        switch (randomRange)
+        {
+            case 0:
+                CurrentRarity = Rarity.common;
+                break;
+            case 1:
+                CurrentRarity = Rarity.uncommon;
+                break;
+            case 2:
+                CurrentRarity = Rarity.rare;
+                break;
+            case 3:
+                CurrentRarity = Rarity.epic;
+                break;
+            case 4:
+                CurrentRarity = Rarity.legendary;
+                break;
+            default:
+                break;
+        }
+    }
+
     public void CreateCopy(Item original)
     {
         ID = original.ID;
