@@ -49,8 +49,10 @@ public class ItemDataBase : MonoBehaviour
         }
         if (i != null)
         {
-            ErrorMessage(3, i.itemName, i.ID);
-            return i;
+            Item newItem = new Item(); // Create copy
+            newItem.CreateCopy(i);
+            ErrorMessage(3, i.itemName, id);
+            return newItem; // Return Copy
         }
         ErrorMessage(2, type.ToString(), id);
         return null;

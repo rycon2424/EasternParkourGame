@@ -21,9 +21,9 @@ public class Item
     [Header("Dont assign")]
     public bool equipped;
     public int itemLevel;
+    [SerializeField] Rarity rarity;
 
     public enum Rarity { common, uncommon, rare, epic, legendary}
-    [SerializeField] Rarity rarity;
     
     public Rarity CurrentRarity
     {
@@ -35,5 +35,17 @@ public class Item
         {
             rarity = value;
         }
+    }
+
+    public void CreateCopy(Item original)
+    {
+        ID = original.ID;
+        itemName = original.itemName;
+        itemPotrait = original.itemPotrait;
+        itemDescription = original.itemDescription;
+        weight = original.weight;
+        gold = original.gold;
+        typeItem = original.typeItem;
+        typeWeapon = original.typeWeapon;
     }
 }

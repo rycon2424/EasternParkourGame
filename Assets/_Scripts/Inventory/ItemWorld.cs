@@ -67,23 +67,13 @@ public class ItemWorld : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    Item temp = ItemDataBase.instance.GetItemInfo(itemID, itemType);
-                    if (temp != null)
+                    Item itemCopy = ItemDataBase.instance.GetItemInfo(itemID, itemType);
+                    if (itemCopy != null)
                     {
-                        Item newItem = new Item();
-                        newItem.ID = temp.ID;
-                        newItem.itemName = temp.itemName;
-                        newItem.itemPotrait = temp.itemPotrait;
-                        newItem.itemDescription = temp.itemDescription;
-                        newItem.weight = temp.weight;
-                        newItem.gold = temp.gold;
-                        newItem.typeItem = temp.typeItem;
-                        newItem.typeWeapon = temp.typeWeapon;
-
-                        newItem.itemLevel = itemLevel;
-                        newItem.CurrentRarity = rarity;
+                        itemCopy.itemLevel = itemLevel;
+                        itemCopy.CurrentRarity = rarity;
                         
-                        InventoryManager.instance.AddItemToInventory(newItem);
+                        InventoryManager.instance.AddItemToInventory(itemCopy);
                         Destroy(gameObject);
                     }
                 }
