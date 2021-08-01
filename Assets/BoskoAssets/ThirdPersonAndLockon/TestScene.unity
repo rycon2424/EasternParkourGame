@@ -1359,9 +1359,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 101
   itemLevel: 3
   rarity: 4
+  itemID: 101
   itemType: 10
   randomSpawn: 1
   haloLight: {fileID: 117404314}
@@ -1979,9 +1979,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 0
   itemLevel: 3
   rarity: 1
+  itemID: 0
   itemType: 0
   randomSpawn: 1
   haloLight: {fileID: 139297062}
@@ -2124,9 +2124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 101
   itemLevel: 3
   rarity: 4
+  itemID: 101
   itemType: 10
   randomSpawn: 1
   haloLight: {fileID: 139894791}
@@ -2367,9 +2367,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 1
   itemLevel: 0
   rarity: 0
+  itemID: 1
   itemType: 10
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -2745,11 +2745,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 0
   itemLevel: 3
   rarity: 0
+  itemID: 0
   itemType: 0
-  randomSpawn: 1
+  randomSpawn: 0
   haloLight: {fileID: 171946346}
   pickupable: 0
   rb: {fileID: 0}
@@ -3706,9 +3706,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 0
   itemLevel: 3
   rarity: 2
+  itemID: 0
   itemType: 0
   randomSpawn: 1
   haloLight: {fileID: 248463408}
@@ -3789,9 +3789,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 1
   itemLevel: 0
   rarity: 0
+  itemID: 1
   itemType: 3
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -3977,9 +3977,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 101
   itemLevel: 3
   rarity: 3
+  itemID: 101
   itemType: 10
   randomSpawn: 1
   haloLight: {fileID: 278104462}
@@ -4206,9 +4206,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 2
   itemLevel: 0
   rarity: 0
+  itemID: 2
   itemType: 6
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -4319,9 +4319,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 1
   itemLevel: 0
   rarity: 0
+  itemID: 1
   itemType: 1
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -4417,9 +4417,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 2
   itemLevel: 0
   rarity: 0
+  itemID: 2
   itemType: 3
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -4514,9 +4514,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 4
   itemLevel: 0
   rarity: 0
+  itemID: 4
   itemType: 1
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -4640,9 +4640,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 3
   itemLevel: 0
   rarity: 0
+  itemID: 3
   itemType: 10
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -4933,9 +4933,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 1
   itemLevel: 0
   rarity: 0
+  itemID: 1
   itemType: 5
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -5416,9 +5416,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 101
   itemLevel: 3
   rarity: 3
+  itemID: 101
   itemType: 10
   randomSpawn: 1
   haloLight: {fileID: 437931185}
@@ -6321,9 +6321,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 101
   itemLevel: 3
   rarity: 4
+  itemID: 101
   itemType: 10
   randomSpawn: 1
   haloLight: {fileID: 507831774}
@@ -7036,9 +7036,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 0
   itemLevel: 3
   rarity: 2
+  itemID: 0
   itemType: 0
   randomSpawn: 1
   haloLight: {fileID: 552457668}
@@ -7418,9 +7418,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 4
   itemLevel: 0
   rarity: 0
+  itemID: 4
   itemType: 10
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -8070,9 +8070,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 2
   itemLevel: 0
   rarity: 0
+  itemID: 2
   itemType: 5
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -8564,9 +8564,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 0
   itemLevel: 3
   rarity: 0
+  itemID: 0
   itemType: 0
   randomSpawn: 1
   haloLight: {fileID: 654653820}
@@ -8786,9 +8786,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 102
   itemLevel: 0
   rarity: 0
+  itemID: 102
   itemType: 10
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -8935,9 +8935,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 3
   itemLevel: 0
   rarity: 0
+  itemID: 3
   itemType: 9
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -9061,9 +9061,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 9
   itemLevel: 0
   rarity: 0
+  itemID: 9
   itemType: 10
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -9350,7 +9350,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: 87.954, z: 0}
 --- !u!1 &713698803
 GameObject:
@@ -9537,9 +9537,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 2
   itemLevel: 0
   rarity: 0
+  itemID: 2
   itemType: 9
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -9725,9 +9725,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 0
   itemLevel: 3
   rarity: 0
+  itemID: 0
   itemType: 0
   randomSpawn: 1
   haloLight: {fileID: 735924809}
@@ -9793,9 +9793,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 1
   itemLevel: 0
   rarity: 0
+  itemID: 1
   itemType: 9
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -10096,9 +10096,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 3
   itemLevel: 0
   rarity: 0
+  itemID: 3
   itemType: 1
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -11222,6 +11222,40 @@ Transform:
   m_Father: {fileID: 24813716}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &912763426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 912763427}
+  m_Layer: 0
+  m_Name: Enemies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &912763427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912763426}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.55637, y: -5.914131, z: 35.62653}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1005992155}
+  - {fileID: 1934983029}
+  - {fileID: 954678114}
+  - {fileID: 8198270258473976944}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &913011127
 GameObject:
   m_ObjectHideFlags: 0
@@ -11267,9 +11301,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 4
   itemLevel: 0
   rarity: 0
+  itemID: 4
   itemType: 5
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -11742,9 +11776,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 0
   itemLevel: 3
   rarity: 1
+  itemID: 0
   itemType: 0
   randomSpawn: 1
   haloLight: {fileID: 923874131}
@@ -12233,14 +12267,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 101
   itemLevel: 0
   rarity: 0
+  itemID: 101
   itemType: 10
   randomSpawn: 0
   haloLight: {fileID: 0}
   pickupable: 0
   rb: {fileID: 0}
+--- !u!4 &954678114 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 193436071878372509, guid: 4b973f91a7b92f74c91c47388412fe27, type: 3}
+  m_PrefabInstance: {fileID: 8783854002103125783}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &960317053
 GameObject:
   m_ObjectHideFlags: 0
@@ -12526,6 +12565,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 995287036}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1005992155 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8883840338677604741, guid: 8f5ff9789bdfc214b8c8b9faee907d33, type: 3}
+  m_PrefabInstance: {fileID: 8888412177881844879}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1012891692
 GameObject:
   m_ObjectHideFlags: 0
@@ -12677,9 +12721,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 101
   itemLevel: 3
   rarity: 3
+  itemID: 101
   itemType: 10
   randomSpawn: 1
   haloLight: {fileID: 1012891695}
@@ -12745,9 +12789,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 4
   itemLevel: 0
   rarity: 0
+  itemID: 4
   itemType: 2
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -13113,9 +13157,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 5
   itemLevel: 0
   rarity: 0
+  itemID: 5
   itemType: 1
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -13305,9 +13349,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 5
   itemLevel: 0
   rarity: 0
+  itemID: 5
   itemType: 4
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -13431,9 +13475,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 2
   itemLevel: 0
   rarity: 0
+  itemID: 2
   itemType: 10
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -13763,9 +13807,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 0
   itemLevel: 3
   rarity: 1
+  itemID: 0
   itemType: 0
   randomSpawn: 1
   haloLight: {fileID: 1119246962}
@@ -14454,9 +14498,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 3
   itemLevel: 0
   rarity: 0
+  itemID: 3
   itemType: 5
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -15285,9 +15329,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 5
   itemLevel: 0
   rarity: 0
+  itemID: 5
   itemType: 10
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -15353,9 +15397,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 5
   itemLevel: 0
   rarity: 0
+  itemID: 5
   itemType: 9
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -15911,9 +15955,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 2
   itemLevel: 0
   rarity: 0
+  itemID: 2
   itemType: 4
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -16048,7 +16092,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 912763427}
     m_Modifications:
     - target: {fileID: 8883423308063825207, guid: 8f5ff9789bdfc214b8c8b9faee907d33, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16540,19 +16584,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8883840338677604741, guid: 8f5ff9789bdfc214b8c8b9faee907d33, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8883840338677604741, guid: 8f5ff9789bdfc214b8c8b9faee907d33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.71
+      value: -18.15363
       objectReference: {fileID: 0}
     - target: {fileID: 8883840338677604741, guid: 8f5ff9789bdfc214b8c8b9faee907d33, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.1139908
+      value: 9.028122
       objectReference: {fileID: 0}
     - target: {fileID: 8883840338677604741, guid: 8f5ff9789bdfc214b8c8b9faee907d33, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.06
+      value: -26.566528
       objectReference: {fileID: 0}
     - target: {fileID: 8883840338677604741, guid: 8f5ff9789bdfc214b8c8b9faee907d33, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17337,7 +17381,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1392695611
 GameObject:
@@ -17857,7 +17901,7 @@ Transform:
   - {fileID: 1026001713}
   - {fileID: 207181676}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1452562568
 GameObject:
@@ -17920,9 +17964,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 3
   itemLevel: 0
   rarity: 0
+  itemID: 3
   itemType: 3
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -18112,9 +18156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 20
   itemLevel: 0
   rarity: 0
+  itemID: 20
   itemType: 2
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -18990,9 +19034,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 2
   itemLevel: 0
   rarity: 0
+  itemID: 2
   itemType: 2
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -19821,9 +19865,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 4
   itemLevel: 0
   rarity: 0
+  itemID: 4
   itemType: 3
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -20284,9 +20328,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 4
   itemLevel: 0
   rarity: 0
+  itemID: 4
   itemType: 4
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -20557,9 +20601,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 2
   itemLevel: 0
   rarity: 0
+  itemID: 2
   itemType: 1
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -21226,9 +21270,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 0
   itemLevel: 3
   rarity: 2
+  itemID: 0
   itemType: 0
   randomSpawn: 1
   haloLight: {fileID: 1724165923}
@@ -21599,9 +21643,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 6
   itemLevel: 0
   rarity: 0
+  itemID: 6
   itemType: 5
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -21713,9 +21757,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 5
   itemLevel: 0
   rarity: 0
+  itemID: 5
   itemType: 3
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -21855,7 +21899,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1853644553}
   m_Layer: 0
-  m_Name: Items
+  m_Name: ItemsV2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21888,7 +21932,7 @@ Transform:
   - {fileID: 278104460}
   - {fileID: 117404312}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1878006645
 GameObject:
@@ -22031,9 +22075,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 5
   itemLevel: 0
   rarity: 0
+  itemID: 5
   itemType: 2
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -22113,9 +22157,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 5
   itemLevel: 0
   rarity: 0
+  itemID: 5
   itemType: 5
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -22377,9 +22421,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 3
   itemLevel: 0
   rarity: 0
+  itemID: 3
   itemType: 4
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -22681,6 +22725,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4449935893505070, guid: 8c71ceddc9423f04c9ce63d00fef0e3d, type: 3}
   m_PrefabInstance: {fileID: 1930012028}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1934983029 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8883840338677604741, guid: 8f5ff9789bdfc214b8c8b9faee907d33, type: 3}
+  m_PrefabInstance: {fileID: 1383114745}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1962500706
 GameObject:
@@ -23238,9 +23287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 8
   itemLevel: 0
   rarity: 0
+  itemID: 8
   itemType: 10
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -23614,9 +23663,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 6
   itemLevel: 0
   rarity: 0
+  itemID: 6
   itemType: 10
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -23953,9 +24002,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 1
   itemLevel: 0
   rarity: 0
+  itemID: 1
   itemType: 4
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -24416,9 +24465,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 4
   itemLevel: 0
   rarity: 0
+  itemID: 4
   itemType: 9
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -24798,9 +24847,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615f9e42e88aaaa4c8ad94a1671f7157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 3
   itemLevel: 0
   rarity: 0
+  itemID: 3
   itemType: 2
   randomSpawn: 0
   haloLight: {fileID: 0}
@@ -25085,7 +25134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6452790173396719749, guid: 1bf49b9792b717a47a36fe32011ff0e4, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6452790173396719749, guid: 1bf49b9792b717a47a36fe32011ff0e4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28299,7 +28348,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4924246283650026773, guid: 1b502010aee57c7438b5085dd2fcb05c, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4924246283650026773, guid: 1b502010aee57c7438b5085dd2fcb05c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28374,7 +28423,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8201156472336863856}
   m_LocalRotation: {x: -0, y: -0.7357341, z: -0, w: 0.6772706}
-  m_LocalPosition: {x: -22.95, y: 3.1139908, z: 29.87}
+  m_LocalPosition: {x: -13.393631, y: 9.028122, z: -5.756529}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2900456265895869377}
@@ -28390,8 +28439,8 @@ Transform:
   - {fileID: 2909064080040060511}
   - {fileID: 2908768262262514443}
   - {fileID: 2900815766769884055}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 912763427}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -94.739, z: 0}
 --- !u!1 &8201156472336863856
 GameObject:
@@ -28415,7 +28464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!195 &8201156472336863860
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -29197,7 +29246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8620841836330070091, guid: 7364b14050643244b9f22cfae368a646, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8620841836330070091, guid: 7364b14050643244b9f22cfae368a646, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29246,7 +29295,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 912763427}
     m_Modifications:
     - target: {fileID: 193093355202701041, guid: 4b973f91a7b92f74c91c47388412fe27, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29406,19 +29455,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 193436071878372509, guid: 4b973f91a7b92f74c91c47388412fe27, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 193436071878372509, guid: 4b973f91a7b92f74c91c47388412fe27, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.46
+      value: 0.09636974
       objectReference: {fileID: 0}
     - target: {fileID: 193436071878372509, guid: 4b973f91a7b92f74c91c47388412fe27, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.1139908
+      value: 9.028122
       objectReference: {fileID: 0}
     - target: {fileID: 193436071878372509, guid: 4b973f91a7b92f74c91c47388412fe27, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.17
+      value: -21.45653
       objectReference: {fileID: 0}
     - target: {fileID: 193436071878372509, guid: 4b973f91a7b92f74c91c47388412fe27, type: 3}
       propertyPath: m_LocalRotation.w
@@ -29975,23 +30024,23 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 912763427}
     m_Modifications:
     - target: {fileID: 8883840338677604741, guid: 8f5ff9789bdfc214b8c8b9faee907d33, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8883840338677604741, guid: 8f5ff9789bdfc214b8c8b9faee907d33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.52
+      value: -12.963631
       objectReference: {fileID: 0}
     - target: {fileID: 8883840338677604741, guid: 8f5ff9789bdfc214b8c8b9faee907d33, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.1139908
+      value: 9.028122
       objectReference: {fileID: 0}
     - target: {fileID: 8883840338677604741, guid: 8f5ff9789bdfc214b8c8b9faee907d33, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 24.69
+      value: -10.936529
       objectReference: {fileID: 0}
     - target: {fileID: 8883840338677604741, guid: 8f5ff9789bdfc214b8c8b9faee907d33, type: 3}
       propertyPath: m_LocalRotation.w

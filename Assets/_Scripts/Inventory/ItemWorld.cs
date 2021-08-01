@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ItemWorld : MonoBehaviour
 {
-    [Header("Assign on Spawn")]
-    public int itemID;
-    public int itemLevel; // Assign from boss
-    [Space]
+    [Header("Assigned on spawn")]
+    public int itemLevel;
     public Item.Rarity rarity; // Assign from boss
+    [Header("Assigned randomly or not")]
+    public int itemID;
     public Item.itemType itemType;
     public bool randomSpawn;
 

@@ -1,0 +1,22 @@
+
+1 Player starts in a prison with nothing except pants and a key
+
+2 Prison: Player is in a cell (goal is to escape the cell) learn all gameplay mechanics with tips showing
+
+3 Desert: Do your first quest for money to buy a horse (tutorial to the questBoard) then ride horse to city
+
+4 City: Get inside the city where u go to the tavern with random generated quests with each a difficulty
+inside the city you have shops etc (Boss quests are not randomGen)
+
+Mechanics needed:
+Quest bulletin board
+Trigger that show Tips
+Right top down show quest objective + functions to update it
+
+Npcs needed:
+Cell guards
+City guards (Done)
+Elite enemies (Done)
+
+Other important things:
+SOUND
