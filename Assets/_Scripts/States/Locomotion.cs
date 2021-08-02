@@ -24,6 +24,7 @@ public class Locomotion : State
 
     public override void OnStateExit(PlayerBehaviour pb)
     {
+        pb.grabTrail.SetActive(false);
         startTime = Time.time;
         pb.cc.center = pb.defaultCenterCc;
         pb.cc.height = defaultCCheight;
@@ -154,8 +155,13 @@ public class Locomotion : State
         {
             if (Input.GetKey(pb.pc.grab))
             {
+                pb.grabTrail.SetActive(true);
                 pb.LedgeInfo();
             }
+        }
+        else
+        {
+            pb.grabTrail.SetActive(false);
         }
     }
 

@@ -42,6 +42,7 @@ public class PlayerBehaviour : Humanoid
     public Transform leftPos;
 
     [Header("VFX")]
+    public GameObject grabTrail;
     public ParticleSystem jumpSmoke;
     public ParticleSystem bleeding;
     private BloodFXHandler bfh;
@@ -101,7 +102,8 @@ public class PlayerBehaviour : Humanoid
         pui.UpdateHPBar(health);
 
         lol.gameObject.SetActive(false);
-        
+        grabTrail.gameObject.SetActive(false);
+
         SetupStateMachine();
     }
 
@@ -144,7 +146,7 @@ public class PlayerBehaviour : Humanoid
             {
                 if (PauseSystem.instance.paused == false)
                 {
-                    PauseSystem.instance.Pause();
+                    PauseSystem.instance.Pause(true);
                 }
                 else
                 {

@@ -9,8 +9,8 @@
 inside the city you have shops etc (Boss quests are not randomGen)
 
 Mechanics needed:
-Quest bulletin board
-Trigger that show Tips
+Quest bulletin board (Done)
+Trigger that show Tips (Done)
 Right top down show quest objective + functions to update it
 
 Npcs needed:

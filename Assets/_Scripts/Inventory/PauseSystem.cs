@@ -22,13 +22,12 @@ public class PauseSystem : MonoBehaviour
 
     public void OpenInventory()
     {
-        Pause();
-        menu.SetActive(false);
+        Pause(false);
         inventory.SetActive(true);
         InventoryManager.instance.CheckForCombat();
     }
 
-    public void Pause()
+    public void Pause(bool showMenu)
     {
         paused = true;
 
@@ -36,7 +35,7 @@ public class PauseSystem : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
 
         Time.timeScale = 0;
-        menu.SetActive(true);
+        menu.SetActive(showMenu);
         InventoryManager.instance.HideDisplay();
     }
 
