@@ -14,7 +14,7 @@ Trigger that show Tips
 Right top down show quest objective + functions to update it
 
 Npcs needed:
-Cell guards
+Cell guards (spears?)
 City guards (Done)
 Elite enemies (Done)
 

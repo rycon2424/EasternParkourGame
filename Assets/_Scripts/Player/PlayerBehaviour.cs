@@ -10,7 +10,9 @@ public class PlayerBehaviour : Humanoid
     public int currentDamage;
     public float armorRating;
     public float slideSpeed;
-
+    [Space]
+    [SerializeField] bool playerLocked;
+    
     [Header("RaycastInfo")]
     public string tagGround;
     public LayerMask everything;
@@ -59,6 +61,25 @@ public class PlayerBehaviour : Humanoid
     [HideInInspector] public MonoBehaviour mono;
     #endregion
 
+    public bool locked
+    {
+        get
+        {
+            return playerLocked;
+        }
+        set
+        {
+            playerLocked = value;
+            if (playerLocked == true)
+            {
+                anim.SetFloat("x", 0);
+                anim.SetFloat("y", 0);
+                anim.SetBool("Sprinting", false);
+                anim.SetBool("Walking", false);
+            }
+        }
+    }
+
     void Start()
     {
         stateMachine = new StateMachine();
@@ -106,6 +127,10 @@ public class PlayerBehaviour : Humanoid
     void Update()
     {
         Pausing();
+        if (locked == true)
+        {
+            return;
+        }
         ccGrounded = cc.isGrounded;
         currentState.StateUpdate(this);
         anim.SetBool("Land", Grounded());
@@ -113,28 +138,31 @@ public class PlayerBehaviour : Humanoid
 
     void Pausing()
     {
-        if (Input.GetKeyDown(pc.pause))
+        if (PauseSystem.instance.blockPausing == false)
         {
-            if (PauseSystem.instance.paused == false)
+            if (Input.GetKeyDown(pc.pause))
             {
-                PauseSystem.instance.Pause();
+                if (PauseSystem.instance.paused == false)
+                {
+                    PauseSystem.instance.Pause();
+                }
+                else
+                {
+                    InventoryManager.instance.ExitSellingMode();
+                    PauseSystem.instance.Resume();
+                }
             }
-            else
+            if (Input.GetKeyDown(pc.inventory))
             {
-                InventoryManager.instance.ExitSellingMode();
-                PauseSystem.instance.Resume();
-            }
-        }
-        if (Input.GetKeyDown(pc.inventory))
-        {
-            if (PauseSystem.instance.paused == false)
-            {
-                PauseSystem.instance.OpenInventory();
-            }
-            else
-            {
-                InventoryManager.instance.ExitSellingMode();
-                PauseSystem.instance.Resume();
+                if (PauseSystem.instance.paused == false)
+                {
+                    PauseSystem.instance.OpenInventory();
+                }
+                else
+                {
+                    InventoryManager.instance.ExitSellingMode();
+                    PauseSystem.instance.Resume();
+                }
             }
         }
     }
@@ -527,6 +555,11 @@ public class PlayerBehaviour : Humanoid
     public void TooHeavy(bool restrictmovement)
     {
         overWeight = restrictmovement;
+    }
+
+    public void CameraOn(bool on)
+    {
+        oc.gameObject.SetActive(on);
     }
 
 }

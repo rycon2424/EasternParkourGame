@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PauseSystem : MonoBehaviour
 {
+    public bool blockPausing;
     public static PauseSystem instance;
     public bool paused;
     public GameObject menu;
