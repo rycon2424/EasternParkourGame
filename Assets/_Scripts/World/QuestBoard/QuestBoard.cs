@@ -51,10 +51,11 @@ public class QuestBoard : MonoBehaviour
         }
     }
 
-    void LeaveBoard()
+    public void LeaveBoard()
     {
         cam.SetActive(false);
         PauseSystem.instance.blockPausing = false;
+        viewingBoard = false;
         startExitUI.SetActive(false);
         pb.CameraOn(true);
         Cursor.visible = false;
@@ -67,6 +68,24 @@ public class QuestBoard : MonoBehaviour
         pb.locked = false;
     }
 
+    public void EnableQuests()
+    {
+        foreach (var q in quests)
+        {
+            q.selectable = true;
+        }
+    }
+
+    public void ReadingQuest(QuestNote qn)
+    {
+        foreach (var q in quests)
+        {
+            q.selectable = false;
+            q.highlight.SetActive(false);
+        }
+        qn.selectable = true;
+    }
+    
     private void OnTriggerEnter(Collider other)
     {
         PlayerBehaviour pb = other.GetComponent<PlayerBehaviour>();
