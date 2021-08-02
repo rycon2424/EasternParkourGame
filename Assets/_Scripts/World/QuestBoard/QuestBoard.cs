@@ -7,18 +7,28 @@ public class QuestBoard : MonoBehaviour
     private bool playerInRange;
     private Animator anim;
     private PlayerBehaviour pb;
-
+    
+    public QuestInfo[] allQuests;
+    [Space]
+    public GameObject[] questNotes;
     public bool viewingBoard;
-    public GameObject startExitUI;
+    public GameObject exitUI;
+    public GameObject startQuestButton;
     public GameObject cam;
     public GameObject EButton;
     [Space]
-    public QuestNote[] quests;
+    public List<QuestNote> quests = new List<QuestNote>();
 
     void Start()
     {
         anim = GetComponent<Animator>();
         pb = FindObjectOfType<PlayerBehaviour>();
+
+        for (int i = 0; i < allQuests.Length; i++)
+        {
+            questNotes[i].SetActive(true);
+            quests.Add(allQuests[i].noteOwner);
+        }
     }
     
     void Update()
@@ -42,7 +52,7 @@ public class QuestBoard : MonoBehaviour
 
     public void EndCutscene()
     {
-        startExitUI.SetActive(true);
+        exitUI.SetActive(true);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         foreach (var q in quests)
@@ -56,7 +66,7 @@ public class QuestBoard : MonoBehaviour
         cam.SetActive(false);
         PauseSystem.instance.blockPausing = false;
         viewingBoard = false;
-        startExitUI.SetActive(false);
+        exitUI.SetActive(false);
         pb.CameraOn(true);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -64,6 +74,7 @@ public class QuestBoard : MonoBehaviour
         {
             q.selectable = false;
             q.highlight.SetActive(false);
+            q.ResetPos();
         }
         pb.locked = false;
     }
@@ -106,3 +117,17 @@ public class QuestBoard : MonoBehaviour
         }
     }
 }
+
+[System.Serializable]
+public class QuestInfo
+{
+    public QuestNote noteOwner;
+    public bool random;
+
+    [Header("Quest Info")]
+    public string questTitle;
+    [TextArea(5, 5)] public string textDescription;
+    public string questReward;
+
+}
+
