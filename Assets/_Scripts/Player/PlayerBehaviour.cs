@@ -288,7 +288,7 @@ public class PlayerBehaviour : Humanoid
     {
         RaycastHit hit;
         Ray ray = new Ray(start, dir);
-        Debug.DrawRay(start, dir * length, Color.magenta, 0.1f);
+        Debug.DrawRay(start, dir * length, Color.magenta, 0.5f);
         if (Physics.Raycast(ray, out hit, length, lm))
         {
             lastCachedhit = hit.point;
@@ -326,7 +326,7 @@ public class PlayerBehaviour : Humanoid
         RaycastHit hit;
         float range = 2;
         Vector3 playerHeight = new Vector3(pb.transform.position.x, pb.transform.position.y + checkYOffset, pb.transform.position.z);
-        Debug.DrawRay(playerHeight, dir * range, Color.green);
+        Debug.DrawRay(playerHeight, dir * range, Color.green, 1);
         if (Physics.Raycast(playerHeight, dir, out hit, range))
         {
             Vector3 temp = pb.transform.position - hit.point;

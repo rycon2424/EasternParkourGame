@@ -169,36 +169,42 @@ public class Climbing : State
         {
             if (climbDirection == -1)
             {
-                if (pb.RayHit(pb.transform.position + pb.transform.forward * 0.3f + pb.transform.up + pb.transform.right * 0.2f, Vector3.down, 1.5f, pb.everything) &&
-                    pb.RayHit(pb.transform.position + pb.transform.forward * 0.3f + pb.transform.up + -pb.transform.right * 0.1f, Vector3.down, 1.5f, pb.everything))
+                if (!pb.RayHit(pb.transform.position + pb.transform.up * 3f, Vector3.up, -1.6f, pb.everything))
                 {
-                    Vector3 temp = pb.lastCachedhit;
-                    temp.x = pb.transform.position.x;
-                    temp.z = pb.transform.position.z;
-                    temp.y -= pb.grabHeight;
+                    if (pb.RayHit(pb.transform.position + pb.transform.forward * 0.3f + pb.transform.up + pb.transform.right * 0.2f, Vector3.down, 1.5f, pb.everything) &&
+                        pb.RayHit(pb.transform.position + pb.transform.forward * 0.3f + pb.transform.up + -pb.transform.right * 0.1f, Vector3.down, 1.5f, pb.everything))
+                    {
+                        Vector3 temp = pb.lastCachedhit;
+                        temp.x = pb.transform.position.x;
+                        temp.z = pb.transform.position.z;
+                        temp.y -= pb.grabHeight;
 
-                    pb.LerpToPosition(temp, 0.35f);
-                    pb.anim.Play("ClimbDown");
-                    climbCooldown = true;
-                    pb.mono.StartCoroutine(ClimbCooldown(pb.anim, 0.8f, pb));
+                        pb.LerpToPosition(temp, 0.35f);
+                        pb.anim.Play("ClimbDown");
+                        climbCooldown = true;
+                        pb.mono.StartCoroutine(ClimbCooldown(pb.anim, 0.8f, pb));
+                    }
                 }
             }
             else if (climbDirection == 1)
             {
-                if (pb.RayHit(pb.transform.position + pb.transform.forward * 0.3f + pb.transform.up * 3f + pb.transform.right * 0.2f, Vector3.down, 1.5f, pb.everything) &&
-                    pb.RayHit(pb.transform.position + pb.transform.forward * 0.3f + pb.transform.up * 3f + -pb.transform.right * 0.1f, Vector3.down, 1.5f, pb.everything))
+                if (!pb.RayHit(pb.transform.position + pb.transform.up * 3f, Vector3.down, 1.6f, pb.everything))
                 {
-                    Vector3 temp = pb.lastCachedhit;
-                    temp.x = pb.transform.position.x;
-                    temp.z = pb.transform.position.z;
-                    temp.y -= pb.grabHeight;
+                    if (pb.RayHit(pb.transform.position + pb.transform.forward * 0.3f + pb.transform.up * 3f + pb.transform.right * 0.2f, Vector3.down, 1.5f, pb.everything) &&
+                    pb.RayHit(pb.transform.position + pb.transform.forward * 0.3f + pb.transform.up * 3f + -pb.transform.right * 0.1f, Vector3.down, 1.5f, pb.everything))
+                    {
+                        Vector3 temp = pb.lastCachedhit;
+                        temp.x = pb.transform.position.x;
+                        temp.z = pb.transform.position.z;
+                        temp.y -= pb.grabHeight;
 
-                    pb.LerpToPosition(temp, 0.35f);
-                    pb.anim.Play("ClimbingUp");
-                    climbCooldown = true;
-                    pb.mono.StartCoroutine(ClimbCooldown(pb.anim, 0.8f, pb));
+                        pb.LerpToPosition(temp, 0.35f);
+                        pb.anim.Play("ClimbingUp");
+                        climbCooldown = true;
+                        pb.mono.StartCoroutine(ClimbCooldown(pb.anim, 0.8f, pb));
+                    }
+                    pb.anim.SetFloat("ClimbingHand", pb.anim.GetFloat("ClimbingHand") * -1);
                 }
-                pb.anim.SetFloat("ClimbingHand", pb.anim.GetFloat("ClimbingHand") * -1);
             }
         }
     }
