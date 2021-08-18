@@ -321,21 +321,22 @@ public class PlayerBehaviour : Humanoid
         anim.applyRootMotion = true;
     }
 
-    public bool PlayerToWall(PlayerBehaviour pb, Vector3 dir, bool lerp, float checkYOffset, float closeDistance)
+    public bool PlayerToWall(PlayerBehaviour pb, Vector3 dir, bool lerp, float checkYOffset, float closeDistance, float lerpTime)
     {
         RaycastHit hit;
         float range = 2;
         Vector3 playerHeight = new Vector3(pb.transform.position.x, pb.transform.position.y + checkYOffset, pb.transform.position.z);
-        Debug.DrawRay(playerHeight, dir * range, Color.green, 1);
-        if (Physics.Raycast(playerHeight, dir, out hit, range))
+        Debug.DrawRay(playerHeight + (pb.transform.forward * -0.1f), dir * range, Color.green, 1);
+        if (Physics.Raycast(playerHeight + (pb.transform.forward * -0.1f), dir, out hit, range))
         {
+            Debug.Log($"hit {hit.collider.gameObject.name}");
             Vector3 temp = pb.transform.position - hit.point;
             temp.y = 0;
             Vector3 positionToSend = pb.transform.position - temp;
             positionToSend -= (pb.transform.forward * (distanceFromWall + closeDistance));
             if (lerp)
             {
-                pb.LerpToPosition(positionToSend, 0.25f);
+                pb.LerpToPosition(positionToSend, lerpTime);
             }
             else
             {

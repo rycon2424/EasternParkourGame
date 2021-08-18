@@ -29,7 +29,7 @@ public class Climbing : State
             pb.stateMachine.GoToState(pb, "Locomotion");
             return;
         }
-        if (!pb.PlayerToWall(pb, pb.transform.forward, false, 1.2f,0))
+        if (!pb.PlayerToWall(pb, pb.transform.forward, false, 1.2f, 0, 0))
         {
             pb.failedClimb = true;
             pb.stateMachine.GoToState(pb, "Locomotion");
@@ -63,7 +63,7 @@ public class Climbing : State
         else
         {
             pb.anim.SetTrigger("Ledge");
-            pb.PlayerToWall(pb, pb.transform.forward, false, 1.2f, -0.1f);
+            pb.PlayerToWall(pb, pb.transform.forward, false, 1.2f, -0.1f, 0);
         }
 
         pb.anim.SetBool("Climbing", true);
@@ -154,11 +154,12 @@ public class Climbing : State
     
     IEnumerator ClimbCooldown(Animator anim, float cld, PlayerBehaviour pb)
     {
-        yield return new WaitForSeconds(cld);
+        yield return new WaitForSeconds((cld - 0.1f));
         if (pb != null)
         {
-            pb.PlayerToWall(pb, pb.transform.forward, false, 1.2f, 0);
+            pb.PlayerToWall(pb, pb.transform.forward, true, 1.2f, 0, 0.1f);
         }
+        yield return new WaitForSeconds(0.1f);
         climbCooldown = false;
     }
 
@@ -215,11 +216,11 @@ public class Climbing : State
         {
             if (legSupport)
             {
-                pb.PlayerToWall(pb, pb.transform.forward, false, 1.2f, 0);
+                pb.PlayerToWall(pb, pb.transform.forward, false, 1.2f, 0, 0);
             }
             else
             {
-                pb.PlayerToWall(pb, pb.transform.forward, false, 1.2f, -0.1f);
+                pb.PlayerToWall(pb, pb.transform.forward, false, 1.2f, -0.1f, 0);
             }
             if (shimmyDirection == 1)
             {
