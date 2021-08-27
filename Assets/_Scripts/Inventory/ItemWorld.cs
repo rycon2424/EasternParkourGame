@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemWorld : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class ItemWorld : MonoBehaviour
     public bool randomSpawn;
 
     [Header("Dont Assign")]
+    [SerializeField] Text itemName;
     [SerializeField] Light haloLight;
     [SerializeField] bool pickupable;
     [SerializeField] Rigidbody rb;
@@ -26,7 +28,15 @@ public class ItemWorld : MonoBehaviour
             Item randomItem = randomitems.items[Random.Range(0, randomitems.items.Count)];
             itemID = randomItem.ID;
             itemType = randomItem.typeItem;
+
+            itemName.text = randomItem.itemName;
         }
+        else
+        {
+            Item itemCopy = ItemDataBase.instance.GetItemInfo(itemID, itemType);
+            itemName.text = itemCopy.itemName;
+        }
+
         rb = GetComponent<Rigidbody>();
         haloLight = GetComponent<Light>();
         Color32 tempColor = new Color32(255,255,255,255);
@@ -51,6 +61,7 @@ public class ItemWorld : MonoBehaviour
                 break;
         }
         haloLight.color = tempColor;
+        itemName.color = tempColor;
         ShootToRandomDirection();
     }
 
