@@ -23,6 +23,10 @@ public class EnemyController : Humanoid
     public Transform dropWeapon;
     public GameObject fightUI;
     public Animator fightAnim;
+
+    [Header("Loot Inventory")]
+    public GameObject[] loot; 
+
     [Header("Patrol settings")]
     public bool oldPost;
     private Vector3 oldPostPos;
@@ -197,6 +201,7 @@ public class EnemyController : Humanoid
 
         ShowBattleUI(false);
         pb.KilledTarget(t);
+        DropLoot();
     }
 
     void SwitchState(EnemyStates es)
@@ -593,6 +598,15 @@ public class EnemyController : Humanoid
             {
                 Gizmos.DrawWireMesh(debugPos, t.position - Vector3.up);
             }
+        }
+    }
+
+    void DropLoot()
+    {
+        foreach (var item in loot)
+        {
+            item.transform.parent = null;
+            item.SetActive(true);
         }
     }
 }
