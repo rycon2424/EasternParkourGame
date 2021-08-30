@@ -207,6 +207,7 @@ public class PlayerBehaviour : Humanoid
             injured = true;
         }
         bfh.SlashDamage(damageType);
+        GetComponent<AudioHandler>().PlaySoundEffect();
 
         float damageToCalculate = damage;
 

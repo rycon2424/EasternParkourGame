@@ -163,6 +163,7 @@ public class EnemyController : Humanoid
             if (damage > 0)
             {
                 bfh.SlashDamage(damageType);
+                GetComponent<AudioHandler>().PlaySoundEffect();
             }
 
             health -= damage;
